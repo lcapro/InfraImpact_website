@@ -1,0 +1,15 @@
+node_modules/
+temporary screenshots/
+.claude/
+
+# Dev scripts (niet nodig in productie)
+add-nav-dropdown.mjs
+fix-nav.mjs
+fix-navs-v2.mjs
+fix-navs-v3.mjs
+fix-navs-v4.mjs
+fix-seo-final.mjs
+update-content.mjs
+screenshot.mjs
+screenshot-hover.mjs
+seo-check.mjs

@@ -1,0 +1,26 @@
+/* TEAM */
+Specialist: Jim van der Kooij
+Role: Oprichter & LCA-specialist
+Expertise: LCA (Life Cycle Assessment), MKI (Milieu Kosten Indicator), GWW, bouw, milieuberekeningen, CO2-reductie, duurzaam aanbesteden, NMD, EPD, bepalingsmethode, PCR 2.0
+Location: Rotterdam, Nederland
+Contact: info@infraimpact.nl
+
+/* SITE */
+Company: InfraImpact B.V.
+KvK: 98323377
+Standards: HTML5, CSS3, WCAG 2.1
+Description: InfraImpact is de Nederlandse specialist in LCA en MKI-berekeningen voor de GWW-sector en bouw. Wij helpen aannemers en opdrachtgevers bij milieuberekeningen, CO2-reductie en duurzaam aanbesteden. Jim van der Kooij heeft 7+ jaar praktijkervaring in de GWW-sector en heeft meer dan 120 projecten begeleid op het gebied van LCA en MKI.
+
+/* EXPERTISE */
+- LCA (Life Cycle Assessment) voor GWW en bouw
+- MKI-berekeningen (Milieu Kosten Indicator) conform bepalingsmethode
+- CO2-berekeningen en CO2-reductie strategieen
+- Duurzaam aanbesteden en EMVI-criteria
+- NMD (Nationale Milieudatabase) en EPD-ondersteuning
+- PCR 2.0 en bepalingsmethode milieuprestatie bouwwerken
+- DuboCalc, SimaPro, One Click LCA
+- GWW, B&U, infra, fundering, asfalt, kunstwerken
+- Rijkswaterstaat, ProRail, gemeenten, aannemers
+
+/* LANGUAGE */
+Content-language: nl-NL

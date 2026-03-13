@@ -1,0 +1,51 @@
+User-agent: *
+Allow: /
+Disallow: /brand_assets/
+
+# Sitemap
+Sitemap: https://www.infraimpact.nl/sitemap.xml
+
+# AI-model crawlers — volledig toegang
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Gemini-Web
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# AI-leesbare samenvatting: https://www.infraimpact.nl/llms.txt

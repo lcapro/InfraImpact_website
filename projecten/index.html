@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projecten & Samenwerkingen, InfraImpact</title>
+  <link rel="icon" type="image/png" href="/brand_assets/infra_impact-icoon.png" />
+  <link rel="apple-touch-icon" href="/brand_assets/infra_impact-icoon.png" />
+  <meta name="description" content="Bekijk projecten waarbij InfraImpact LCA en MKI-berekeningen heeft uitgevoerd voor GWW-aanbestedingen. Van fundering tot asfalt, milieuimpact in de praktijk." />
+  <meta name="keywords" content="LCA projecten, MKI projecten, GWW aanbesteding, milieuberekening praktijk, CO2 bouw, infra, duurzaam aanbesteden" />
+  <link rel="canonical" href="https://www.infraimpact.nl/projecten/" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.infraimpact.nl/projecten/" />
+  <meta property="og:title" content="LCA & MKI Projecten, InfraImpact" />
+  <meta property="og:description" content="Bekijk projecten waarbij InfraImpact LCA en MKI-berekeningen heeft uitgevoerd voor GWW-aanbestedingen. Van fundering tot asfalt, milieuimpact in de praktijk." />
+  <meta property="og:image" content="https://www.infraimpact.nl/brand_assets/infra_impact.png" />
+  <meta property="og:locale" content="nl_NL" />
+
+  <script>
+    (function() {
+      var stored = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (stored === 'dark' || (!stored && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            teal:  { DEFAULT: '#2D6E5E', dark: '#1E4D42', light: '#3D8A73', faint: '#EAF3F0' },
+            steel: { DEFAULT: '#3B6080', dark: '#273F54', light: '#4E7A9E', faint: '#EDF2F7' },
+          },
+          fontFamily: {
+            display: ['"DM Serif Display"', 'Georgia', 'serif'],
+            body:    ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: #1a2c38; background: #F8F7F4; transition: background 0.3s ease, color 0.3s ease; }
+
+    html.dark body { background: #0D1B26; color: #e2e8f0; }
+    html.dark .bg-white { background: #102236 !important; }
+    html.dark .border-slate-100 { border-color: rgba(255,255,255,0.06) !important; }
+    html.dark .text-steel-dark { color: #e2e8f0 !important; }
+    html.dark .text-slate-600 { color: #94a3b8 !important; }
+    html.dark .text-slate-500 { color: #94a3b8 !important; }
+    html.dark #navbar.scrolled { background: rgba(13,27,38,0.97) !important; box-shadow: 0 1px 0 rgba(0,0,0,0.2), 0 4px 16px rgba(0,0,0,0.15); }
+    html.dark .project-card { background: #162e47 !important; border-color: rgba(255,255,255,0.06) !important; }
+    html.dark .filter-bar { background: rgba(13,27,38,0.97) !important; border-bottom-color: rgba(255,255,255,0.06) !important; }
+    html.dark .filter-btn { background: rgba(255,255,255,0.07) !important; border-color: rgba(255,255,255,0.14) !important; color: rgba(255,255,255,0.70) !important; }
+    html.dark .filter-btn:hover { color: #3D8A73 !important; border-color: #3D8A73 !important; }
+    html.dark .filter-btn.active { background: #2D6E5E !important; border-color: #2D6E5E !important; color: #fff !important; }
+    html.dark .search-input { background: rgba(255,255,255,0.07) !important; border-color: rgba(255,255,255,0.14) !important; color: #e2e8f0 !important; }
+    html.dark .search-input::placeholder { color: rgba(255,255,255,0.30) !important; }
+    html.dark .page-hero { background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(59,96,128,0.08) 0%, transparent 65%), radial-gradient(ellipse 60% 80% at 10% 80%, rgba(45,110,94,0.07) 0%, transparent 60%), #0D1B26 !important; }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999; opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    }
+
+    .heading-xl { font-family: 'DM Serif Display', Georgia, serif; letter-spacing: -0.03em; line-height: 1.08; }
+    .heading-lg { font-family: 'DM Serif Display', Georgia, serif; letter-spacing: -0.025em; line-height: 1.15; }
+    .body-copy { line-height: 1.75; }
+
+    .shadow-teal { box-shadow: 0 1px 2px rgba(45,110,94,0.08), 0 4px 12px rgba(45,110,94,0.12), 0 16px 40px rgba(45,110,94,0.10); }
+    .shadow-card { box-shadow: 0 1px 1px rgba(30,50,65,0.04), 0 4px 8px rgba(30,50,65,0.06), 0 12px 32px rgba(30,50,65,0.07); }
+
+    #navbar { transition: background 0.3s ease, box-shadow 0.3s ease; }
+    #navbar.scrolled { background: rgba(248,247,244,0.96); backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(30,50,65,0.08), 0 4px 16px rgba(30,50,65,0.06); }
+
+    .nav-pill-container {
+      position: relative; display: flex; align-items: center;
+      background: rgba(45,110,94,0.06); border: 1px solid rgba(45,110,94,0.12);
+      border-radius: 9999px; padding: 4px; gap: 2px;
+    }
+    html.dark .nav-pill-container { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.08); }
+    .nav-link-pill {
+      position: relative; z-index: 1; padding: 0.45rem 1.1rem;
+      border-radius: 9999px; font-size: 0.9375rem; font-weight: 500; color: #273F54;
+      transition: color 0.18s ease; text-decoration: none; white-space: nowrap;
+    }
+    html.dark .nav-link-pill { color: rgba(255,255,255,0.65); }
+    .nav-link-pill:hover { color: #2D6E5E; }
+    html.dark .nav-link-pill:hover { color: #3D8A73; }
+    .nav-link-pill.active { color: #2D6E5E; }
+    html.dark .nav-link-pill.active { color: #3D8A73; }
+    .nav-link-pill:focus-visible { outline: 2px solid #2D6E5E; outline-offset: 2px; border-radius: 9999px; }
+
+    #tubelight-indicator {
+      position: absolute; top: 4px; height: calc(100% - 8px);
+      border-radius: 9999px; background: rgba(45,110,94,0.12);
+      transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1), width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none; z-index: 0;
+    }
+    html.dark #tubelight-indicator { background: rgba(61,138,115,0.15); }
+    #tubelight-indicator::before {
+      content: ''; position: absolute; top: -6px;
+      left: 50%; transform: translateX(-50%);
+      width: 36px; height: 2px; background: #2D6E5E; border-radius: 0 0 3px 3px;
+      box-shadow: 0 0 8px 2px rgba(45,110,94,0.5), 0 0 20px 6px rgba(45,110,94,0.2);
+    }
+    #tubelight-indicator::after {
+      content: ''; position: absolute; top: -14px;
+      left: 50%; transform: translateX(-50%);
+      width: 60px; height: 16px;
+      background: radial-gradient(ellipse at center top, rgba(45,110,94,0.25), transparent 70%);
+    }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #2D6E5E; color: #fff;
+      padding: 0.8rem 1.75rem; border-radius: 0.5rem;
+      font-weight: 500; font-size: 0.9375rem; letter-spacing: 0.01em;
+      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.18s ease, background 0.18s ease;
+      box-shadow: 0 2px 8px rgba(45,110,94,0.20), 0 8px 24px rgba(45,110,94,0.14);
+      text-decoration: none;
+    }
+    .btn-primary:hover { background: #1E4D42; transform: translateY(-2px); box-shadow: 0 4px 14px rgba(45,110,94,0.28), 0 12px 32px rgba(45,110,94,0.18); }
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: #2D6E5E;
+      padding: 0.8rem 1.75rem; border-radius: 0.5rem;
+      font-weight: 500; font-size: 0.9375rem;
+      border: 1.5px solid #2D6E5E;
+      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), background 0.18s ease, color 0.18s ease;
+      text-decoration: none;
+    }
+    .btn-outline:hover { background: #2D6E5E; color: #fff; transform: translateY(-2px); }
+    .btn-outline:active { transform: translateY(0); }
+
+    .nav-link { position: relative; font-size: 0.9375rem; font-weight: 500; color: #273F54; transition: color 0.18s ease; text-decoration: none; }
+    .nav-link::after { content: ''; position: absolute; left: 0; bottom: -3px; width: 0; height: 2px; background: #2D6E5E; border-radius: 2px; transition: width 0.22s cubic-bezier(0.4,0,0.2,1); }
+    .nav-link:hover { color: #2D6E5E; }
+    .nav-link:hover::after { width: 100%; }
+
+    .theme-toggle-wrap {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 56px; height: 28px; padding: 3px; border-radius: 9999px; cursor: pointer;
+      border: 1px solid; flex-shrink: 0;
+      transition: background 0.3s ease, border-color 0.3s ease;
+      background: #f4f4f5; border-color: #d4d4d8;
+    }
+    html.dark .theme-toggle-wrap { background: #18181b; border-color: #3f3f46; }
+    .theme-toggle-thumb {
+      display: flex; align-items: center; justify-content: center;
+      width: 20px; height: 20px; border-radius: 50%;
+      transition: transform 0.3s ease, background 0.3s ease; flex-shrink: 0;
+      background: #e4e4e7; transform: translateX(0);
+    }
+    html.dark .theme-toggle-thumb { background: #3f3f46; transform: translateX(0); }
+    .theme-toggle-secondary { display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0; }
+    html.dark .theme-toggle-wrap .theme-toggle-thumb { order: 2; }
+    html.dark .theme-toggle-wrap .theme-toggle-secondary { order: 1; }
+    .theme-toggle-wrap:hover .theme-toggle-thumb { background: #d4d4d8; }
+    html.dark .theme-toggle-wrap:hover .theme-toggle-thumb { background: #52525b; }
+
+    .page-hero {
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(59,96,128,0.12) 0%, transparent 65%),
+        radial-gradient(ellipse 60% 80% at 10% 80%, rgba(45,110,94,0.10) 0%, transparent 60%),
+        #F8F7F4;
+    }
+    .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #2D6E5E; }
+
+    /* ── Project card ── */
+    .project-card {
+      background: #fff;
+      border-radius: 1.25rem;
+      border: 1px solid rgba(45,110,94,0.10);
+      overflow: hidden;
+      transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.22s ease;
+      display: flex; flex-direction: column; height: 100%;
+      text-decoration: none; color: inherit;
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 4px 16px rgba(45,110,94,0.14), 0 20px 48px rgba(45,110,94,0.12);
+    }
+    .project-card-accent {
+      height: 4px;
+      background: linear-gradient(90deg, #2D6E5E, #3D8A73);
+    }
+    .project-card-accent.steel {
+      background: linear-gradient(90deg, #3B6080, #4E7A9E);
+    }
+
+    /* ── Filter/search ── */
+    .filter-btn {
+      padding: 0.5rem 1.2rem; border-radius: 9999px; border: 1.5px solid rgba(45,110,94,0.20);
+      font-size: 0.875rem; font-weight: 500; color: #4a6070;
+      background: rgba(255,255,255,0.8); cursor: pointer;
+      transition: all 0.18s ease; white-space: nowrap;
+    }
+    .filter-btn:hover { border-color: #2D6E5E; color: #2D6E5E; }
+    .filter-btn.active { background: #2D6E5E; border-color: #2D6E5E; color: #fff; }
+
+    .search-input {
+      background: rgba(255,255,255,0.9); border: 1.5px solid rgba(45,110,94,0.15);
+      border-radius: 0.625rem; padding: 0.65rem 1rem 0.65rem 2.75rem;
+      font-size: 0.9375rem; color: #273F54; outline: none; width: 100%;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+    .search-input:focus { border-color: #2D6E5E; box-shadow: 0 0 0 3px rgba(45,110,94,0.12); }
+    .search-input::placeholder { color: #94a3b8; }
+
+    /* ── Badge ── */
+    .badge-samenwerking { background: rgba(45,110,94,0.10); color: #2D6E5E; }
+    .badge-case { background: rgba(59,96,128,0.10); color: #3B6080; }
+    html.dark .badge-samenwerking { background: rgba(45,110,94,0.20); color: #3D8A73; }
+    html.dark .badge-case { background: rgba(59,96,128,0.20); color: #4E7A9E; }
+
+    /* ── Animations ── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-up { animation: fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) both; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.22s; }
+
+    /* ── Empty state ── */
+    #empty-state { display: none; }
+
+    /* ── CTA section ── */
+    .cta-bg {
+      background:
+        radial-gradient(ellipse 60% 80% at 90% 50%, rgba(61,138,115,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 60% at 10% 30%, rgba(78,122,158,0.15) 0%, transparent 55%),
+        #1E3A4A;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"CollectionPage","name":"LCA en MKI Projecten","url":"https://www.infraimpact.nl/projecten/","description":"Projecten waarbij InfraImpact LCA en MKI-berekeningen heeft uitgevoerd voor GWW-aanbestedingen.","publisher":{"@id":"https://www.infraimpact.nl/#organization"}}
+  </script>
+<style>
+
+    /* nav-dropdown-styles-v1 */
+    .nav-dropdown-wrap { position: relative; }
+    .nav-dropdown-trigger {
+      display: flex; align-items: center; gap: 0.375rem;
+      background: none; border: none; cursor: pointer; font-family: inherit; padding: 0;
+    }
+    .nav-dropdown-trigger .nav-chevron { transition: transform 0.2s ease; }
+    .nav-dropdown-wrap[data-open="true"] .nav-chevron { transform: rotate(180deg); }
+    .nav-dropdown-panel {
+      position: absolute;
+      top: calc(100% + 0.75rem);
+      left: 50%;
+      transform: translateX(-50%) translateY(-8px);
+      width: 520px;
+      background: #fff;
+      border: 1px solid rgba(59,96,128,0.12);
+      border-radius: 1rem;
+      box-shadow: 0 8px 32px rgba(13,27,38,.12), 0 2px 8px rgba(13,27,38,.08);
+      padding: 1.25rem;
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      gap: 0.75rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+      z-index: 200;
+    }
+    .nav-dropdown-panel.is-open {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+    html.dark .nav-dropdown-panel {
+      background: #162e47;
+      border-color: rgba(255,255,255,0.08);
+      box-shadow: 0 8px 32px rgba(0,0,0,.3), 0 2px 8px rgba(0,0,0,.2);
+    }
+    .nav-dropdown-divider { background: rgba(59,96,128,0.10); }
+    html.dark .nav-dropdown-divider { background: rgba(255,255,255,0.07); }
+    .nav-dropdown-col-label {
+      font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: #2D6E5E; margin-bottom: 0.375rem; padding: 0 0.75rem;
+    }
+    .nav-dropdown-item {
+      display: block; padding: 0.625rem 0.75rem; border-radius: 0.625rem;
+      text-decoration: none; transition: background 0.15s ease;
+    }
+    .nav-dropdown-item:hover { background: rgba(45,110,94,0.07); }
+    html.dark .nav-dropdown-item:hover { background: rgba(45,110,94,0.15); }
+    .nav-dropdown-item-title {
+      font-size: 0.875rem; font-weight: 600; color: #1a2c38; margin-bottom: 0.125rem;
+    }
+    html.dark .nav-dropdown-item-title { color: #e2e8f0; }
+    .nav-dropdown-item-desc { font-size: 0.8rem; color: #64748b; line-height: 1.4; }
+    html.dark .nav-dropdown-item-desc { color: rgba(255,255,255,0.45); }
+    .nav-dropdown-all-link {
+      display: block; margin-top: 0.5rem; padding: 0.5rem 0.75rem;
+      font-size: 0.875rem; font-weight: 600; color: #2D6E5E;
+      border-top: 1px solid rgba(45,110,94,0.12); text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .nav-dropdown-all-link:hover { color: #1E4D42; }
+    html.dark .nav-dropdown-all-link { border-top-color: rgba(45,110,94,0.2); }
+    .nav-mobile-accordion-trigger {
+      background: none; border: none; cursor: pointer; font-family: inherit;
+      width: 100%; text-align: left; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-mobile-accordion-trigger .nav-chevron-m { transition: transform 0.2s ease; flex-shrink: 0; }
+    .nav-mobile-accordion-trigger[aria-expanded="true"] .nav-chevron-m { transform: rotate(180deg); }
+
+  </style>
+  <link rel="icon" type="image/png" href="/brand_assets/infra_impact-icoon.png" />
+
+  <style>/* nav-fix-v2 */
+    /* Button never wraps */
+    .btn-primary { white-space: nowrap !important; }
+    /* Logo link never shrinks */
+    #navbar .flex.items-center.justify-between > a:first-child,
+    #navbar > div > a:first-child { flex-shrink: 0 !important; }
+    /* Right group (toggle + button) never shrinks */
+    #navbar .hidden.md\:flex.items-center.gap-3 { flex-shrink: 0 !important; }
+    /* Nav pills tighter */
+    .nav-link-pill { padding: .35rem .75rem !important; font-size: .8125rem !important; }
+    .nav-dropdown-trigger { font-size: .8125rem !important; }
+    /* Logo bigger */
+    #navbar img[alt="InfraImpact"],
+    #navbar .h-14 { height: 3rem !important; width: auto !important; }
+  </style>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="LCA & MKI Projecten, InfraImpact" />
+  <meta name="twitter:description" content="Bekijk projecten waarbij InfraImpact LCA en MKI-berekeningen heeft uitgevoerd voor GWW-aanbestedingen. Van fundering tot asfalt, milieuimpact in de praktijk." />
+  <meta name="twitter:image" content="https://www.infraimpact.nl/brand_assets/infra_impact.png" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════ -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 h-18 flex items-center justify-between py-4">
+    <a href="/" class="flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal rounded-lg" aria-label="InfraImpact home">
+      <img src="/brand_assets/infra_impact.png" alt="InfraImpact" class="h-14 w-auto" id="nav-logo" />
+    </a>
+
+    <nav class="hidden md:flex items-center" aria-label="Hoofdnavigatie">
+      <div class="nav-pill-container">
+        <div class="nav-dropdown-wrap" id="home-dropdown">
+          <button class="nav-link-pill nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="home-trigger">Home <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-dropdown-panel" id="home-panel" role="menu">
+            <div>
+              <div class="nav-dropdown-col-label">InfraImpact</div>
+              <a href="/" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Homepagina</div><div class="nav-dropdown-item-desc">Terug naar het overzicht</div></a>
+              <a href="/#diensten" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Voor wie</div><div class="nav-dropdown-item-desc">Onze doelgroepen en sectoren</div></a>
+              <a href="/#aanpak" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Aanpak</div><div class="nav-dropdown-item-desc">Hoe we werken</div></a>
+              <a href="/#waarom" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Waarom ons</div><div class="nav-dropdown-item-desc">Onze onderscheidende aanpak</div></a>
+              <a href="/#faq" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">FAQ</div><div class="nav-dropdown-item-desc">Veelgestelde vragen</div></a>
+              <a href="/#contact" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Contact</div><div class="nav-dropdown-item-desc">Neem contact op</div></a>
+            </div>
+          </div>
+        </div>
+        <a href="/projecten" class="nav-link-pill active">Projecten</a>
+        <a href="/tooling" class="nav-link-pill">Tooling</a>
+        <div class="nav-dropdown-wrap" id="artikelen-dropdown">
+          <button class="nav-link-pill nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="artikelen-trigger">Artikelen <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-dropdown-panel" id="artikelen-panel" role="menu">
+            <div>
+              <div class="nav-dropdown-col-label">Artikelen</div>
+              <a href="/artikelen/wat-is-een-lca" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Wat is een LCA?</div><div class="nav-dropdown-item-desc">Levenscyclusanalyse uitgelegd voor de GWW</div></a>
+              <a href="/artikelen/wat-is-mki" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Wat is MKI?</div><div class="nav-dropdown-item-desc">De Milieu Kosten Indicator in de praktijk</div></a>
+              <a href="/artikelen/wat-zegt-milieu-impact-echt" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Wat zegt milieuimpact echt?</div><div class="nav-dropdown-item-desc">Achter de cijfers van duurzaamheid</div></a>
+              <a href="/artikelen" class="nav-dropdown-all-link" role="menuitem">Alle artikelen &rarr;</a>
+            </div>
+            <div class="nav-dropdown-divider"></div>
+            <div>
+              <div class="nav-dropdown-col-label">Kennisbank</div>
+              <a href="/kennisbank/lca-in-de-gww" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">LCA in de GWW</div><div class="nav-dropdown-item-desc">Basiskennis voor de infrasector</div></a>
+              <a href="/kennisbank/mki-berekeningen" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">MKI-berekeningen</div><div class="nav-dropdown-item-desc">Hoe werkt de berekening?</div></a>
+              <a href="/kennisbank/epd-en-normen" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">EPD en normen</div><div class="nav-dropdown-item-desc">NMD, PCR 2.0 en bepalingsmethode</div></a>
+              <a href="/kennisbank/lca-in-aanbestedingen" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">LCA in aanbestedingen</div><div class="nav-dropdown-item-desc">EMVI en duurzaam aanbesteden</div></a>
+            </div>
+          </div>
+        </div>
+        <a href="/over-ons" class="nav-link-pill">Over ons</a>
+      </div>
+    </nav>
+
+    <div class="hidden md:flex items-center gap-3">
+      <div id="theme-toggle" class="theme-toggle-wrap" role="button" tabindex="0" aria-label="Thema wisselen">
+        <div class="theme-toggle-thumb">
+          <svg id="toggle-icon-moon" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M12 9.5A5.5 5.5 0 016.5 4a5.5 5.5 0 00.5 11 5.5 5.5 0 005-5.5z" fill="#3f3f46" stroke="#3f3f46" stroke-width="0.5"/></svg>
+          <svg id="toggle-icon-sun-thumb" width="12" height="12" viewBox="0 0 16 16" fill="none" style="display:none;"><circle cx="8" cy="8" r="3" stroke="#e4e4e7" stroke-width="1.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.22 3.22l1.41 1.41M11.36 11.36l1.41 1.41M3.22 12.78l1.41-1.41M11.36 4.64l1.41-1.41" stroke="#e4e4e7" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="theme-toggle-secondary">
+          <svg id="toggle-icon-sun" width="12" height="12" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" stroke="#a1a1aa" stroke-width="1.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.22 3.22l1.41 1.41M11.36 11.36l1.41 1.41M3.22 12.78l1.41-1.41M11.36 4.64l1.41-1.41" stroke="#a1a1aa" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg id="toggle-icon-moon-secondary" width="12" height="12" viewBox="0 0 16 16" fill="none" style="display:none;"><path d="M12 9.5A5.5 5.5 0 016.5 4a5.5 5.5 0 00.5 11 5.5 5.5 0 005-5.5z" fill="#52525b" stroke="#52525b" stroke-width="0.5"/></svg>
+        </div>
+      </div>
+      <a href="mailto:info@infraimpact.nl?subject=Kennismakingsafspraak%20plannen&body=Beste%20InfraImpact%2C%0A%0AIk%20zou%20graag%20een%20kennismakingsafspraak%20met%20jullie%20inplannen." class="btn-primary hidden md:inline-flex">
+        Plan een kennismaking
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <div class="md:hidden flex items-center gap-2">
+      <div id="theme-toggle-mobile" class="theme-toggle-wrap" role="button" tabindex="0" aria-label="Thema wisselen">
+        <div class="theme-toggle-thumb">
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M12 9.5A5.5 5.5 0 016.5 4a5.5 5.5 0 00.5 11 5.5 5.5 0 005-5.5z" fill="#3f3f46" stroke="#3f3f46" stroke-width="0.5"/></svg>
+        </div>
+        <div class="theme-toggle-secondary">
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" stroke="#a1a1aa" stroke-width="1.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.22 3.22l1.41 1.41M11.36 11.36l1.41 1.41M3.22 12.78l1.41-1.41M11.36 4.64l1.41-1.41" stroke="#a1a1aa" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+      <button id="mobile-menu-btn" class="p-2 rounded-lg hover:bg-steel-faint transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal" aria-label="Menu openen" aria-expanded="false" style="color:#273F54;">
+        <svg id="icon-hamburger" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+        <svg id="icon-close" width="22" height="22" viewBox="0 0 22 22" fill="none" class="hidden"><path d="M5 5l12 12M17 5L5 17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-lg border-t border-steel-faint px-6 pb-6 pt-4">
+    <nav class="flex flex-col gap-4">
+      <div>
+        <button class="nav-mobile-accordion-trigger nav-link py-2 text-base w-full" id="home-accordion-trigger" aria-expanded="false">
+          <span>Home</span>
+          <svg class="nav-chevron-m" width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div id="home-accordion-panel" style="display:none;" class="pl-4 flex flex-col gap-2 mt-1">
+          <a href="/" class="nav-link py-1.5 text-sm">Homepagina</a>
+          <a href="/#diensten" class="nav-link py-1.5 text-sm">Voor wie</a>
+          <a href="/#aanpak" class="nav-link py-1.5 text-sm">Aanpak</a>
+          <a href="/#waarom" class="nav-link py-1.5 text-sm">Waarom ons</a>
+          <a href="/#faq" class="nav-link py-1.5 text-sm">FAQ</a>
+          <a href="/#contact" class="nav-link py-1.5 text-sm">Contact</a>
+        </div>
+      </div>
+      <a href="/projecten" class="nav-link py-2 text-base" style="color:#2D6E5E;">Projecten</a>
+      <a href="/tooling" class="nav-link py-2 text-base">Tooling</a>
+      <div>
+        <button class="nav-mobile-accordion-trigger nav-link py-2 text-base w-full" id="artikelen-accordion-trigger" aria-expanded="false">
+          <span>Artikelen</span>
+          <svg class="nav-chevron-m" width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div id="artikelen-accordion-panel" style="display:none;" class="pl-4 flex flex-col gap-2 mt-1">
+          <a href="/artikelen/wat-is-een-lca" class="nav-link py-1.5 text-sm">Wat is een LCA?</a>
+          <a href="/artikelen/wat-is-mki" class="nav-link py-1.5 text-sm">Wat is MKI?</a>
+          <a href="/artikelen/wat-zegt-milieu-impact-echt" class="nav-link py-1.5 text-sm">Wat zegt milieuimpact echt?</a>
+          <a href="/kennisbank/lca-in-de-gww" class="nav-link py-1.5 text-sm">LCA in de GWW</a>
+          <a href="/kennisbank/mki-berekeningen" class="nav-link py-1.5 text-sm">MKI-berekeningen</a>
+          <a href="/kennisbank/epd-en-normen" class="nav-link py-1.5 text-sm">EPD &amp; normen</a>
+          <a href="/kennisbank/lca-in-aanbestedingen" class="nav-link py-1.5 text-sm">LCA in aanbestedingen</a>
+          <a href="/artikelen" class="nav-link py-1.5 text-sm font-semibold">Alle artikelen →</a>
+        </div>
+      </div>
+      <a href="/over-ons" class="nav-link py-2 text-base">Over ons</a>
+      <a href="mailto:info@infraimpact.nl?subject=Kennismakingsafspraak%20plannen" class="btn-primary mt-2 w-full justify-center">Plan een kennismaking</a>
+    </nav>
+  </div>
+</header>
+
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="page-hero pt-32 pb-16 md:pt-40 md:pb-20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="max-w-2xl">
+      <div class="fade-up section-label mb-5">Onze praktijk</div>
+      <h1 class="heading-xl fade-up delay-1 text-5xl md:text-6xl text-steel-dark mb-6">
+        Projecten &amp;<br/><em class="not-italic" style="color:#2D6E5E;">Samenwerkingen</em>
+      </h1>
+      <p class="fade-up delay-2 body-copy text-lg text-slate-600 max-w-xl">
+        Een overzicht van projecten waarbij InfraImpact betrokken is geweest, en de samenwerkingen die we zijn aangegaan, elk gericht op het meetbaar en bestuurbaar maken van duurzaamheid in de bouwpraktijk.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FILTER + SEARCH
+══════════════════════════════════════ -->
+<section class="filter-bar py-8 sticky top-[72px] z-40" style="background: rgba(248,247,244,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(45,110,94,0.08);">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+
+      <!-- Search -->
+      <div class="relative w-full sm:max-w-xs">
+        <svg class="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" width="16" height="16" viewBox="0 0 16 16" fill="none" style="color:#94a3b8;"><circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 10.5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <input id="search-input" type="text" class="search-input" placeholder="Zoek project of samenwerking…" autocomplete="off" />
+      </div>
+
+      <!-- Filters -->
+      <div class="flex items-center gap-2 flex-wrap">
+        <button class="filter-btn active" data-filter="all">Alle</button>
+        <button class="filter-btn" data-filter="samenwerking">Samenwerking</button>
+        <button class="filter-btn" data-filter="case">Case study</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     PROJECT CARDS GRID
+══════════════════════════════════════ -->
+<section class="py-16">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Card 1: Eco Monitor -->
+      <a href="/projecten/eco-monitor"
+         class="project-card shadow-card"
+         data-type="samenwerking"
+         data-tags="mki lca eco monitor samenwerking infraimpact duurzaamheid gww beleid aanbesteding">
+        <div class="project-card-accent"></div>
+        <div class="p-7 flex flex-col h-full">
+
+          <!-- Type badge + logo -->
+          <div class="flex items-start justify-between mb-5">
+            <span class="badge-samenwerking text-xs font-semibold px-3 py-1 rounded-full">Samenwerking</span>
+            <div class="h-8 flex items-center">
+              <img src="/brand_assets/Logo_ecomonitor.png" alt="Eco Monitor" class="h-7 w-auto object-contain" />
+            </div>
+          </div>
+
+          <!-- Period -->
+          <p class="text-xs font-medium mb-3" style="color:#2D6E5E;">2026, heden</p>
+
+          <!-- Title -->
+          <h2 class="heading-lg text-xl text-steel-dark mb-3">InfraImpact × Eco Monitor</h2>
+
+          <!-- Description -->
+          <p class="text-sm text-slate-600 body-copy mb-5 flex-1">
+            MKI als stuurinstrument voor beleid, aanbesteding en projecten. Strategische partnersamenwerking gericht op uitvoering, duiding en kennisdeling rondom LCA in de GWW-praktijk.
+          </p>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="text-xs px-2.5 py-1 rounded-full" style="background:rgba(45,110,94,0.08); color:#2D6E5E;">MKI</span>
+            <span class="text-xs px-2.5 py-1 rounded-full" style="background:rgba(45,110,94,0.08); color:#2D6E5E;">LCA</span>
+            <span class="text-xs px-2.5 py-1 rounded-full" style="background:rgba(45,110,94,0.08); color:#2D6E5E;">GWW</span>
+            <span class="text-xs px-2.5 py-1 rounded-full" style="background:rgba(45,110,94,0.08); color:#2D6E5E;">Beleid</span>
+          </div>
+
+          <!-- CTA -->
+          <div class="flex items-center gap-2 text-sm font-medium mt-auto" style="color:#2D6E5E;">
+            Lees het verhaal
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 2: NMD GWW -->
+      <a href="/projecten/nmd-gww-perceel-6"
+         class="project-card shadow-card"
+         data-type="case"
+         data-tags="nmd gww perceel 6 h80 h81 lca berekening categorie data rapportage nationale milieudatabase">
+        <div class="project-card-accent steel"></div>
+        <div class="p-7 flex flex-col h-full">
+
+          <!-- Type badge + logo -->
+          <div class="flex items-start justify-between mb-5">
+            <span class="badge-case text-xs font-semibold px-3 py-1 rounded-full">Case study</span>
+            <div class="h-8 flex items-center">
+              <img src="/brand_assets/Logo_NMD.png" alt="NMD" class="h-7 w-auto object-contain" />
+            </div>
+          </div>
+
+          <!-- Period -->
+          <p class="text-xs font-medium mb-3" style="color:#3B6080;">Sep, Nov 2025</p>
+
+          <!-- Title -->
+          <h2 class="heading-lg text-xl text-steel-dark mb-3">NMD GWW Perceel 6 (H80/H81)</h2>
+
+          <!-- Description -->
+          <p class="text-sm text-slate-600 body-copy mb-5 flex-1">
+            Actualisatie categorie 3 data en LCA-berekening voor funderingslagen en bitumineuze verhardingen. Rapportage conform NMD-template, inclusief reviewverwerking en invoer in het NMD-platform.
+          </p>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="text-xs px-2.5 py-1 rounded-full" style="background:rgba(59,96,128,0.08); color:#3B6080;">NMD</span>
+            <span class="text-xs px-2.5 py-1 rounded-full" style="background:rgba(59,96,128,0.08); color:#3B6080;">LCA</span>
+            <span class="text-xs px-2.5 py-1 rounded-full" style="background:rgba(59,96,128,0.08); color:#3B6080;">GWW</span>
+            <span class="text-xs px-2.5 py-1 rounded-full" style="background:rgba(59,96,128,0.08); color:#3B6080;">Categorie 3</span>
+          </div>
+
+          <!-- CTA -->
+          <div class="flex items-center gap-2 text-sm font-medium mt-auto" style="color:#3B6080;">
+            Lees het verhaal
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Empty state -->
+    <div id="empty-state" class="py-24 text-center">
+      <svg class="mx-auto mb-4 opacity-30" width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="22" cy="22" r="16" stroke="#2D6E5E" stroke-width="2"/><path d="M33 33l9 9" stroke="#2D6E5E" stroke-width="2" stroke-linecap="round"/></svg>
+      <p class="text-slate-500 text-lg font-medium mb-1">Geen resultaten gevonden</p>
+      <p class="text-slate-400 text-sm">Probeer een andere zoekterm of filter.</p>
+    </div>
+
+    <!-- Count -->
+    <p id="results-count" class="text-sm text-slate-400 mt-8"></p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     CTA SECTION
+══════════════════════════════════════ -->
+<section class="cta-bg py-20">
+  <div class="max-w-4xl mx-auto px-6 lg:px-10 text-center">
+    <p class="section-label mb-4" style="color:#3D8A73;">Samenwerken?</p>
+    <h2 class="heading-lg text-4xl md:text-5xl text-white mb-5">Jouw project staat hier straks ook</h2>
+    <p class="text-lg mb-10" style="color:rgba(255,255,255,0.65); line-height:1.75;">
+      Wil je sparren over MKI in jouw project of organisatie? Plan een kennismakingsafspraak en ontdek wat we samen kunnen bereiken.
+    </p>
+    <a href="mailto:info@infraimpact.nl?subject=Kennismakingsafspraak%20plannen&body=Beste%20InfraImpact%2C%0A%0AIk%20zou%20graag%20een%20kennismakingsafspraak%20met%20jullie%20inplannen." class="btn-primary text-base px-8 py-4">
+      Plan een kennismaking
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer style="background:#0D1B26;" class="py-14">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="grid md:grid-cols-3 gap-10 pb-10 border-b" style="border-color:rgba(255,255,255,0.08);">
+      <div>
+        <a href="/" aria-label="InfraImpact home" class="inline-block mb-4">
+          <img src="/brand_assets/infra_impact.png" alt="InfraImpact" class="h-12 w-auto" style="filter: brightness(0) invert(1) opacity(0.85);" />
+        </a>
+        <p class="text-sm mb-1" style="color:rgba(255,255,255,0.40);">Making sustainability count</p>
+        <p class="text-xs" style="color:rgba(255,255,255,0.25);">LCA &amp; MKI advies voor de Nederlandse bouwsector</p>
+      </div>
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest mb-4" style="color:rgba(255,255,255,0.30);">Navigatie</p>
+        <nav class="flex flex-col gap-3" aria-label="Footer navigatie">
+          <a href="/#diensten" class="text-sm transition-colors duration-150" style="color:rgba(255,255,255,0.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,0.50)'">Voor wie</a>
+          <a href="/#aanpak"   class="text-sm transition-colors duration-150" style="color:rgba(255,255,255,0.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,0.50)'">Aanpak</a>
+          <a href="/#waarom"   class="text-sm transition-colors duration-150" style="color:rgba(255,255,255,0.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,0.50)'">Waarom ons</a>
+          <a href="/projecten" class="text-sm transition-colors duration-150" style="color:#3D8A73;">Projecten</a>
+          <a href="/artikelen" class="text-sm transition-colors duration-150" style="color:rgba(255,255,255,0.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,0.50)'">Artikelen</a>
+          <a href="/#faq"      class="text-sm transition-colors duration-150" style="color:rgba(255,255,255,0.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,0.50)'">FAQ</a>
+          <a href="/#contact"  class="text-sm transition-colors duration-150" style="color:rgba(255,255,255,0.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,0.50)'">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest mb-4" style="color:rgba(255,255,255,0.30);">Contact</p>
+        <div class="flex flex-col gap-2.5 text-sm" style="color:rgba(255,255,255,0.50);">
+          <span>InfraImpact B.V.</span>
+          <span>Westzeedijk 639, 3024 PJ Rotterdam</span>
+          <a href="tel:+31621350805" class="transition-colors duration-150" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,0.50)'" style="color:rgba(255,255,255,0.50);">+31 (0)6 2135 0805</a>
+          <a href="mailto:info@infraimpact.nl" class="transition-colors duration-150" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,0.50)'" style="color:rgba(255,255,255,0.50);">info@infraimpact.nl</a>
+          <a href="https://nl.linkedin.com/company/infraimpact" target="_blank" rel="noopener" class="transition-colors duration-150" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,0.50)'" style="color:rgba(255,255,255,0.50);">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="pt-7 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p class="text-xs" style="color:rgba(255,255,255,0.25);">© 2026 InfraImpact B.V. Alle rechten voorbehouden.</p>
+      <div class="flex gap-5">
+        <a href="/algemene-voorwaarden" class="text-xs" style="color:rgba(255,255,255,.25);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.25)'">Algemene Voorwaarden</a>
+        <a href="/privacybeleid" class="text-xs" style="color:rgba(255,255,255,.25);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.25)'">Privacybeleid</a>
+        <a href="/cookiebeleid" class="text-xs" style="color:rgba(255,255,255,.25);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.25)'">Cookiebeleid</a>
+      </div>
+      <p class="text-xs" style="color:rgba(255,255,255,0.20);">KvK: 98323377</p>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  // ── Navbar scroll ──
+  var navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 20) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  }, { passive: true });
+
+  // ── Theme toggle ──
+  function updateThemeIcons(dark) {
+    var moon = document.getElementById('toggle-icon-moon');
+    var sunThumb = document.getElementById('toggle-icon-sun-thumb');
+    var sun = document.getElementById('toggle-icon-sun');
+    var moonSec = document.getElementById('toggle-icon-moon-secondary');
+    if (moon) moon.style.display = dark ? 'none' : 'block';
+    if (sunThumb) sunThumb.style.display = dark ? 'block' : 'none';
+    if (sun) sun.style.display = dark ? 'none' : 'block';
+    if (moonSec) moonSec.style.display = dark ? 'block' : 'none';
+  }
+  updateThemeIcons(document.documentElement.classList.contains('dark'));
+
+  function toggleTheme() {
+    var isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    updateThemeIcons(isDark);
+  }
+  var tt = document.getElementById('theme-toggle');
+  var ttm = document.getElementById('theme-toggle-mobile');
+  if (tt) { tt.addEventListener('click', toggleTheme); tt.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleTheme(); } }); }
+  if (ttm) { ttm.addEventListener('click', toggleTheme); ttm.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleTheme(); } }); }
+
+  // ── Mobile menu ──
+  var menuBtn = document.getElementById('mobile-menu-btn');
+  var mobileMenu = document.getElementById('mobile-menu');
+  var iconHam = document.getElementById('icon-hamburger');
+  var iconClose = document.getElementById('icon-close');
+  if (menuBtn) {
+    menuBtn.addEventListener('click', function() {
+      var open = mobileMenu.classList.toggle('hidden');
+      iconHam.classList.toggle('hidden', !open);
+      iconClose.classList.toggle('hidden', open);
+      menuBtn.setAttribute('aria-expanded', String(!open));
+    });
+  }
+
+  // ── Search + Filter ──
+  var searchInput = document.getElementById('search-input');
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var cards = document.querySelectorAll('#projects-grid .project-card');
+  var emptyState = document.getElementById('empty-state');
+  var resultsCount = document.getElementById('results-count');
+  var currentFilter = 'all';
+  var currentSearch = '';
+
+  function applyFilters() {
+    var visible = 0;
+    cards.forEach(function(card) {
+      var type = card.dataset.type;
+      var tags = card.dataset.tags || '';
+      var title = card.querySelector('h2') ? card.querySelector('h2').textContent.toLowerCase() : '';
+      var desc = card.querySelector('p.flex-1') ? card.querySelector('p.flex-1').textContent.toLowerCase() : '';
+      var matchFilter = currentFilter === 'all' || type === currentFilter;
+      var q = currentSearch.toLowerCase();
+      var matchSearch = !q || tags.includes(q) || title.includes(q) || desc.includes(q);
+      var show = matchFilter && matchSearch;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    emptyState.style.display = visible === 0 ? 'block' : 'none';
+    var total = cards.length;
+    resultsCount.textContent = visible === total ? total + ' project' + (total !== 1 ? 'en' : '') + ' gevonden'
+      : visible + ' van ' + total + ' projecten';
+  }
+
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      applyFilters();
+    });
+  });
+
+  searchInput.addEventListener('input', function() {
+    currentSearch = this.value;
+    applyFilters();
+  });
+
+  applyFilters();
+</script>
+<script>
+  // nav-dropdown-js-v2
+  (function() {
+    function makeDropdown(wrapId, triggerId, panelId) {
+      var wrap = document.getElementById(wrapId);
+      var trigger = document.getElementById(triggerId);
+      var panel = document.getElementById(panelId);
+      if (!wrap || !trigger || !panel) return;
+      var t;
+      function open() { clearTimeout(t); panel.classList.add('is-open'); trigger.setAttribute('aria-expanded','true'); wrap.dataset.open='true'; }
+      function close() { t = setTimeout(function(){ panel.classList.remove('is-open'); trigger.setAttribute('aria-expanded','false'); delete wrap.dataset.open; }, 120); }
+      wrap.addEventListener('mouseenter', open);
+      wrap.addEventListener('mouseleave', close);
+      trigger.addEventListener('click', function(){ panel.classList.contains('is-open') ? close() : open(); });
+      document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ panel.classList.remove('is-open'); trigger.setAttribute('aria-expanded','false'); delete wrap.dataset.open; }});
+      document.addEventListener('click', function(e){ if(!wrap.contains(e.target)){ panel.classList.remove('is-open'); trigger.setAttribute('aria-expanded','false'); delete wrap.dataset.open; }});
+    }
+    function makeAccordion(triggerId, panelId) {
+      var t = document.getElementById(triggerId);
+      var p = document.getElementById(panelId);
+      if (!t || !p) return;
+      t.addEventListener('click', function(){ var open = p.style.display !== 'none'; p.style.display = open ? 'none' : 'block'; t.setAttribute('aria-expanded', open ? 'false' : 'true'); });
+    }
+    makeDropdown('home-dropdown','home-trigger','home-panel');
+    makeDropdown('artikelen-dropdown','artikelen-trigger','artikelen-panel');
+    makeAccordion('home-accordion-trigger','home-accordion-panel');
+    makeAccordion('artikelen-accordion-trigger','artikelen-accordion-panel');
+  })();
+</script>
+</body>
+</html>

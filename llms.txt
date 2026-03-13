@@ -1,0 +1,94 @@
+# InfraImpact — llms.txt
+# AI-leesbare samenvatting van de website voor LLM-crawlers
+
+## Wie is InfraImpact?
+
+InfraImpact B.V. (KvK: 98323377) is een Nederlands adviesbureau gespecialiseerd in LCA (Life Cycle Assessment) en MKI-berekeningen (Milieu Kosten Indicator) voor de GWW-sector (Grond-, Weg- en Waterbouw) en de bredere bouwsector. Opgericht door Jim van der Kooij, LCA-specialist met jarenlange praktijkervaring aan de opdrachtnemende kant.
+
+Website: https://www.infraimpact.nl
+Contact: info@infraimpact.nl | +31 6 21 35 08 05
+Adres: Westzeedijk 639, 3024 PJ Rotterdam, Nederland
+
+## Wat doet InfraImpact?
+
+InfraImpact helpt:
+- **Aannemers en bouwbedrijven** bij MKI-berekeningen voor aanbestedingen (EMVI, duurzaam aanbesteden)
+- **Opdrachtgevers** bij het meetbaar maken van duurzaamheidsambities via LCA en MKI
+- **Producenten en leveranciers** bij het opstellen van product-LCA's conform PCR 2.0 en Europese normen
+- **Projectteams** bij het interpreteren van milieudata, CO2-reductie en optimalisatiestrategieën
+
+## Kernexpertise
+
+- LCA (Life Cycle Assessment) conform ISO 14040/14044
+- MKI-berekening (Milieu Kosten Indicator) conform de Nederlandse Bepalingsmethode
+- NMD (Nationale Milieudatabase) rapportages
+- EPD (Environmental Product Declaration) opstellen en toetsen
+- PCR (Product Category Rules)
+- EMVI en duurzaam aanbesteden in GWW
+- CO2-footprint en materialenmonitoring
+
+## Pagina's
+
+### Homepage
+URL: https://www.infraimpact.nl/
+Inhoud: Overzicht diensten, doelgroepen, aanpak, waarom InfraImpact, FAQ, contact
+
+### Over ons
+URL: https://www.infraimpact.nl/over-ons/
+Inhoud: Profiel Jim van der Kooij, achtergrond InfraImpact, aanpak en waarden
+
+### Projecten
+URL: https://www.infraimpact.nl/projecten/
+Inhoud: Overzicht uitgevoerde projecten en samenwerkingen
+
+#### InfraImpact × Eco Monitor
+URL: https://www.infraimpact.nl/projecten/eco-monitor/
+Inhoud: Strategische samenwerking met Eco Monitor — MKI als stuurinstrument voor beleid, aanbesteding en projecten. Actief vanaf 2026.
+
+#### NMD GWW Perceel 6 (H80/H81)
+URL: https://www.infraimpact.nl/projecten/nmd-gww-perceel-6/
+Inhoud: Case study NMD GWW Perceel 6, betrouwbare LCA-rapportage conform actuele rekenmethodiek. Uitgevoerd september–november 2025.
+
+### Tooling
+URL: https://www.infraimpact.nl/tooling/
+Inhoud: Gratis tools voor LCA en MKI professionals. EPD Checker — upload EPD's en controleer compliance met MKI-uitvraag.
+
+### Artikelen
+URL: https://www.infraimpact.nl/artikelen/
+Inhoud: Kennisartikelen over LCA, MKI en GWW
+
+#### Wat is een LCA?
+URL: https://www.infraimpact.nl/artikelen/wat-is-een-lca/
+Inhoud: Uitleg over Life Cycle Assessment (LCA) in de GWW-sector, wat het is, hoe het werkt en waarom het relevant is.
+
+#### Wat is MKI?
+URL: https://www.infraimpact.nl/artikelen/wat-is-mki/
+Inhoud: Uitleg over de Milieu Kosten Indicator (MKI), hoe de score wordt berekend en wat het betekent in aanbestedingen.
+
+#### Wat zegt milieu-impact echt?
+URL: https://www.infraimpact.nl/artikelen/wat-zegt-milieu-impact-echt/
+Inhoud: Duiding van milieuimpactscores — hoe interpreteer je een MKI-waarde en wat betekent dit in de praktijk.
+
+### Kennisbank
+
+#### LCA in de GWW
+URL: https://www.infraimpact.nl/kennisbank/lca-in-de-gww/
+Inhoud: Basiskennis LCA voor de infrasector — hoe werkt LCA in de GWW, bepalingsmethode, toepassingen.
+
+#### MKI-berekeningen
+URL: https://www.infraimpact.nl/kennisbank/mki-berekeningen/
+Inhoud: Technische uitleg MKI-berekeningen — systematiek, CO2-equivalenten, rekenmethodiek.
+
+#### EPD en normen
+URL: https://www.infraimpact.nl/kennisbank/epd-en-normen/
+Inhoud: EPD (Environmental Product Declaration), NMD, ISO 14040/14044, PCR — normen en toepassing in LCA.
+
+#### LCA in aanbestedingen
+URL: https://www.infraimpact.nl/kennisbank/lca-in-aanbestedingen/
+Inhoud: MKI als gunningscriterium, EMVI-criteria, duurzaam aanbesteden in GWW en B&U.
+
+## Sitemap
+https://www.infraimpact.nl/sitemap.xml
+
+## Taal
+Nederlands (nl-NL). Doelmarkt: Nederland, GWW-sector, bouwsector.

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.infraimpact.nl/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-03-12</lastmod>
+  </url>
+
+  <!-- Over ons -->
+  <url>
+    <loc>https://www.infraimpact.nl/over-ons/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-12</lastmod>
+  </url>
+
+  <!-- Projecten -->
+  <url>
+    <loc>https://www.infraimpact.nl/projecten/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.infraimpact.nl/projecten/eco-monitor/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-03-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.infraimpact.nl/projecten/nmd-gww-perceel-6/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-03-12</lastmod>
+  </url>
+
+  <!-- Artikelen -->
+  <url>
+    <loc>https://www.infraimpact.nl/artikelen/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.infraimpact.nl/artikelen/wat-is-een-lca/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.infraimpact.nl/artikelen/wat-is-mki/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.infraimpact.nl/artikelen/wat-zegt-milieu-impact-echt/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-12</lastmod>
+  </url>
+
+  <!-- Kennisbank -->
+  <url>
+    <loc>https://www.infraimpact.nl/kennisbank/lca-in-de-gww/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <lastmod>2026-03-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.infraimpact.nl/kennisbank/mki-berekeningen/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <lastmod>2026-03-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.infraimpact.nl/kennisbank/epd-en-normen/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <lastmod>2026-03-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.infraimpact.nl/kennisbank/lca-in-aanbestedingen/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <lastmod>2026-03-12</lastmod>
+  </url>
+
+  <!-- Juridisch -->
+  <url>
+    <loc>https://www.infraimpact.nl/algemene-voorwaarden/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2026-03-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.infraimpact.nl/privacybeleid/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2026-03-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.infraimpact.nl/cookiebeleid/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2026-03-12</lastmod>
+  </url>
+
+</urlset>

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LCA in de GWW, InfraImpact</title>
+  <link rel="icon" type="image/png" href="/brand_assets/infra_impact-icoon.png" />
+  <link rel="apple-touch-icon" href="/brand_assets/infra_impact-icoon.png" />
+  <meta name="description" content="Hoe werkt LCA in de GWW-sector? Uitleg over de bepalingsmethode, PCR 2.0, systeemgrenzen en de rol van de LCA-specialist bij aanbestedingen." />
+  <meta name="keywords" content="LCA GWW, bepalingsmethode, PCR 2.0, LCA aanbesteding, LCA specialist, milieuberekening infra, NMD, EPD GWW, CO2 infra" />
+  <link rel="canonical" href="https://www.infraimpact.nl/kennisbank/lca-in-de-gww/" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.infraimpact.nl/kennisbank/lca-in-de-gww/" />
+  <meta property="og:title" content="LCA in de GWW, InfraImpact" />
+  <meta property="og:description" content="Hoe werkt LCA in de GWW-sector? Uitleg over de bepalingsmethode, PCR 2.0, systeemgrenzen en de rol van de LCA-specialist bij aanbestedingen." />
+  <meta property="og:image" content="https://www.infraimpact.nl/brand_assets/infra_impact.png" />
+  <meta property="og:locale" content="nl_NL" />
+  
+  <script>(function(){var s=localStorage.getItem('theme'),p=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&p))document.documentElement.classList.add('dark')})();</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{teal:{DEFAULT:'#2D6E5E',dark:'#1E4D42',light:'#3D8A73',faint:'#EAF3F0'},steel:{DEFAULT:'#3B6080',dark:'#273F54',light:'#4E7A9E',faint:'#EDF2F7'}},fontFamily:{display:['"DM Serif Display"','Georgia','serif'],body:['Inter','system-ui','sans-serif']}}}}</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,sans-serif;color:#1a2c38;background:#F8F7F4;transition:background .3s,color .3s}
+    html.dark body{background:#0D1B26;color:#e2e8f0}
+    html.dark .bg-white{background:#102236!important}
+    html.dark #navbar.scrolled{background:rgba(13,27,38,.97)!important}
+    html.dark .content-card{background:#162e47!important;border-color:rgba(255,255,255,.06)!important}
+    html.dark .meta-panel{background:#162e47!important;border-color:rgba(255,255,255,.06)!important}
+    html.dark .faq-question{color:#e2e8f0!important}
+    html.dark .faq-answer-inner{color:#94a3b8!important}
+    html.dark .divider{border-color:rgba(255,255,255,.06)!important}
+    html.dark .role-card{background:#162e47!important;border-color:rgba(255,255,255,.06)!important}
+    body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")}
+    .heading-xl{font-family:'DM Serif Display',Georgia,serif;letter-spacing:-.03em;line-height:1.08}
+    .heading-lg{font-family:'DM Serif Display',Georgia,serif;letter-spacing:-.025em;line-height:1.15}
+    .shadow-card{box-shadow:0 1px 1px rgba(30,50,65,.04),0 4px 8px rgba(30,50,65,.06),0 12px 32px rgba(30,50,65,.07)}
+    #navbar{transition:background .3s,box-shadow .3s}
+    #navbar.scrolled{background:rgba(248,247,244,.96);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(30,50,65,.08),0 4px 16px rgba(30,50,65,.06)}
+    .nav-pill-container{position:relative;display:flex;align-items:center;background:rgba(45,110,94,.06);border:1px solid rgba(45,110,94,.12);border-radius:9999px;padding:4px;gap:2px}
+    html.dark .nav-pill-container{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.08)}
+    .nav-link-pill{position:relative;z-index:1;padding:.45rem 1.1rem;border-radius:9999px;font-size:.9375rem;font-weight:500;color:#273F54;transition:color .18s;text-decoration:none;white-space:nowrap}
+    html.dark .nav-link-pill{color:rgba(255,255,255,.65)}
+    .nav-link-pill:hover,.nav-link-pill.active{color:#2D6E5E}
+    html.dark .nav-link-pill:hover,html.dark .nav-link-pill.active{color:#3D8A73}
+    .btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:#2D6E5E;color:#fff;padding:.8rem 1.75rem;border-radius:.5rem;font-weight:500;font-size:.9375rem;transition:transform .18s cubic-bezier(.34,1.56,.64,1),box-shadow .18s,background .18s;box-shadow:0 2px 8px rgba(45,110,94,.20),0 8px 24px rgba(45,110,94,.14);text-decoration:none}
+    .btn-primary:hover{background:#1E4D42;transform:translateY(-2px)}
+    .btn-outline{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:#fff;padding:.75rem 1.5rem;border-radius:.5rem;font-weight:500;font-size:.9375rem;border:1.5px solid rgba(255,255,255,.3);transition:transform .18s,background .18s;text-decoration:none}
+    .btn-outline:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+    .nav-link{position:relative;font-size:.9375rem;font-weight:500;color:#273F54;transition:color .18s;text-decoration:none}
+    .nav-link::after{content:'';position:absolute;left:0;bottom:-3px;width:0;height:2px;background:#2D6E5E;border-radius:2px;transition:width .22s}
+    .nav-link:hover{color:#2D6E5E}
+    .nav-link:hover::after{width:100%}
+    .theme-toggle-wrap{display:flex;align-items:center;justify-content:space-between;width:56px;height:28px;padding:3px;border-radius:9999px;cursor:pointer;border:1px solid;flex-shrink:0;transition:background .3s,border-color .3s;background:#f4f4f5;border-color:#d4d4d8}
+    html.dark .theme-toggle-wrap{background:#18181b;border-color:#3f3f46}
+    .theme-toggle-thumb{display:flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;flex-shrink:0;background:#e4e4e7}
+    html.dark .theme-toggle-thumb{background:#3f3f46}
+    .theme-toggle-secondary{display:flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;flex-shrink:0}
+    html.dark .theme-toggle-wrap .theme-toggle-thumb{order:2}
+    html.dark .theme-toggle-wrap .theme-toggle-secondary{order:1}
+    .section-label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#2D6E5E}
+    .meta-panel{background:#fff;border:1px solid rgba(45,110,94,.12);border-radius:1.25rem}
+    .content-card{background:#fff;border:1px solid rgba(45,110,94,.10);border-radius:1rem;padding:1.5rem}
+    .bullet-list{list-style:none;padding:0;margin:0}
+    .bullet-list li{position:relative;padding-left:1.5rem;margin-bottom:.65rem;color:#4a6070;line-height:1.65;font-size:1rem}
+    html.dark .bullet-list li{color:#94a3b8}
+    .bullet-list li::before{content:'';position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:#2D6E5E}
+    .divider{border:none;border-top:1px solid rgba(45,110,94,.10);margin:2.5rem 0}
+    .tag{display:inline-flex;align-items:center;font-size:.75rem;font-weight:600;padding:.25rem .6rem;border-radius:9999px}
+    .tag-teal{background:rgba(45,110,94,.10);color:#2D6E5E}
+    .tag-steel{background:rgba(59,96,128,.10);color:#3B6080}
+    html.dark .tag-teal{background:rgba(45,110,94,.20);color:#3D8A73}
+    .breadcrumb{font-size:.875rem;color:#94a3b8}
+    .breadcrumb a{color:#2D6E5E;text-decoration:none}
+    .breadcrumb a:hover{text-decoration:underline}
+    .faq-item{border-bottom:1px solid rgba(45,110,94,.12)}
+    .faq-btn{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:1.1rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+    .faq-question{font-family:'DM Serif Display',Georgia,serif;font-size:1rem;color:#273F54;transition:color .2s;line-height:1.4}
+    .faq-btn:hover .faq-question{color:#2D6E5E}
+    .faq-icon{flex-shrink:0;transition:transform .35s cubic-bezier(.22,1,.36,1);color:#2D6E5E}
+    .faq-item.open .faq-icon{transform:rotate(45deg)}
+    .faq-answer{overflow:hidden;max-height:0;transition:max-height .4s cubic-bezier(.22,1,.36,1)}
+    .faq-item.open .faq-answer{max-height:400px}
+    .faq-answer-inner{padding-bottom:1rem;line-height:1.75;color:#64748b;font-size:.9rem}
+    .toc-link{display:block;font-size:.875rem;color:#64748b;padding:.3rem 0;border-left:2px solid transparent;padding-left:.75rem;text-decoration:none;transition:color .15s,border-color .15s}
+    .toc-link:hover,.toc-link.active{color:#2D6E5E;border-left-color:#2D6E5E}
+    html.dark .toc-link{color:#94a3b8}
+    .cta-bg{background:radial-gradient(ellipse 60% 80% at 90% 50%,rgba(61,138,115,.18) 0%,transparent 60%),radial-gradient(ellipse 80% 60% at 10% 30%,rgba(78,122,158,.15) 0%,transparent 55%),#1E3A4A}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    .fade-up{animation:fadeUp .65s cubic-bezier(.22,1,.36,1) both}
+    @media(min-width:1024px){.toc-sticky{position:sticky;top:100px}}
+    .pillar-prose h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.5rem;letter-spacing:-.02em;line-height:1.2;color:#1a2c38;margin-top:2.75rem;margin-bottom:.875rem;scroll-margin-top:90px}
+    [id]{scroll-margin-top:90px}
+    html.dark .pillar-prose h2{color:#e2e8f0}
+    .pillar-prose p{line-height:1.8;color:#4a6070;font-size:1.0625rem;margin-bottom:1.25rem}
+    html.dark .pillar-prose p{color:#94a3b8}
+    .pillar-prose a{color:#2D6E5E;text-decoration:underline;text-decoration-color:rgba(45,110,94,.3);}
+    .pillar-prose a:hover{text-decoration-color:#2D6E5E}
+    .role-card{background:#fff;border:1px solid rgba(45,110,94,.10);border-radius:1rem;padding:1.5rem}
+    html.dark .role-card{background:#162e47;border-color:rgba(255,255,255,.06)}
+    .two-col-compare{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+    @media(max-width:640px){.two-col-compare{grid-template-columns:1fr}}
+    .compare-col{border-radius:.875rem;padding:1.25rem 1.5rem}
+    .compare-col-green{background:rgba(45,110,94,.06);border:1px solid rgba(45,110,94,.15)}
+    .compare-col-red{background:rgba(59,96,128,.06);border:1px solid rgba(59,96,128,.15)}
+    html.dark .compare-col-green{background:rgba(45,110,94,.12);border-color:rgba(45,110,94,.25)}
+    html.dark .compare-col-red{background:rgba(59,96,128,.12);border-color:rgba(59,96,128,.25)}
+  </style>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"LCA in de GWW","description":"Hoe werkt LCA in de GWW-sector? Uitleg over de bepalingsmethode, PCR 2.0, systeemgrenzen en de rol van de LCA-specialist.","url":"https://www.infraimpact.nl/kennisbank/lca-in-de-gww/","author":{"@id":"https://www.infraimpact.nl/over-ons/#jim"},"publisher":{"@id":"https://www.infraimpact.nl/#organization"},"keywords":["LCA","GWW","bepalingsmethode","PCR 2.0","MKI","NMD"],"inLanguage":"nl-NL"}
+  </script>
+<style>
+
+    /* nav-dropdown-styles-v1 */
+    .nav-dropdown-wrap { position: relative; }
+    .nav-dropdown-trigger {
+      display: flex; align-items: center; gap: 0.375rem;
+      background: none; border: none; cursor: pointer; font-family: inherit; padding: 0;
+    }
+    .nav-dropdown-trigger .nav-chevron { transition: transform 0.2s ease; }
+    .nav-dropdown-wrap[data-open="true"] .nav-chevron { transform: rotate(180deg); }
+    .nav-dropdown-panel {
+      position: absolute;
+      top: calc(100% + 0.75rem);
+      left: 50%;
+      transform: translateX(-50%) translateY(-8px);
+      width: 520px;
+      background: #fff;
+      border: 1px solid rgba(59,96,128,0.12);
+      border-radius: 1rem;
+      box-shadow: 0 8px 32px rgba(13,27,38,.12), 0 2px 8px rgba(13,27,38,.08);
+      padding: 1.25rem;
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      gap: 0.75rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+      z-index: 200;
+    }
+    .nav-dropdown-panel.is-open {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+    html.dark .nav-dropdown-panel {
+      background: #162e47;
+      border-color: rgba(255,255,255,0.08);
+      box-shadow: 0 8px 32px rgba(0,0,0,.3), 0 2px 8px rgba(0,0,0,.2);
+    }
+    .nav-dropdown-divider { background: rgba(59,96,128,0.10); }
+    html.dark .nav-dropdown-divider { background: rgba(255,255,255,0.07); }
+    .nav-dropdown-col-label {
+      font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: #2D6E5E; margin-bottom: 0.375rem; padding: 0 0.75rem;
+    }
+    .nav-dropdown-item {
+      display: block; padding: 0.625rem 0.75rem; border-radius: 0.625rem;
+      text-decoration: none; transition: background 0.15s ease;
+    }
+    .nav-dropdown-item:hover { background: rgba(45,110,94,0.07); }
+    html.dark .nav-dropdown-item:hover { background: rgba(45,110,94,0.15); }
+    .nav-dropdown-item-title {
+      font-size: 0.875rem; font-weight: 600; color: #1a2c38; margin-bottom: 0.125rem;
+    }
+    html.dark .nav-dropdown-item-title { color: #e2e8f0; }
+    .nav-dropdown-item-desc { font-size: 0.8rem; color: #64748b; line-height: 1.4; }
+    html.dark .nav-dropdown-item-desc { color: rgba(255,255,255,0.45); }
+    .nav-dropdown-all-link {
+      display: block; margin-top: 0.5rem; padding: 0.5rem 0.75rem;
+      font-size: 0.875rem; font-weight: 600; color: #2D6E5E;
+      border-top: 1px solid rgba(45,110,94,0.12); text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .nav-dropdown-all-link:hover { color: #1E4D42; }
+    html.dark .nav-dropdown-all-link { border-top-color: rgba(45,110,94,0.2); }
+    .nav-mobile-accordion-trigger {
+      background: none; border: none; cursor: pointer; font-family: inherit;
+      width: 100%; text-align: left; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-mobile-accordion-trigger .nav-chevron-m { transition: transform 0.2s ease; flex-shrink: 0; }
+    .nav-mobile-accordion-trigger[aria-expanded="true"] .nav-chevron-m { transform: rotate(180deg); }
+
+  </style>
+  <link rel="icon" type="image/png" href="/brand_assets/infra_impact-icoon.png" />
+
+  <style>/* nav-fix-v2 */
+    /* Button never wraps */
+    .btn-primary { white-space: nowrap !important; }
+    /* Logo link never shrinks */
+    #navbar .flex.items-center.justify-between > a:first-child,
+    #navbar > div > a:first-child { flex-shrink: 0 !important; }
+    /* Right group (toggle + button) never shrinks */
+    #navbar .hidden.md\:flex.items-center.gap-3 { flex-shrink: 0 !important; }
+    /* Nav pills tighter */
+    .nav-link-pill { padding: .35rem .75rem !important; font-size: .8125rem !important; }
+    .nav-dropdown-trigger { font-size: .8125rem !important; }
+    /* Logo bigger */
+    #navbar img[alt="InfraImpact"],
+    #navbar .h-14 { height: 3rem !important; width: auto !important; }
+  </style>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="LCA in de GWW, InfraImpact" />
+  <meta name="twitter:description" content="Hoe werkt LCA in de GWW-sector? Uitleg over de bepalingsmethode, PCR 2.0, systeemgrenzen en de rol van de LCA-specialist bij aanbestedingen." />
+  <meta name="twitter:image" content="https://www.infraimpact.nl/brand_assets/infra_impact.png" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 h-18 flex items-center justify-between py-4">
+    <a href="/" class="flex items-center gap-3" aria-label="InfraImpact home">
+      <img src="/brand_assets/infra_impact.png" alt="InfraImpact" class="h-14 w-auto" />
+    </a>
+    <nav class="hidden md:flex items-center" aria-label="Hoofdnavigatie">
+      <div class="nav-pill-container">
+        <div class="nav-dropdown-wrap" id="home-dropdown">
+          <button class="nav-link-pill nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="home-trigger">Home <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-dropdown-panel" id="home-panel" role="menu">
+            <div>
+              <div class="nav-dropdown-col-label">InfraImpact</div>
+              <a href="/" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Homepagina</div><div class="nav-dropdown-item-desc">Terug naar het overzicht</div></a>
+              <a href="/#diensten" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Voor wie</div><div class="nav-dropdown-item-desc">Onze doelgroepen en sectoren</div></a>
+              <a href="/#aanpak" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Aanpak</div><div class="nav-dropdown-item-desc">Hoe we werken</div></a>
+              <a href="/#waarom" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Waarom ons</div><div class="nav-dropdown-item-desc">Onze onderscheidende aanpak</div></a>
+              <a href="/#faq" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">FAQ</div><div class="nav-dropdown-item-desc">Veelgestelde vragen</div></a>
+              <a href="/#contact" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Contact</div><div class="nav-dropdown-item-desc">Neem contact op</div></a>
+            </div>
+          </div>
+        </div>
+        <a href="/projecten" class="nav-link-pill">Projecten</a>
+        <a href="/tooling" class="nav-link-pill">Tooling</a>
+        <div class="nav-dropdown-wrap" id="artikelen-dropdown">
+          <button class="nav-link-pill nav-dropdown-trigger active" aria-haspopup="true" aria-expanded="false" id="artikelen-trigger">Artikelen <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-dropdown-panel" id="artikelen-panel" role="menu">
+            <div>
+              <div class="nav-dropdown-col-label">Artikelen</div>
+              <a href="/artikelen/wat-is-een-lca" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Wat is een LCA?</div><div class="nav-dropdown-item-desc">Levenscyclusanalyse uitgelegd voor de GWW</div></a>
+              <a href="/artikelen/wat-is-mki" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Wat is MKI?</div><div class="nav-dropdown-item-desc">De Milieu Kosten Indicator in de praktijk</div></a>
+              <a href="/artikelen/wat-zegt-milieu-impact-echt" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Wat zegt milieuimpact echt?</div><div class="nav-dropdown-item-desc">Achter de cijfers van duurzaamheid</div></a>
+              <a href="/artikelen" class="nav-dropdown-all-link" role="menuitem">Alle artikelen &rarr;</a>
+            </div>
+            <div class="nav-dropdown-divider"></div>
+            <div>
+              <div class="nav-dropdown-col-label">Kennisbank</div>
+              <a href="/kennisbank/lca-in-de-gww" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">LCA in de GWW</div><div class="nav-dropdown-item-desc">Basiskennis voor de infrasector</div></a>
+              <a href="/kennisbank/mki-berekeningen" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">MKI-berekeningen</div><div class="nav-dropdown-item-desc">Hoe werkt de berekening?</div></a>
+              <a href="/kennisbank/epd-en-normen" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">EPD en normen</div><div class="nav-dropdown-item-desc">NMD, PCR 2.0 en bepalingsmethode</div></a>
+              <a href="/kennisbank/lca-in-aanbestedingen" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">LCA in aanbestedingen</div><div class="nav-dropdown-item-desc">EMVI en duurzaam aanbesteden</div></a>
+            </div>
+          </div>
+        </div>
+        <a href="/over-ons" class="nav-link-pill">Over ons</a>
+      </div>
+    </nav>
+    <div class="hidden md:flex items-center gap-3">
+      <div id="theme-toggle" class="theme-toggle-wrap" role="button" tabindex="0" aria-label="Thema wisselen">
+        <div class="theme-toggle-thumb"><svg id="tt-moon" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M12 9.5A5.5 5.5 0 016.5 4a5.5 5.5 0 00.5 11 5.5 5.5 0 005-5.5z" fill="#3f3f46" stroke="#3f3f46" stroke-width="0.5"/></svg><svg id="tt-sun-t" width="12" height="12" viewBox="0 0 16 16" fill="none" style="display:none"><circle cx="8" cy="8" r="3" stroke="#e4e4e7" stroke-width="1.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2" stroke="#e4e4e7" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div class="theme-toggle-secondary"><svg id="tt-sun" width="12" height="12" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" stroke="#a1a1aa" stroke-width="1.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2" stroke="#a1a1aa" stroke-width="1.5" stroke-linecap="round"/></svg><svg id="tt-moon-s" width="12" height="12" viewBox="0 0 16 16" fill="none" style="display:none"><path d="M12 9.5A5.5 5.5 0 016.5 4a5.5 5.5 0 00.5 11 5.5 5.5 0 005-5.5z" fill="#52525b" stroke="#52525b" stroke-width="0.5"/></svg></div>
+      </div>
+      <a href="mailto:info@infraimpact.nl?subject=Kennismakingsafspraak%20plannen" class="btn-primary hidden md:inline-flex">Plan een kennismaking <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <div class="md:hidden flex items-center gap-2">
+      <div id="theme-toggle-mobile" class="theme-toggle-wrap" role="button" tabindex="0" aria-label="Thema wisselen"><div class="theme-toggle-thumb"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M12 9.5A5.5 5.5 0 016.5 4a5.5 5.5 0 00.5 11 5.5 5.5 0 005-5.5z" fill="#3f3f46" stroke="#3f3f46" stroke-width="0.5"/></svg></div><div class="theme-toggle-secondary"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" stroke="#a1a1aa" stroke-width="1.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2" stroke="#a1a1aa" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
+      <button id="mobile-menu-btn" class="p-2 rounded-lg" style="color:#273F54;" aria-label="Menu openen">
+        <svg id="icon-ham" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+        <svg id="icon-x" width="22" height="22" viewBox="0 0 22 22" fill="none" class="hidden"><path d="M5 5l12 12M17 5L5 17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-lg border-t border-steel-faint px-6 pb-6 pt-4">
+    <nav class="flex flex-col gap-4">
+      <div>
+        <button class="nav-mobile-accordion-trigger nav-link py-2 text-base w-full" id="home-accordion-trigger" aria-expanded="false">
+          <span>Home</span>
+          <svg class="nav-chevron-m" width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div id="home-accordion-panel" style="display:none;" class="pl-4 flex flex-col gap-2 mt-1">
+          <a href="/" class="nav-link py-1.5 text-sm">Homepagina</a>
+          <a href="/#diensten" class="nav-link py-1.5 text-sm">Voor wie</a>
+          <a href="/#aanpak" class="nav-link py-1.5 text-sm">Aanpak</a>
+          <a href="/#waarom" class="nav-link py-1.5 text-sm">Waarom ons</a>
+          <a href="/#faq" class="nav-link py-1.5 text-sm">FAQ</a>
+          <a href="/#contact" class="nav-link py-1.5 text-sm">Contact</a>
+        </div>
+      </div>
+      <a href="/projecten" class="nav-link py-2 text-base">Projecten</a>
+      <a href="/tooling" class="nav-link py-2 text-base">Tooling</a>
+      <div>
+        <button class="nav-mobile-accordion-trigger nav-link py-2 text-base w-full" id="artikelen-accordion-trigger" aria-expanded="false">
+          <span style="color:#2D6E5E;">Artikelen</span>
+          <svg class="nav-chevron-m" width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div id="artikelen-accordion-panel" style="display:none;" class="pl-4 flex flex-col gap-2 mt-1">
+          <a href="/artikelen/wat-is-een-lca" class="nav-link py-1.5 text-sm">Wat is een LCA?</a>
+          <a href="/artikelen/wat-is-mki" class="nav-link py-1.5 text-sm">Wat is MKI?</a>
+          <a href="/artikelen/wat-zegt-milieu-impact-echt" class="nav-link py-1.5 text-sm">Wat zegt milieuimpact echt?</a>
+          <a href="/kennisbank/lca-in-de-gww" class="nav-link py-1.5 text-sm">LCA in de GWW</a>
+          <a href="/kennisbank/mki-berekeningen" class="nav-link py-1.5 text-sm">MKI-berekeningen</a>
+          <a href="/kennisbank/epd-en-normen" class="nav-link py-1.5 text-sm">EPD &amp; normen</a>
+          <a href="/kennisbank/lca-in-aanbestedingen" class="nav-link py-1.5 text-sm">LCA in aanbestedingen</a>
+          <a href="/artikelen" class="nav-link py-1.5 text-sm font-semibold">Alle artikelen →</a>
+        </div>
+      </div>
+      <a href="/over-ons" class="nav-link py-2 text-base">Over ons</a>
+      <a href="mailto:info@infraimpact.nl?subject=Kennismakingsafspraak%20plannen" class="btn-primary mt-2 w-full justify-center">Plan een kennismaking</a>
+    </nav>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="pt-28 pb-14" style="background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(59,96,128,.12) 0%,transparent 65%),radial-gradient(ellipse 60% 80% at 10% 80%,rgba(45,110,94,.10) 0%,transparent 60%),#F8F7F4;">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="breadcrumb mb-5">
+      <span>Kennisbank</span>
+      <span class="mx-2">/</span>
+      <span>LCA in de GWW</span>
+    </div>
+    <span class="section-label block mb-3">Kennisbank Pillar</span>
+    <h1 class="heading-xl fade-up" style="font-size:clamp(2rem,5vw,3.25rem);max-width:720px;color:#1a2c38;">LCA in de GWW</h1>
+    <p class="mt-4 fade-up" style="font-size:1.125rem;line-height:1.75;color:#4a6070;max-width:600px;animation-delay:.1s;">Wat LCA betekent voor GWW-projecten, hoe het zich verhoudt tot MKI en aanbestedingen, en welke keuzes je er wél en niet mee kunt sturen.</p>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main class="max-w-7xl mx-auto px-6 lg:px-10 py-12 lg:py-16">
+  <div class="lg:grid lg:grid-cols-[220px_1fr] lg:gap-14 xl:gap-20">
+
+    <!-- LEFT TOC -->
+    <aside class="hidden lg:block">
+      <div class="toc-sticky">
+        <p class="text-xs font-semibold uppercase tracking-widest mb-4" style="color:#94a3b8;">Inhoudsopgave</p>
+        <nav class="flex flex-col">
+          <a href="#intro" class="toc-link">Introductie</a>
+          <a href="#wel-niet" class="toc-link">Wél en niet</a>
+          <a href="#relatie" class="toc-link">LCA, MKI &amp; aanbestedingen</a>
+          <a href="#verschil" class="toc-link">Waar LCA het verschil maakt</a>
+          <a href="#normen" class="toc-link">Normen &amp; databronnen</a>
+          <a href="#adviseur" class="toc-link">LCA-specialist</a>
+          <a href="#per-rol" class="toc-link">LCA per rol</a>
+          <a href="#faq" class="toc-link">Veelgestelde vragen</a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- CONTENT -->
+    <div class="pillar-prose min-w-0 max-w-3xl">
+
+      <!-- Intro -->
+      <div id="intro">
+        <p>LCA staat voor levenscyclusanalyse. In de GWW gaat het om de totale milieu-impact van een ontwerp, materiaal of werk over de volledige levensduur: van grondstofwinning en productie tot aanleg, onderhoud en einde levensduur. Het doel is niet één cijfer, maar inzicht in waar de impact ontstaat en welke keuzes het verschil maken.</p>
+        <p>Dat maakt LCA anders dan een los duurzaamheidsetiket. Het is een methodiek die je helpt om keuzes te onderbouwen. Bijvoorbeeld: is een zwaarder ontwerp met minder onderhoud op lange termijn beter dan een lichter ontwerp dat vaker vervangen moet worden? LCA brengt die afweging in beeld, op basis van geldende normen en bepalingsmethoden.</p>
+        <p>In de praktijk is LCA in de GWW sterk verbonden met MKI, omdat de MKI de LCA-uitkomsten samenvat in één geldwaarde. Voor opdrachtgevers en aannemers is dat praktisch, zolang duidelijk is welke aannames en data onder de cijfers liggen.</p>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Wél en niet -->
+      <h2 id="wel-niet">Wat een LCA wél en niet is</h2>
+      <div class="two-col-compare my-6">
+        <div class="compare-col compare-col-green">
+          <p class="text-sm font-semibold mb-3" style="color:#2D6E5E;">LCA is wél</p>
+          <ul class="bullet-list">
+            <li>Inzicht in impact over de hele levensduur</li>
+            <li>Onderbouwing van ontwerpkeuzes</li>
+            <li>Vergelijking van varianten op basis van dezelfde spelregels</li>
+            <li>Input voor aanbestedingsstrategieën</li>
+          </ul>
+        </div>
+        <div class="compare-col compare-col-red">
+          <p class="text-sm font-semibold mb-3" style="color:#3B6080;">LCA is niet</p>
+          <ul class="bullet-list" style="--dot:#3B6080;">
+            <li style="--before-bg:#3B6080;">Een los scorebord zonder aannames</li>
+            <li>Een vervanging voor technische of financiële afwegingen</li>
+            <li>Een garantie voor de laagste impact in elke situatie</li>
+            <li>Een eindpunt in plaats van een startpunt voor sturing</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Relatie LCA MKI aanbestedingen -->
+      <h2 id="relatie">De relatie tussen LCA, MKI en aanbestedingen</h2>
+      <p>In aanbestedingen wordt MKI vaak gebruikt als beoordelingscriterium. Dat is logisch: één waarde maakt het mogelijk om aanbiedingen te vergelijken. Maar die waarde is een samenvatting van een LCA. Als de uitgangspunten verschillen, vergelijk je dus appels met peren.</p>
+      <p>Daarom is het belangrijk om de LCA achter de MKI te begrijpen. Het gaat om systeemgrenzen, levensduur, data en rekenregels. In aanbestedingen is het bovendien relevant wanneer je de LCA inzet: vroeg in het ontwerp krijg je sturingsruimte; laat in het proces blijft het vaak bij optimaliseren binnen bestaande kaders.</p>
+      <p>Meer weten over het toepassen van LCA in tenders? Bekijk <a href="/kennisbank/lca-in-aanbestedingen">LCA in aanbestedingen</a> voor de praktische vertaling naar EMVI, gunningscriteria en variantenstudies.</p>
+
+      <!-- Waar LCA verschil maakt -->
+      <h2 id="verschil">Waar LCA in de GWW het verschil maakt</h2>
+      <p>De grootste winst zit meestal in keuzes die vroeg in het ontwerp worden gemaakt. Denk aan materiaalkeuze, diktes, onderhoudsstrategie en hergebruik. Een LCA helpt om dit niet op gevoel te doen, maar op basis van herleidbare data.</p>
+      <p>Typische situaties waar LCA waarde toevoegt:</p>
+      <ul class="bullet-list mb-4">
+        <li>Vergelijking van asfaltmengsels met verschillende bitumensoorten of recyclingaandelen.</li>
+        <li>Keuze tussen onderhoudsconcepten: vaker licht onderhoud versus minder vaak groot onderhoud.</li>
+        <li>Vergelijking van materiaalalternatieven bij kunstwerken of funderingen.</li>
+        <li>Beoordeling van hergebruikscenario's en einde levensduur.</li>
+      </ul>
+      <p>LCA laat zien waar de impact verschuift in de keten. Zo wordt duidelijk of een lage MKI-waarde echt het gevolg is van een betere keuze, of vooral van een gunstige aanname. Dat gesprek voorkomt schijnoptimalisatie.</p>
+
+      <!-- Normen -->
+      <h2 id="normen">Normen, bepalingsmethoden en databronnen</h2>
+      <p>LCA is geen vrije interpretatie. De methode is vastgelegd in geldende normen en bepalingsmethoden. In de GWW gaat het vaak om de koppeling tussen internationale LCA-richtlijnen en nationale bepalingsmethoden.</p>
+      <p>EPD's spelen hierin een belangrijke rol. Ze leveren gevalideerde data over producten en materialen, op basis van vaste rekenregels. De basisprincipes en normen rond EPD's lees je op <a href="/kennisbank/epd-en-normen">EPD &amp; normen</a>.</p>
+      <p>De kwaliteit van een LCA staat of valt met de data. Daarom gaat het niet alleen om rekenwerk, maar ook om bronkeuze, aannames en systeemgrenzen.</p>
+
+      <!-- LCA-specialist -->
+      <h2 id="adviseur">Wat doet een LCA-specialist in de GWW?</h2>
+      <p>In de GWW is de druk op planning en budget hoog. LCA wordt dan snel gezien als extra verplichting in plaats van een sturingsinstrument. Een LCA-specialist helpt om die slag te maken: van rekenverplichting naar onderbouwde ontwerpkeuze.</p>
+      <p>Let op: in de NMD-context heeft "onafhankelijkheid" een specifieke betekenis. Zowel de opsteller als de toetser van een milieuverklaring moeten geregistreerd staan bij de NMD. Dat is een verificatierol die losstaat van wat een LCA-specialist of -adviseur doet. InfraImpact opereert als LCA-specialist die het rekenwerk, de data en de aannames inhoudelijk begeleidt. Denk aan: systeemgrenzen bepalen, variantenstudies uitvoeren, en uitkomsten vertalen naar een aanbestedingsstrategie. Dat is geen toetsersrol, maar een inhoudelijke procesrol, van vroeg in het ontwerp tot en met de tender.</p>
+      <p>Die rol is het meest waardevol als hij vroeg in het proces start. Wie wacht tot de aanbesteding, optimaliseert binnen vaste kaders. Wie vroeg begint, kan keuzes nog beïnvloeden op basis van feiten.</p>
+
+      <!-- Per rol -->
+      <h2 id="per-rol">LCA toepassen per rol</h2>
+      <div class="grid md:grid-cols-3 gap-5 my-6">
+        <div class="role-card shadow-card">
+          <p class="text-sm font-semibold mb-2" style="color:#2D6E5E;">Opdrachtgever</p>
+          <p class="text-sm" style="color:#4a6070;line-height:1.7;">Voor opdrachtgevers is LCA vooral een kader voor eerlijke vergelijking. Door duidelijke systeemgrenzen en levensduur af te spreken, voorkom je dat de laagste MKI vooral het gevolg is van aannames. Het helpt om in de uitvraag te sturen op onderbouwing en transparantie, niet alleen op een getal. Dat maakt de beoordeling betrouwbaarder en beter uitlegbaar.</p>
+        </div>
+        <div class="role-card shadow-card">
+          <p class="text-sm font-semibold mb-2" style="color:#2D6E5E;">Aannemer</p>
+          <p class="text-sm" style="color:#4a6070;line-height:1.7;">Voor aannemers is LCA een praktisch ontwerpinstrument. Het laat zien waar een alternatief echt verschil maakt, bijvoorbeeld in materiaalkeuze, hergebruik of onderhoudsinterval. Wie LCA vroeg inzet, kan varianten doorrekenen vóórdat het ontwerp vastligt. Dat levert niet alleen een scherpere MKI op, maar ook een sterker verhaal richting de opdrachtgever.</p>
+        </div>
+        <div class="role-card shadow-card">
+          <p class="text-sm font-semibold mb-2" style="color:#2D6E5E;">Leverancier / producent</p>
+          <p class="text-sm" style="color:#4a6070;line-height:1.7;">Leveranciers gebruiken LCA en EPD-data om hun product te positioneren binnen een keten. Het gaat dan niet om een claim, maar om onderbouwde data die past binnen de geldende normen en bepalingsmethoden. Een goed onderbouwde EPD maakt het voor ontwerpers en aannemers makkelijker om keuzes te verantwoorden.</p>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- FAQ -->
+      <h2 id="faq" style="margin-top:1.5rem;">Veelgestelde vragen</h2>
+      <div class="mt-4">
+        <div class="faq-item">
+          <button class="faq-btn"><span class="faq-question">Wat is het verschil tussen LCA en MKI?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">LCA is de volledige analyse van milieu-impact over de levensduur. MKI is de samenvatting van die analyse in één geldwaarde, bedoeld voor vergelijking in aanbestedingen.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn"><span class="faq-question">Wanneer begin je met LCA in een project?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">Bij voorkeur zo vroeg mogelijk, al in de verkennings- of ontwerpfase. Hoe eerder je start, hoe meer sturingsruimte je hebt.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn"><span class="faq-question">Moet elke LCA exact hetzelfde zijn?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">Nee, maar de aannames en systeemgrenzen moeten expliciet en vergelijkbaar zijn. Anders vergelijk je appels met peren.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn"><span class="faq-question">Hoe betrouwbaar is een MKI-waarde?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">Dat hangt af van de kwaliteit van de onderliggende LCA en de gebruikte databronnen. Transparantie over aannames is essentieel.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn"><span class="faq-question">Welke rol spelen EPD's?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">EPD's leveren gevalideerde productdata op basis van vaste normen. Ze verhogen de betrouwbaarheid van de LCA.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn"><span class="faq-question">Is LCA verplicht in aanbestedingen?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">Niet altijd, maar bij EMVI/BPKV-criteria is een MKI-waarde vaak vereist, wat een LCA als basis veronderstelt.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn"><span class="faq-question">Wat zijn typische valkuilen?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">Aannames die niet expliciet zijn, het gebruik van verouderde databronnen, en het te laat starten in het project.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn"><span class="faq-question">Is LCA alleen relevant voor grote projecten?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">Nee. Ook voor kleinere projecten kan LCA helpen om de juiste materiaalkeuzes te maken en duurzaamheid aantoonbaar te maken.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn"><span class="faq-question">Hoe verhouden LCA en bepalingsmethoden zich?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">De bepalingsmethode beschrijft hoe je een LCA uitvoert en welke rekenregels gelden. LCA is de uitvoering; de bepalingsmethode is het kader.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn"><span class="faq-question">Kan ik zelf een LCA uitvoeren?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">Ja, maar het vergt kennis van de methodiek, databronnen en normen. Een onafhankelijke expert kan helpen bij complexe vraagstukken.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn"><span class="faq-question">Wat levert een LCA in aanbestedingen op?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">Een sterkere onderbouwing van je aanbieding, grip op milieurisico's en een basis voor een inhoudelijk gesprek met de opdrachtgever.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn"><span class="faq-question">Hoe blijf ik consistent tussen projecten?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">Door dezelfde bepalingsmethode, databronnen en aannames te hanteren. Documenteer keuzes zodat ze herhaalbaar en toetsbaar zijn.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn"><span class="faq-question">Wat als data ontbreekt?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">Gebruik generieke data uit de NMD of EcoInvent als proxy, maar wees transparant over de onzekerheid die daardoor ontstaat.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn"><span class="faq-question">Hoe verhoudt LCA zich tot CO₂-prestatieladder?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">De CO₂-prestatieladder focust op emissies van de eigen organisatie. LCA kijkt naar de milieu-impact van het product of werk over de volledige levensduur.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn"><span class="faq-question">Wat is een praktische eerste stap?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">Begin met het afbakenen van scope en functionele eenheid, en inventariseer welke data beschikbaar is. Neem bij twijfel contact op met een adviseur.</p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- CTA -->
+<section class="cta-bg py-20 mt-8">
+  <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center">
+    <span class="section-label" style="color:rgba(255,255,255,.55);">Stel een vraag</span>
+    <h2 class="heading-lg text-white mt-3 mb-4" style="font-size:clamp(1.75rem,3.5vw,2.5rem);">Wil je weten wat LCA voor jouw project betekent?</h2>
+    <p class="mb-8" style="color:rgba(255,255,255,.65);font-size:1.0625rem;line-height:1.75;">We helpen opdrachtgevers, aannemers en leveranciers om LCA praktisch in te zetten. Plan een gesprek of stel direct een vraag.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="mailto:info@infraimpact.nl?subject=Vraag%20over%20LCA%20in%20de%20GWW" class="btn-primary">Neem contact op <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="/kennisbank/mki-berekeningen" class="btn-outline">MKI-berekeningen lezen</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#0D1B26;" class="py-14">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="grid md:grid-cols-3 gap-10 pb-10 border-b" style="border-color:rgba(255,255,255,.08);">
+      <div>
+        <a href="/" class="inline-block mb-4"><img src="/brand_assets/infra_impact.png" alt="InfraImpact" class="h-12 w-auto" style="filter:brightness(0) invert(1) opacity(.85);" /></a>
+        <p class="text-sm mb-1" style="color:rgba(255,255,255,.40);">Making sustainability count</p>
+        <p class="text-xs" style="color:rgba(255,255,255,.25);">LCA &amp; MKI advies voor de Nederlandse bouwsector</p>
+      </div>
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest mb-4" style="color:rgba(255,255,255,.30);">Navigatie</p>
+        <nav class="flex flex-col gap-3">
+          <a href="/#diensten" class="text-sm" style="color:rgba(255,255,255,.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.50)'">Voor wie</a>
+          <a href="/projecten" class="text-sm" style="color:rgba(255,255,255,.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.50)'">Projecten</a>
+          <a href="/artikelen" class="text-sm" style="color:rgba(255,255,255,.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.50)'">Artikelen</a>
+          <a href="/over-ons" class="text-sm" style="color:rgba(255,255,255,0.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,0.50)'">Over ons</a>
+          <a href="/#faq" class="text-sm" style="color:rgba(255,255,255,.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.50)'">FAQ</a>
+          <a href="/#contact" class="text-sm" style="color:rgba(255,255,255,.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.50)'">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest mb-4" style="color:rgba(255,255,255,.30);">Contact</p>
+        <div class="flex flex-col gap-2.5 text-sm" style="color:rgba(255,255,255,.50);">
+          <span>InfraImpact B.V.</span>
+          <span>Westzeedijk 639, 3024 PJ Rotterdam</span>
+          <a href="tel:+31621350805" style="color:rgba(255,255,255,.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.50)'">+31 (0)6 2135 0805</a>
+          <a href="mailto:info@infraimpact.nl" style="color:rgba(255,255,255,.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.50)'">info@infraimpact.nl</a>
+          <a href="https://nl.linkedin.com/company/infraimpact" target="_blank" rel="noopener" style="color:rgba(255,255,255,.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.50)'">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="pt-7 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p class="text-xs" style="color:rgba(255,255,255,.25);">© 2026 InfraImpact B.V. Alle rechten voorbehouden.</p>
+      <div class="flex gap-5">
+        <a href="/algemene-voorwaarden" class="text-xs" style="color:rgba(255,255,255,.25);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.25)'">Algemene Voorwaarden</a>
+        <a href="/privacybeleid" class="text-xs" style="color:rgba(255,255,255,.25);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.25)'">Privacybeleid</a>
+        <a href="/cookiebeleid" class="text-xs" style="color:rgba(255,255,255,.25);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.25)'">Cookiebeleid</a>
+      </div>
+      <p class="text-xs" style="color:rgba(255,255,255,.20);">KvK: 98323377</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var nb=document.getElementById('navbar');
+  window.addEventListener('scroll',function(){nb.classList[window.scrollY>20?'add':'remove']('scrolled')},{passive:true});
+  function updateIcons(d){[['tt-moon',!d],['tt-sun-t',d],['tt-sun',!d],['tt-moon-s',d]].forEach(function(x){var el=document.getElementById(x[0]);if(el)el.style.display=x[1]?'block':'none'});}
+  updateIcons(document.documentElement.classList.contains('dark'));
+  function toggleTheme(){var d=document.documentElement.classList.toggle('dark');localStorage.setItem('theme',d?'dark':'light');updateIcons(d);}
+  ['theme-toggle','theme-toggle-mobile'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('click',toggleTheme)});
+  var mmBtn=document.getElementById('mobile-menu-btn'),mm=document.getElementById('mobile-menu');
+  if(mmBtn)mmBtn.addEventListener('click',function(){var h=mm.classList.toggle('hidden');document.getElementById('icon-ham').classList.toggle('hidden',!h);document.getElementById('icon-x').classList.toggle('hidden',h)});
+  document.querySelectorAll('.faq-btn').forEach(function(btn){btn.addEventListener('click',function(){var item=btn.closest('.faq-item');var wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});if(!wasOpen)item.classList.add('open')})});
+  var tocLinks=document.querySelectorAll('.toc-link');
+  var sections=[];
+  tocLinks.forEach(function(l){var id=l.getAttribute('href').replace('#','');var el=document.getElementById(id);if(el)sections.push({el:el,link:l})});
+  window.addEventListener('scroll',function(){var y=window.scrollY+120;var current=null;sections.forEach(function(s){if(s.el.offsetTop<=y)current=s});tocLinks.forEach(function(l){l.classList.remove('active')});if(current)current.link.classList.add('active')},{passive:true});
+</script>
+<script>
+  // nav-dropdown-js-v2
+  (function() {
+    function makeDropdown(wrapId, triggerId, panelId) {
+      var wrap = document.getElementById(wrapId);
+      var trigger = document.getElementById(triggerId);
+      var panel = document.getElementById(panelId);
+      if (!wrap || !trigger || !panel) return;
+      var t;
+      function open() { clearTimeout(t); panel.classList.add('is-open'); trigger.setAttribute('aria-expanded','true'); wrap.dataset.open='true'; }
+      function close() { t = setTimeout(function(){ panel.classList.remove('is-open'); trigger.setAttribute('aria-expanded','false'); delete wrap.dataset.open; }, 120); }
+      wrap.addEventListener('mouseenter', open);
+      wrap.addEventListener('mouseleave', close);
+      trigger.addEventListener('click', function(){ panel.classList.contains('is-open') ? close() : open(); });
+      document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ panel.classList.remove('is-open'); trigger.setAttribute('aria-expanded','false'); delete wrap.dataset.open; }});
+      document.addEventListener('click', function(e){ if(!wrap.contains(e.target)){ panel.classList.remove('is-open'); trigger.setAttribute('aria-expanded','false'); delete wrap.dataset.open; }});
+    }
+    function makeAccordion(triggerId, panelId) {
+      var t = document.getElementById(triggerId);
+      var p = document.getElementById(panelId);
+      if (!t || !p) return;
+      t.addEventListener('click', function(){ var open = p.style.display !== 'none'; p.style.display = open ? 'none' : 'block'; t.setAttribute('aria-expanded', open ? 'false' : 'true'); });
+    }
+    makeDropdown('home-dropdown','home-trigger','home-panel');
+    makeDropdown('artikelen-dropdown','artikelen-trigger','artikelen-panel');
+    makeAccordion('home-accordion-trigger','home-accordion-panel');
+    makeAccordion('artikelen-accordion-trigger','artikelen-accordion-panel');
+  })();
+</script>
+</body>
+</html>

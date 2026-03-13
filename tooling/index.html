@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tooling voor LCA & MKI | InfraImpact</title>
+  <link rel="icon" type="image/png" href="/brand_assets/infra_impact-icoon.png" />
+  <link rel="apple-touch-icon" href="/brand_assets/infra_impact-icoon.png" />
+  <meta name="description" content="Gratis tools voor LCA en MKI professionals. Upload EPD's en controleer direct of ze voldoen aan de MKI-eisen van jouw uitvraag." />
+  <meta name="keywords" content="EPD checker, MKI toetsing, LCA tool, PCR 2.0, GWW tooling, milieuberekening software" />
+  <link rel="canonical" href="https://www.infraimpact.nl/tooling/" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.infraimpact.nl/tooling/" />
+  <meta property="og:title" content="Tooling voor LCA & MKI | InfraImpact" />
+  <meta property="og:description" content="Gratis tools voor LCA en MKI professionals. Upload EPD's en controleer direct of ze voldoen aan de MKI-eisen van jouw uitvraag." />
+  <meta property="og:image" content="https://www.infraimpact.nl/brand_assets/infra_impact.png" />
+  <meta property="og:locale" content="nl_NL" />
+
+  <script>(function(){var s=localStorage.getItem('theme'),p=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&p))document.documentElement.classList.add('dark')})();</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config={darkMode:'class',theme:{extend:{colors:{teal:{DEFAULT:'#2D6E5E',dark:'#1E4D42',light:'#3D8A73',faint:'#EAF3F0'},steel:{DEFAULT:'#3B6080',dark:'#273F54',light:'#4E7A9E',faint:'#EDF2F7'}},fontFamily:{display:['"DM Serif Display"','Georgia','serif'],body:['Inter','system-ui','sans-serif']}}}}
+  </script>
+  <!-- pdf.js for reading EPD PDFs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>if(window.pdfjsLib)pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';</script>
+  <!-- SheetJS for Excel export -->
+  <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.46.1/dist/umd/supabase.min.js"></script>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,sans-serif;color:#1a2c38;background:#F8F7F4;transition:background .3s,color .3s}
+    html.dark body{background:#0D1B26;color:#e2e8f0}
+    html.dark .bg-white{background:#102236!important}
+    html.dark .text-steel-dark{color:#e2e8f0!important}
+    html.dark .text-slate-500{color:#94a3b8!important}
+    html.dark .text-slate-600{color:#94a3b8!important}
+    html.dark #navbar.scrolled{background:rgba(13,27,38,.97)!important}
+    html.dark .tool-card{background:#162e47!important;border-color:rgba(255,255,255,.08)!important}
+    html.dark .eisen-table th{background:#1a3550!important}
+    html.dark .eisen-table td{border-color:rgba(255,255,255,.06)!important}
+    html.dark .upload-zone{background:rgba(255,255,255,.04)!important;border-color:rgba(255,255,255,.12)!important}
+    html.dark .upload-zone:hover{background:rgba(45,110,94,.08)!important}
+    html.dark .epd-card{background:#1a3550!important;border-color:rgba(255,255,255,.08)!important}
+    html.dark select,html.dark input[type="number"],html.dark input[type="text"]{background:#1a3550!important;border-color:rgba(255,255,255,.14)!important;color:#e2e8f0!important}
+    html.dark .result-pass{background:rgba(45,110,94,.15)!important;border-color:rgba(45,110,94,.3)!important}
+    html.dark .result-fail{background:rgba(153,27,27,.15)!important;border-color:rgba(239,68,68,.2)!important}
+    body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")}
+    .heading-xl{font-family:'DM Serif Display',Georgia,serif;letter-spacing:-.03em;line-height:1.08}
+    .heading-lg{font-family:'DM Serif Display',Georgia,serif;letter-spacing:-.025em;line-height:1.15}
+    .heading-md{font-family:'DM Serif Display',Georgia,serif;letter-spacing:-.02em;line-height:1.2}
+    .section-label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#2D6E5E}
+    .page-hero{background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(59,96,128,.12) 0%,transparent 65%),radial-gradient(ellipse 60% 80% at 10% 80%,rgba(45,110,94,.10) 0%,transparent 60%),#F8F7F4}
+    html.dark .page-hero{background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(59,96,128,.08) 0%,transparent 65%),#0D1B26!important}
+    .btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:#2D6E5E;color:#fff;padding:.8rem 1.75rem;border-radius:.5rem;font-weight:500;font-size:.9375rem;transition:transform .18s cubic-bezier(.34,1.56,.64,1),box-shadow .18s,background .18s;box-shadow:0 2px 8px rgba(45,110,94,.20),0 8px 24px rgba(45,110,94,.14);text-decoration:none;border:none;cursor:pointer}
+    .btn-primary:hover{background:#1E4D42;transform:translateY(-2px)}
+    .btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+    .btn-secondary{display:inline-flex;align-items:center;gap:.5rem;background:rgba(45,110,94,.09);color:#2D6E5E;padding:.7rem 1.5rem;border-radius:.5rem;font-weight:500;font-size:.875rem;border:1.5px solid rgba(45,110,94,.25);cursor:pointer;transition:background .18s,transform .18s}
+    .btn-secondary:hover{background:rgba(45,110,94,.15);transform:translateY(-1px)}
+    .btn-secondary:disabled{opacity:.45;cursor:not-allowed;transform:none}
+    /* Navbar */
+    #navbar{transition:background .3s,box-shadow .3s}
+    #navbar.scrolled{background:rgba(248,247,244,.96);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(30,50,65,.08),0 4px 16px rgba(30,50,65,.06)}
+    .nav-pill-container{position:relative;display:flex;align-items:center;background:rgba(45,110,94,.06);border:1px solid rgba(45,110,94,.12);border-radius:9999px;padding:4px;gap:2px}
+    html.dark .nav-pill-container{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.08)}
+    .nav-link-pill{position:relative;z-index:1;padding:.45rem 1.1rem;border-radius:9999px;font-size:.9375rem;font-weight:500;color:#273F54;transition:color .18s;text-decoration:none;white-space:nowrap}
+    html.dark .nav-link-pill{color:rgba(255,255,255,.65)}
+    .nav-link-pill:hover{color:#2D6E5E}
+    html.dark .nav-link-pill:hover{color:#3D8A73}
+    .nav-link-pill.active{color:#2D6E5E;background:rgba(45,110,94,.10)}
+    html.dark .nav-link-pill.active{color:#3D8A73;background:rgba(61,138,115,.12)}
+    .nav-link{position:relative;font-size:.9375rem;font-weight:500;color:#273F54;transition:color .18s;text-decoration:none}
+    .nav-link::after{content:'';position:absolute;left:0;bottom:-3px;width:0;height:2px;background:#2D6E5E;border-radius:2px;transition:width .22s}
+    .nav-link:hover{color:#2D6E5E}
+    .nav-link:hover::after{width:100%}
+    .theme-toggle-wrap{display:flex;align-items:center;justify-content:space-between;width:56px;height:28px;padding:3px;border-radius:9999px;cursor:pointer;border:1px solid;flex-shrink:0;transition:background .3s,border-color .3s;background:#f4f4f5;border-color:#d4d4d8}
+    html.dark .theme-toggle-wrap{background:#18181b;border-color:#3f3f46}
+    .theme-toggle-thumb{display:flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;transition:transform .3s,background .3s;flex-shrink:0;background:#e4e4e7}
+    html.dark .theme-toggle-thumb{background:#3f3f46;order:2}
+    .theme-toggle-secondary{display:flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;flex-shrink:0}
+    html.dark .theme-toggle-secondary{order:1}
+    /* Dropdown nav */
+    .nav-dropdown-wrap{position:relative}
+    .nav-dropdown-trigger{display:flex;align-items:center;gap:.375rem;background:none;border:none;cursor:pointer;font-family:inherit;padding:0}
+    .nav-dropdown-trigger .nav-chevron{transition:transform .2s}
+    .nav-dropdown-wrap[data-open="true"] .nav-chevron{transform:rotate(180deg)}
+    .nav-dropdown-panel{position:absolute;top:calc(100% + .75rem);left:50%;transform:translateX(-50%) translateY(-8px);width:520px;background:#fff;border:1px solid rgba(59,96,128,.12);border-radius:1rem;box-shadow:0 8px 32px rgba(13,27,38,.12),0 2px 8px rgba(13,27,38,.08);padding:1.25rem;display:grid;grid-template-columns:1fr 1px 1fr;gap:.75rem;opacity:0;pointer-events:none;transition:opacity .18s,transform .18s;z-index:200}
+    .nav-dropdown-panel.is-open{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}
+    html.dark .nav-dropdown-panel{background:#162e47;border-color:rgba(255,255,255,.08);box-shadow:0 8px 32px rgba(0,0,0,.3),0 2px 8px rgba(0,0,0,.2)}
+    .nav-dropdown-divider{background:rgba(59,96,128,.10)}
+    html.dark .nav-dropdown-divider{background:rgba(255,255,255,.07)}
+    .nav-dropdown-col-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#2D6E5E;margin-bottom:.375rem;padding:0 .75rem}
+    .nav-dropdown-item{display:block;padding:.625rem .75rem;border-radius:.625rem;text-decoration:none;transition:background .15s}
+    .nav-dropdown-item:hover{background:rgba(45,110,94,.07)}
+    html.dark .nav-dropdown-item:hover{background:rgba(45,110,94,.15)}
+    .nav-dropdown-item-title{font-size:.875rem;font-weight:600;color:#1a2c38;margin-bottom:.125rem}
+    html.dark .nav-dropdown-item-title{color:#e2e8f0}
+    .nav-dropdown-item-desc{font-size:.8rem;color:#64748b;line-height:1.4}
+    html.dark .nav-dropdown-item-desc{color:rgba(255,255,255,.45)}
+    .nav-dropdown-all-link{display:block;margin-top:.5rem;padding:.5rem .75rem;font-size:.875rem;font-weight:600;color:#2D6E5E;border-top:1px solid rgba(45,110,94,.12);text-decoration:none;transition:color .15s}
+    .nav-dropdown-all-link:hover{color:#1E4D42}
+    html.dark .nav-dropdown-all-link{border-top-color:rgba(45,110,94,.2)}
+    .nav-mobile-accordion-trigger{background:none;border:none;cursor:pointer;font-family:inherit;width:100%;text-align:left;display:flex;align-items:center;justify-content:space-between}
+    .nav-mobile-accordion-trigger .nav-chevron-m{transition:transform .2s;flex-shrink:0}
+    .nav-mobile-accordion-trigger[aria-expanded="true"] .nav-chevron-m{transform:rotate(180deg)}
+    /* Tool UI */
+    .tool-card{background:#fff;border:1px solid rgba(45,110,94,.12);border-radius:1.5rem;padding:2rem;box-shadow:0 1px 1px rgba(30,50,65,.04),0 4px 8px rgba(30,50,65,.06),0 12px 32px rgba(30,50,65,.07)}
+    .tool-badge{display:inline-flex;align-items:center;gap:.375rem;padding:.25rem .75rem;border-radius:9999px;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+    .badge-free{background:rgba(45,110,94,.10);color:#2D6E5E;border:1px solid rgba(45,110,94,.2)}
+    .badge-soon{background:rgba(59,96,128,.08);color:#3B6080;border:1px solid rgba(59,96,128,.15)}
+    .badge-pass{background:#ecfdf5;color:#065f46;border:1px solid rgba(6,95,70,.15);padding:.2rem .6rem;border-radius:.5rem;font-size:.75rem;font-weight:600}
+    .badge-fail{background:#fef2f2;color:#991b1b;border:1px solid rgba(153,27,27,.15);padding:.2rem .6rem;border-radius:.5rem;font-size:.75rem;font-weight:600}
+    html.dark .badge-pass{background:rgba(45,110,94,.2);color:#6ee7b7;border-color:rgba(45,110,94,.3)}
+    html.dark .badge-fail{background:rgba(153,27,27,.2);color:#fca5a5;border-color:rgba(239,68,68,.2)}
+    .upload-zone{border:2px dashed rgba(45,110,94,.25);border-radius:1rem;background:rgba(45,110,94,.03);cursor:pointer;transition:border-color .18s,background .18s;position:relative}
+    .upload-zone:hover{border-color:rgba(45,110,94,.5);background:rgba(45,110,94,.06)}
+    .upload-zone.drag-over{border-color:#2D6E5E;background:rgba(45,110,94,.08)}
+    .upload-input{position:absolute;inset:0;opacity:0;cursor:pointer}
+    .eisen-table th{background:rgba(45,110,94,.06);font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#2D6E5E;padding:.625rem .875rem;text-align:left;white-space:nowrap}
+    .eisen-table td{padding:.5rem .875rem;font-size:.875rem;border-top:1px solid rgba(45,110,94,.06);color:#273F54}
+    html.dark .eisen-table td{color:#cbd5e1}
+    .eisen-table tr:hover td{background:rgba(45,110,94,.04)}
+    .year-highlight{background:rgba(45,110,94,.10)!important;font-weight:600;color:#2D6E5E!important}
+    html.dark .year-highlight{background:rgba(45,110,94,.2)!important;color:#6ee7b7!important}
+    .epd-card{background:#f9fbff;border:1px solid rgba(45,110,94,.10);border-radius:1rem;padding:1.25rem}
+    .form-input{width:100%;border:1.5px solid rgba(59,96,128,.18);border-radius:.5rem;padding:.55rem .875rem;font-size:.875rem;color:#273F54;background:#fff;outline:none;transition:border-color .18s,box-shadow .18s;font-family:'Inter',sans-serif}
+    .form-input:focus{border-color:#2D6E5E;box-shadow:0 0 0 3px rgba(45,110,94,.10)}
+    .form-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23687887' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .875rem center;padding-right:2.25rem}
+    .result-pass{background:#f0fdf4;border:1px solid rgba(6,95,70,.15);border-radius:1rem;padding:1.25rem}
+    .result-fail{background:#fef2f2;border:1px solid rgba(239,68,68,.15);border-radius:1rem;padding:1.25rem}
+    .mono{font-variant-numeric:tabular-nums;font-family:ui-monospace,Menlo,Monaco,'Courier New',monospace}
+    #toast{position:fixed;top:1.25rem;right:1.25rem;z-index:10000;padding:.625rem 1.125rem;border-radius:.75rem;font-size:.875rem;font-weight:500;color:#fff;display:none;box-shadow:0 4px 20px rgba(0,0,0,.2)}
+  </style>
+  <link rel="icon" type="image/png" href="/brand_assets/infra_impact-icoon.png" />
+
+  <style>/* nav-fix-v2 */
+    /* Button never wraps */
+    .btn-primary { white-space: nowrap !important; }
+    /* Logo link never shrinks */
+    #navbar .flex.items-center.justify-between > a:first-child,
+    #navbar > div > a:first-child { flex-shrink: 0 !important; }
+    /* Right group (toggle + button) never shrinks */
+    #navbar .hidden.md\:flex.items-center.gap-3 { flex-shrink: 0 !important; }
+    /* Nav pills tighter */
+    .nav-link-pill { padding: .35rem .75rem !important; font-size: .8125rem !important; }
+    .nav-dropdown-trigger { font-size: .8125rem !important; }
+    /* Logo bigger */
+    #navbar img[alt="InfraImpact"],
+    #navbar .h-14 { height: 3rem !important; width: auto !important; }
+  </style>
+
+  <style>
+  /* ── Wachtlijst Modal ── */
+  @keyframes wl-fade  { from{opacity:0}              to{opacity:1} }
+  @keyframes wl-slide { from{opacity:0;transform:scale(.96) translateY(14px)} to{opacity:1;transform:scale(1) translateY(0)} }
+
+  #epd-waitlist-overlay {
+    display:none; position:fixed; inset:0; z-index:300;
+    background:rgba(13,27,38,.55); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+    align-items:center; justify-content:center; padding:1.25rem;
+  }
+  #epd-waitlist-overlay.wl-open {
+    display:flex; animation:wl-fade .18s ease forwards;
+  }
+  #epd-waitlist-card {
+    background:#fff; border-radius:1.75rem; width:100%; max-width:34rem;
+    max-height:90vh; overflow-y:auto;
+    box-shadow:0 4px 6px rgba(13,27,38,.06),0 12px 32px rgba(13,27,38,.14),0 40px 80px rgba(13,27,38,.12);
+    animation:wl-slide .24s cubic-bezier(.34,1.56,.64,1) forwards;
+  }
+  html.dark #epd-waitlist-card { background:#162e47; }
+
+  .wl-header {
+    padding:1.75rem 1.75rem 0;
+    border-bottom:1px solid rgba(45,110,94,.10);
+    padding-bottom:1.25rem;
+  }
+  html.dark .wl-header { border-bottom-color:rgba(255,255,255,.07); }
+
+  .wl-body { padding:1.5rem 1.75rem 1.75rem; }
+
+  .wl-tag {
+    display:inline-flex; align-items:center; gap:.375rem;
+    padding:.2rem .7rem; border-radius:9999px; font-size:.7rem;
+    font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    background:rgba(45,110,94,.10); color:#2D6E5E; border:1px solid rgba(45,110,94,.2);
+    margin-bottom:.625rem;
+  }
+
+  .wl-title {
+    font-family:'DM Serif Display',serif; font-size:1.5rem;
+    color:#1a2c38; line-height:1.25; margin-bottom:.375rem;
+  }
+  html.dark .wl-title { color:#e2e8f0; }
+
+  .wl-subtitle { font-size:.875rem; color:#64748b; line-height:1.6; }
+  html.dark .wl-subtitle { color:rgba(255,255,255,.5); }
+
+  .wl-close-btn {
+    position:absolute; top:1.25rem; right:1.25rem;
+    width:2rem; height:2rem; border-radius:9999px;
+    border:1.5px solid rgba(59,96,128,.15); background:transparent;
+    display:flex; align-items:center; justify-content:center;
+    color:#64748b; cursor:pointer; transition:background .15s,color .15s;
+    font-size:1.125rem; line-height:1; flex-shrink:0;
+  }
+  .wl-close-btn:hover { background:rgba(59,96,128,.08); color:#273F54; }
+  html.dark .wl-close-btn { border-color:rgba(255,255,255,.12); color:rgba(255,255,255,.5); }
+  html.dark .wl-close-btn:hover { background:rgba(255,255,255,.07); color:#e2e8f0; }
+
+  .wl-grid { display:grid; grid-template-columns:1fr 1fr; gap:.875rem; }
+  @media(max-width:480px){ .wl-grid { grid-template-columns:1fr; } }
+
+  .wl-label { display:flex; flex-direction:column; gap:.375rem; font-size:.8125rem; font-weight:500; color:#273F54; }
+  html.dark .wl-label { color:#cbd5e1; }
+
+  .wl-input {
+    border:1.5px solid rgba(59,96,128,.18); border-radius:.5rem;
+    padding:.6rem .875rem; font-size:.875rem; color:#273F54;
+    background:#fff; outline:none; font-family:'Inter',sans-serif; width:100%;
+    transition:border-color .18s,box-shadow .18s;
+  }
+  .wl-input:focus { border-color:#2D6E5E; box-shadow:0 0 0 3px rgba(45,110,94,.10); }
+  html.dark .wl-input { background:#0f2236; border-color:rgba(255,255,255,.10); color:#e2e8f0; }
+  html.dark .wl-input:focus { border-color:#2D6E5E; box-shadow:0 0 0 3px rgba(45,110,94,.15); }
+
+  .wl-error { font-size:.8125rem; color:#b91c1c; display:none; }
+  html.dark .wl-error { color:#fca5a5; }
+
+  .wl-footer-note { font-size:.75rem; color:#94a3b8; line-height:1.5; }
+  html.dark .wl-footer-note { color:rgba(255,255,255,.35); }
+
+  /* Success state */
+  .wl-success-icon {
+    width:3rem; height:3rem; border-radius:9999px;
+    background:rgba(45,110,94,.10); display:flex; align-items:center; justify-content:center;
+    margin-bottom:1rem;
+  }
+  </style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Tooling voor LCA & MKI | InfraImpact",
+      "description": "Gratis tools voor LCA en MKI professionals. Upload EPDs en controleer direct of ze voldoen aan de MKI-eisen van jouw uitvraag.",
+      "url": "https://www.infraimpact.nl/tooling/",
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.infraimpact.nl/#organization",
+        "name": "InfraImpact"
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "InfraImpact",
+        "url": "https://www.infraimpact.nl"
+      },
+      "mainEntity": {
+        "@type": "SoftwareApplication",
+        "name": "EPD Checker",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "description": "Upload EPDs en controleer direct of ze voldoen aan de MKI-eisen van jouw uitvraag."
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.infraimpact.nl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tooling",
+          "item": "https://www.infraimpact.nl/tooling/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tooling voor LCA & MKI | InfraImpact" />
+  <meta name="twitter:description" content="Gratis tools voor LCA en MKI professionals. Upload EPD's en controleer direct of ze voldoen aan de MKI-eisen van jouw uitvraag." />
+  <meta name="twitter:image" content="https://www.infraimpact.nl/brand_assets/infra_impact.png" />
+</head>
+<body>
+
+<div id="toast"></div>
+
+<!-- ══════════ NAVBAR ══════════ -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 h-18 flex items-center justify-between py-4">
+    <a href="/" class="flex items-center gap-3" aria-label="InfraImpact home">
+      <img src="/brand_assets/infra_impact.png" alt="InfraImpact" class="h-14 w-auto" />
+    </a>
+    <nav class="hidden md:flex items-center" aria-label="Hoofdnavigatie">
+      <div class="nav-pill-container">
+        <div class="nav-dropdown-wrap" id="home-dropdown">
+          <button class="nav-link-pill nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="home-trigger">Home <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-dropdown-panel" id="home-panel" role="menu">
+            <div>
+              <div class="nav-dropdown-col-label">InfraImpact</div>
+              <a href="/" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Homepagina</div><div class="nav-dropdown-item-desc">Terug naar het overzicht</div></a>
+              <a href="/#diensten" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Voor wie</div><div class="nav-dropdown-item-desc">Onze doelgroepen en sectoren</div></a>
+              <a href="/#aanpak" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Aanpak</div><div class="nav-dropdown-item-desc">Hoe we werken</div></a>
+              <a href="/#waarom" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Waarom ons</div><div class="nav-dropdown-item-desc">Onze onderscheidende aanpak</div></a>
+              <a href="/#faq" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">FAQ</div><div class="nav-dropdown-item-desc">Veelgestelde vragen</div></a>
+              <a href="/#contact" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Contact</div><div class="nav-dropdown-item-desc">Neem contact op</div></a>
+            </div>
+          </div>
+        </div>
+        <a href="/projecten" class="nav-link-pill">Projecten</a>
+        <a href="/tooling" class="nav-link-pill active">Tooling</a>
+        <div class="nav-dropdown-wrap" id="artikelen-dropdown">
+          <button class="nav-link-pill nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="artikelen-trigger">Artikelen <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-dropdown-panel" id="artikelen-panel" role="menu">
+            <div>
+              <div class="nav-dropdown-col-label">Artikelen</div>
+              <a href="/artikelen/wat-is-een-lca" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Wat is een LCA?</div><div class="nav-dropdown-item-desc">Levenscyclusanalyse uitgelegd voor de GWW</div></a>
+              <a href="/artikelen/wat-is-mki" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Wat is MKI?</div><div class="nav-dropdown-item-desc">De Milieu Kosten Indicator in de praktijk</div></a>
+              <a href="/artikelen/wat-zegt-milieu-impact-echt" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">Wat zegt milieuimpact echt?</div><div class="nav-dropdown-item-desc">Achter de cijfers van duurzaamheid</div></a>
+              <a href="/artikelen" class="nav-dropdown-all-link" role="menuitem">Alle artikelen &rarr;</a>
+            </div>
+            <div class="nav-dropdown-divider"></div>
+            <div>
+              <div class="nav-dropdown-col-label">Kennisbank</div>
+              <a href="/kennisbank/lca-in-de-gww" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">LCA in de GWW</div><div class="nav-dropdown-item-desc">Basiskennis voor de infrasector</div></a>
+              <a href="/kennisbank/mki-berekeningen" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">MKI-berekeningen</div><div class="nav-dropdown-item-desc">Hoe werkt de berekening?</div></a>
+              <a href="/kennisbank/epd-en-normen" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">EPD en normen</div><div class="nav-dropdown-item-desc">NMD, PCR 2.0 en bepalingsmethode</div></a>
+              <a href="/kennisbank/lca-in-aanbestedingen" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">LCA in aanbestedingen</div><div class="nav-dropdown-item-desc">EMVI en duurzaam aanbesteden</div></a>
+            </div>
+          </div>
+        </div>
+        <a href="/over-ons" class="nav-link-pill">Over ons</a>
+      </div>
+    </nav>
+    <div class="hidden md:flex items-center gap-3">
+      <div id="theme-toggle" class="theme-toggle-wrap" role="button" tabindex="0" aria-label="Thema wisselen">
+        <div class="theme-toggle-thumb">
+          <svg id="tt-moon" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M12 9.5A5.5 5.5 0 016.5 4a5.5 5.5 0 00.5 11 5.5 5.5 0 005-5.5z" fill="#3f3f46" stroke="#3f3f46" stroke-width="0.5"/></svg>
+          <svg id="tt-sun-t" width="12" height="12" viewBox="0 0 16 16" fill="none" style="display:none"><circle cx="8" cy="8" r="3" stroke="#e4e4e7" stroke-width="1.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.22 3.22l1.41 1.41M11.36 11.36l1.41 1.41M3.22 12.78l1.41-1.41M11.36 4.64l1.41-1.41" stroke="#e4e4e7" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="theme-toggle-secondary">
+          <svg id="tt-sun" width="12" height="12" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" stroke="#a1a1aa" stroke-width="1.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.22 3.22l1.41 1.41M11.36 11.36l1.41 1.41M3.22 12.78l1.41-1.41M11.36 4.64l1.41-1.41" stroke="#a1a1aa" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg id="tt-moon-s" width="12" height="12" viewBox="0 0 16 16" fill="none" style="display:none"><path d="M12 9.5A5.5 5.5 0 016.5 4a5.5 5.5 0 00.5 11 5.5 5.5 0 005-5.5z" fill="#52525b" stroke="#52525b" stroke-width="0.5"/></svg>
+        </div>
+      </div>
+      <a href="mailto:info@infraimpact.nl?subject=Kennismakingsafspraak%20plannen" class="btn-primary hidden md:inline-flex" style="padding:.65rem 1.375rem;font-size:.875rem;">Plan een kennismaking <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <div class="md:hidden flex items-center gap-2">
+      <div id="theme-toggle-mobile" class="theme-toggle-wrap" role="button" tabindex="0" aria-label="Thema wisselen">
+        <div class="theme-toggle-thumb"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M12 9.5A5.5 5.5 0 016.5 4a5.5 5.5 0 00.5 11 5.5 5.5 0 005-5.5z" fill="#3f3f46" stroke="#3f3f46" stroke-width="0.5"/></svg></div>
+        <div class="theme-toggle-secondary"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" stroke="#a1a1aa" stroke-width="1.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2" stroke="#a1a1aa" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+      <button id="mobile-menu-btn" class="p-2 rounded-lg" style="color:#273F54;" aria-label="Menu openen">
+        <svg id="icon-ham" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+        <svg id="icon-x" width="22" height="22" viewBox="0 0 22 22" fill="none" class="hidden"><path d="M5 5l12 12M17 5L5 17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-lg border-t border-steel-faint px-6 pb-6 pt-4">
+    <nav class="flex flex-col gap-4">
+      <div>
+        <button class="nav-mobile-accordion-trigger nav-link py-2 text-base w-full" id="home-accordion-trigger" aria-expanded="false">
+          <span>Home</span>
+          <svg class="nav-chevron-m" width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div id="home-accordion-panel" style="display:none;" class="pl-4 flex flex-col gap-2 mt-1">
+          <a href="/" class="nav-link py-1.5 text-sm">Homepagina</a>
+          <a href="/#diensten" class="nav-link py-1.5 text-sm">Voor wie</a>
+          <a href="/#aanpak" class="nav-link py-1.5 text-sm">Aanpak</a>
+          <a href="/#waarom" class="nav-link py-1.5 text-sm">Waarom ons</a>
+          <a href="/#faq" class="nav-link py-1.5 text-sm">FAQ</a>
+          <a href="/#contact" class="nav-link py-1.5 text-sm">Contact</a>
+        </div>
+      </div>
+      <a href="/projecten" class="nav-link py-2 text-base">Projecten</a>
+      <a href="/tooling" class="nav-link py-2 text-base" style="color:#2D6E5E;">Tooling</a>
+      <div>
+        <button class="nav-mobile-accordion-trigger nav-link py-2 text-base w-full" id="artikelen-accordion-trigger" aria-expanded="false">
+          <span>Artikelen</span>
+          <svg class="nav-chevron-m" width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div id="artikelen-accordion-panel" style="display:none;" class="pl-4 flex flex-col gap-2 mt-1">
+          <a href="/artikelen/wat-is-een-lca" class="nav-link py-1.5 text-sm">Wat is een LCA?</a>
+          <a href="/artikelen/wat-is-mki" class="nav-link py-1.5 text-sm">Wat is MKI?</a>
+          <a href="/artikelen/wat-zegt-milieu-impact-echt" class="nav-link py-1.5 text-sm">Wat zegt milieuimpact echt?</a>
+          <a href="/kennisbank/lca-in-de-gww" class="nav-link py-1.5 text-sm">LCA in de GWW</a>
+          <a href="/kennisbank/mki-berekeningen" class="nav-link py-1.5 text-sm">MKI-berekeningen</a>
+          <a href="/kennisbank/epd-en-normen" class="nav-link py-1.5 text-sm">EPD &amp; normen</a>
+          <a href="/kennisbank/lca-in-aanbestedingen" class="nav-link py-1.5 text-sm">LCA in aanbestedingen</a>
+          <a href="/artikelen" class="nav-link py-1.5 text-sm font-semibold">Alle artikelen →</a>
+        </div>
+      </div>
+      <a href="/over-ons" class="nav-link py-2 text-base">Over ons</a>
+      <a href="mailto:info@infraimpact.nl?subject=Kennismakingsafspraak%20plannen" class="btn-primary mt-2 w-full justify-center">Plan een kennismaking</a>
+    </nav>
+  </div>
+</header>
+
+
+<!-- ══════════ HERO ══════════ -->
+<section class="page-hero pt-32 pb-16 md:pt-40 md:pb-20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="max-w-2xl">
+      <div class="section-label mb-5">Tools</div>
+      <h1 class="heading-xl text-5xl md:text-6xl text-steel-dark mb-6">Slimmer werken<br/>met <em class="not-italic" style="color:#2D6E5E;">MKI & LCA</em></h1>
+      <p class="text-lg text-slate-600 max-w-xl" style="line-height:1.75;">Praktische tools voor aannemers, adviseurs en opdrachtgevers. Gratis te gebruiken, direct resultaat.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ MAIN CONTENT ══════════ -->
+<main class="max-w-7xl mx-auto px-6 lg:px-10 pb-24 space-y-16">
+
+
+  <!-- ── EPD CHECKER ── -->
+  <section id="epd-checker">
+    <div class="flex flex-wrap items-center gap-3 mb-2">
+      <span class="tool-badge badge-free">
+        <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M8 1l1.5 4.5H15l-4 3 1.5 5L8 11l-4.5 2.5L5 8.5 1 5.5h5z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+        Gratis
+      </span>
+    </div>
+    <h2 class="heading-lg text-3xl md:text-4xl text-steel-dark mb-3">EPD Checker</h2>
+    <p class="text-slate-500 max-w-2xl mb-10" style="line-height:1.75;">Upload één of meerdere EPD's (PDF) en toets ze direct aan de uniforme MKI-plafondwaarden van het NPDW (PCR 2.0). Exporteer de resultaten als Excel voor gebruik in rapporten of aanbestedingen.</p>
+
+    <div class="space-y-6">
+
+      <!-- MKI-plafondwaarden tabel (full width) -->
+      <div class="tool-card">
+        <div class="flex items-center justify-between mb-4 gap-4 flex-wrap">
+          <div>
+            <div class="font-semibold text-steel-dark mb-0.5" style="font-family:'DM Serif Display',serif;font-size:1.1rem;">MKI-plafondwaarden (NPDW 2025, PCR 2.0)</div>
+            <div class="text-xs text-slate-500">Uniforme MKI-eisen per asfaltsoort. Geselecteerd jaar wordt gehighlight.</div>
+          </div>
+          <div class="flex items-center gap-3">
+            <label class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Toetsjaar</label>
+            <select id="year-target" class="form-input form-select" style="width:auto;padding:.45rem 2.25rem .45rem .875rem;font-size:.875rem;">
+              <option>2022</option>
+              <option>2024</option>
+              <option selected>2026</option>
+              <option>2028</option>
+              <option>2030</option>
+            </select>
+          </div>
+        </div>
+        <div class="overflow-x-auto rounded-xl border" style="border-color:rgba(45,110,94,.10);">
+          <table id="eisen-table" class="eisen-table w-full"></table>
+        </div>
+      </div>
+
+      <!-- Upload zone (full width) -->
+      <div class="tool-card">
+        <div class="font-semibold text-steel-dark mb-4" style="font-family:'DM Serif Display',serif;font-size:1.1rem;">Upload EPD's</div>
+        <div id="epd-drop" class="upload-zone py-10 text-center">
+          <input id="epd-files" type="file" accept=".pdf,application/pdf" multiple class="upload-input" />
+          <div class="pointer-events-none">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-3" style="background:rgba(45,110,94,.10);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 16V8m-4 4l4-4 4 4" stroke="#2D6E5E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 16.5A3.5 3.5 0 0017.5 10H16A6 6 0 106 16.5" stroke="#2D6E5E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <p class="font-medium text-steel-dark mb-1">Sleep EPD-PDF's hierheen of klik om te kiezen</p>
+            <p class="text-sm text-slate-500">Meerdere bestanden tegelijk toegestaan</p>
+          </div>
+        </div>
+
+        <!-- EPD cards -->
+        <div id="epd-list" class="space-y-4 mt-4"></div>
+
+        <!-- Actions -->
+        <div class="flex flex-wrap items-center gap-3 mt-5 pt-5 border-t" style="border-color:rgba(45,110,94,.10);">
+          <button id="run-checks" type="button" class="btn-primary" disabled>
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Controleer EPD's
+          </button>
+          <button id="export-excel" type="button" class="btn-secondary" disabled>
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 12l3-4 2 3 3-5 3 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><rect x="1" y="1" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.3"/></svg>
+            Exporteer Excel
+          </button>
+          <button id="clear-all" type="button" class="btn-secondary" style="border-color:rgba(220,38,38,.2);color:#991b1b;background:rgba(220,38,38,.05);" disabled>Wis alles</button>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div id="results" class="space-y-3"></div>
+    </div>
+  </section>
+
+
+  <!-- ── EPD DATABASE TEASER ── -->
+  <section id="epd-database">
+    <div class="flex flex-wrap items-center gap-3 mb-2">
+      <span class="tool-badge badge-soon">
+        <svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M8 1v7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Binnenkort beschikbaar
+      </span>
+    </div>
+    <h2 class="heading-lg text-3xl md:text-4xl text-steel-dark mb-3">EPD Database</h2>
+    <p class="text-slate-500 max-w-2xl mb-8" style="line-height:1.75;">Een centrale plek voor al jouw EPD's. Inladen, opslaan, analyseren en vergelijken, op persoonlijk of organisatieniveau.</p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Free tier -->
+      <div class="tool-card" style="border-color:rgba(45,110,94,.15);">
+        <div class="tool-badge badge-free mb-4">Gratis</div>
+        <h3 class="font-semibold text-steel-dark mb-3" style="font-family:'DM Serif Display',serif;font-size:1.05rem;">Basis</h3>
+        <ul class="space-y-2 text-sm text-slate-600" style="line-height:1.65;">
+          <li class="flex items-start gap-2"><svg class="flex-shrink-0 mt-0.5" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#2D6E5E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>EPD's uploaden en inlezen</li>
+          <li class="flex items-start gap-2"><svg class="flex-shrink-0 mt-0.5" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#2D6E5E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Exporteren naar Excel</li>
+          <li class="flex items-start gap-2"><svg class="flex-shrink-0 mt-0.5" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#2D6E5E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>MKI-toetsing per EPD</li>
+        </ul>
+      </div>
+      <!-- Paid features -->
+      <div class="tool-card" style="border-color:rgba(59,96,128,.15);">
+        <div class="tool-badge badge-soon mb-4">Premium</div>
+        <h3 class="font-semibold text-steel-dark mb-3" style="font-family:'DM Serif Display',serif;font-size:1.05rem;">Analyse & Benchmark</h3>
+        <ul class="space-y-2 text-sm text-slate-600" style="line-height:1.65;">
+          <li class="flex items-start gap-2"><svg class="flex-shrink-0 mt-0.5" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#3B6080" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Opslaan op persoonlijk of organisatieniveau</li>
+          <li class="flex items-start gap-2"><svg class="flex-shrink-0 mt-0.5" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#3B6080" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Geanonimiseerde benchmark: zie hoe je scoort</li>
+          <li class="flex items-start gap-2"><svg class="flex-shrink-0 mt-0.5" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#3B6080" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Filters, zoeken en sorteren</li>
+          <li class="flex items-start gap-2"><svg class="flex-shrink-0 mt-0.5" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#3B6080" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Toetsen aan eisen van opdrachtgevers</li>
+        </ul>
+      </div>
+      <!-- More paid features -->
+      <div class="tool-card" style="border-color:rgba(59,96,128,.15);">
+        <div class="tool-badge badge-soon mb-4">Premium</div>
+        <h3 class="font-semibold text-steel-dark mb-3" style="font-family:'DM Serif Display',serif;font-size:1.05rem;">Berekening & Export</h3>
+        <ul class="space-y-2 text-sm text-slate-600" style="line-height:1.65;">
+          <li class="flex items-start gap-2"><svg class="flex-shrink-0 mt-0.5" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#3B6080" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Transport (A4) en aanleg (A5) meenemen</li>
+          <li class="flex items-start gap-2"><svg class="flex-shrink-0 mt-0.5" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#3B6080" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Uitgebreide Excel-exports per project</li>
+          <li class="flex items-start gap-2"><svg class="flex-shrink-0 mt-0.5" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#3B6080" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Inzicht in totale milieudruk van jouw project</li>
+          <li class="flex items-start gap-2"><svg class="flex-shrink-0 mt-0.5" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#3B6080" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>API-koppeling voor eigen systemen</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-8 tool-card" style="background:linear-gradient(135deg,rgba(45,110,94,.06) 0%,rgba(59,96,128,.06) 100%);border-color:rgba(45,110,94,.15);">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div>
+          <div class="font-semibold text-steel-dark mb-1" style="font-family:'DM Serif Display',serif;font-size:1.1rem;">Interesse in de EPD Database?</div>
+          <p class="text-sm text-slate-500">Meld je aan voor de wachtlijst en we laten je als eerste weten wanneer de database beschikbaar is.</p>
+        </div>
+        <button type="button" id="epd-waitlist-open" class="btn-primary flex-shrink-0">
+          Aanmelden wachtlijst
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══════════ WACHTLIJST MODAL ══════════ -->
+<div id="epd-waitlist-overlay" role="dialog" aria-modal="true" aria-labelledby="wl-title">
+  <div id="epd-waitlist-card" style="position:relative;">
+
+    <!-- Header -->
+    <div class="wl-header">
+      <button type="button" id="epd-waitlist-close" class="wl-close-btn" aria-label="Sluiten">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <path d="M1 1l10 10M11 1L1 11" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="wl-tag">
+        <svg width="9" height="9" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="#2D6E5E" stroke-width="1.5"/><circle cx="5" cy="5" r="1.5" fill="#2D6E5E"/></svg>
+        EPD Database
+      </div>
+      <h2 id="wl-title" class="wl-title">Aanmelden wachtlijst</h2>
+      <p class="wl-subtitle">Laat je gegevens achter en je ontvangt een bevestiging per e-mail. We laten je als eerste weten wanneer de database beschikbaar is.</p>
+    </div>
+
+    <!-- Form state -->
+    <div id="wl-form-state" class="wl-body">
+      <form id="epd-waitlist-form" novalidate>
+        <!-- Formspree hidden fields -->
+        <input type="hidden" name="_subject" value="Nieuwe aanmelding — EPD Database wachtlijst">
+        <!-- Honeypot spam protection -->
+        <input type="text" name="_gotcha" style="display:none;" tabindex="-1" aria-hidden="true">
+
+        <div class="wl-grid" style="margin-bottom:.875rem;">
+          <label class="wl-label">
+            Voornaam
+            <input type="text" name="voornaam" autocomplete="given-name" required class="wl-input" placeholder="Jan">
+          </label>
+          <label class="wl-label">
+            Achternaam
+            <input type="text" name="achternaam" autocomplete="family-name" required class="wl-input" placeholder="de Vries">
+          </label>
+          <label class="wl-label" style="grid-column:1/-1;">
+            Bedrijf
+            <input type="text" name="bedrijf" autocomplete="organization" required class="wl-input" placeholder="Naam van jouw organisatie">
+          </label>
+          <label class="wl-label" style="grid-column:1/-1;">
+            E-mailadres
+            <input type="email" name="email" autocomplete="email" required class="wl-input" placeholder="jouw@email.nl">
+          </label>
+        </div>
+
+        <p id="wl-error" class="wl-error" role="alert" style="margin-bottom:.75rem;">Er ging iets mis. Probeer het opnieuw of mail ons op <a href="mailto:info@infraimpact.nl" style="color:#2D6E5E;text-decoration:underline;">info@infraimpact.nl</a>.</p>
+
+        <div style="display:flex;flex-direction:column;gap:.875rem;">
+          <button type="submit" id="wl-submit" class="btn-primary" style="justify-content:center;width:100%;">
+            <svg id="wl-spinner" width="16" height="16" viewBox="0 0 24 24" fill="none" style="display:none;animation:spin 1s linear infinite;">
+              <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,.35)" stroke-width="3"/>
+              <path d="M12 2a10 10 0 0 1 10 10" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <span id="wl-submit-label">Aanmelden</span>
+          </button>
+          <p class="wl-footer-note">Door je aan te melden ga je akkoord dat we je e-mailadres gebruiken om je te informeren over de EPD Database. Geen spam, afmelden kan altijd.</p>
+        </div>
+      </form>
+    </div>
+
+    <!-- Success state (hidden by default) -->
+    <div id="wl-success-state" class="wl-body" style="display:none; text-align:center; padding-top:2rem; padding-bottom:2.5rem;">
+      <div class="wl-success-icon" style="margin:0 auto 1rem;">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M4 10l4.5 4.5L16 6" stroke="#2D6E5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3 style="font-family:'DM Serif Display',serif;font-size:1.25rem;color:#1a2c38;margin-bottom:.5rem;" class="html-dark-title">Aanmelding ontvangen</h3>
+      <p style="font-size:.875rem;color:#64748b;line-height:1.65;margin-bottom:1.5rem;" id="wl-success-msg">We sturen je een bevestiging per e-mail. Zodra de EPD Database beschikbaar is, laten we het je weten.</p>
+      <button type="button" id="wl-success-close" class="btn-primary" style="margin:0 auto;">
+        Sluiten
+      </button>
+    </div>
+
+  </div>
+</div>
+<style>
+  @keyframes spin { to { transform:rotate(360deg); } }
+  html.dark #wl-success-state h3 { color:#e2e8f0; }
+  html.dark #wl-success-state p  { color:rgba(255,255,255,.5); }
+</style>
+
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="py-16 md:py-20" style="background:#0D1B26;">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="grid md:grid-cols-3 gap-12 pb-10 border-b" style="border-color:rgba(255,255,255,0.06);">
+      <div>
+        <a href="/" aria-label="InfraImpact home" class="inline-block mb-4">
+          <img src="/brand_assets/infra_impact.png" alt="InfraImpact" class="h-12 w-auto" style="filter:brightness(0) invert(1) opacity(.85);" />
+        </a>
+        <p class="text-sm mb-1" style="color:rgba(255,255,255,.40);">Making sustainability count</p>
+        <p class="text-xs" style="color:rgba(255,255,255,.25);">LCA &amp; MKI advies voor de Nederlandse bouwsector</p>
+      </div>
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest mb-4" style="color:rgba(255,255,255,.30);">Navigatie</p>
+        <nav class="flex flex-col gap-3">
+          <a href="/tooling" class="text-sm" style="color:#3D8A73;">Tooling</a>
+          <a href="/projecten" class="text-sm" style="color:rgba(255,255,255,.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.50)'">Projecten</a>
+          <a href="/artikelen" class="text-sm" style="color:rgba(255,255,255,.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.50)'">Artikelen</a>
+          <a href="/over-ons" class="text-sm" style="color:rgba(255,255,255,.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.50)'">Over ons</a>
+          <a href="/#contact" class="text-sm" style="color:rgba(255,255,255,.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.50)'">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest mb-4" style="color:rgba(255,255,255,.30);">Contact</p>
+        <div class="flex flex-col gap-2.5 text-sm" style="color:rgba(255,255,255,.50);">
+          <span>InfraImpact B.V.</span>
+          <span>Westzeedijk 639, 3024 PJ Rotterdam</span>
+          <a href="tel:+31621350805" style="color:rgba(255,255,255,.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.50)'">+31 (0)6 2135 0805</a>
+          <a href="mailto:info@infraimpact.nl" style="color:rgba(255,255,255,.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.50)'">info@infraimpact.nl</a>
+        </div>
+      </div>
+    </div>
+    <div class="pt-7 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p class="text-xs" style="color:rgba(255,255,255,.25);">© 2026 InfraImpact B.V. Alle rechten voorbehouden.</p>
+      <div class="flex gap-5">
+        <a href="/algemene-voorwaarden" class="text-xs" style="color:rgba(255,255,255,.25);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.25)'">Algemene Voorwaarden</a>
+        <a href="/privacybeleid" class="text-xs" style="color:rgba(255,255,255,.25);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.25)'">Privacybeleid</a>
+        <a href="/cookiebeleid" class="text-xs" style="color:rgba(255,255,255,.25);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.25)'">Cookiebeleid</a>
+      </div>
+      <p class="text-xs" style="color:rgba(255,255,255,.20);">KvK: 98323377</p>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+// ── Navbar scroll ──
+(function(){
+  var nav = document.getElementById('navbar');
+  window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 40); }, {passive:true});
+
+  // Mobile menu
+  var btn = document.getElementById('mobile-menu-btn');
+  var menu = document.getElementById('mobile-menu');
+  var ham = document.getElementById('icon-ham');
+  var x = document.getElementById('icon-x');
+  if(btn && menu){ btn.addEventListener('click', function(){
+    var open = !menu.classList.contains('hidden');
+    menu.classList.toggle('hidden', open);
+    if(ham) ham.classList.toggle('hidden', !open);
+    if(x) x.classList.toggle('hidden', open);
+  }); }
+
+  // Home dropdown
+  (function(){
+    var wrap = document.getElementById('home-dropdown');
+    var trigger = document.getElementById('home-trigger');
+    var panel = document.getElementById('home-panel');
+    if(wrap && trigger && panel){
+      var t;
+      function open(){ clearTimeout(t); panel.classList.add('is-open'); trigger.setAttribute('aria-expanded','true'); wrap.dataset.open='true'; }
+      function close(){ t=setTimeout(function(){ panel.classList.remove('is-open'); trigger.setAttribute('aria-expanded','false'); delete wrap.dataset.open; },120); }
+      wrap.addEventListener('mouseenter',open); wrap.addEventListener('mouseleave',close);
+      trigger.addEventListener('click',function(){ panel.classList.contains('is-open')?close():open(); });
+      document.addEventListener('click',function(e){ if(!wrap.contains(e.target)) close(); });
+      document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+    }
+    var accT = document.getElementById('home-accordion-trigger');
+    var accP = document.getElementById('home-accordion-panel');
+    if(accT && accP){ accT.addEventListener('click',function(){
+      var open = accP.style.display !== 'none';
+      accP.style.display = open ? 'none' : 'block';
+      accT.setAttribute('aria-expanded', open ? 'false' : 'true');
+    }); }
+  })();
+
+  // Artikelen dropdown
+  var wrap = document.getElementById('artikelen-dropdown');
+  var trigger = document.getElementById('artikelen-trigger');
+  var panel = document.getElementById('artikelen-panel');
+  if(wrap && trigger && panel){
+    var t;
+    function open(){ clearTimeout(t); panel.classList.add('is-open'); trigger.setAttribute('aria-expanded','true'); wrap.dataset.open='true'; }
+    function close(){ t=setTimeout(function(){ panel.classList.remove('is-open'); trigger.setAttribute('aria-expanded','false'); delete wrap.dataset.open; },120); }
+    wrap.addEventListener('mouseenter',open); wrap.addEventListener('mouseleave',close);
+    trigger.addEventListener('click',function(){ panel.classList.contains('is-open')?close():open(); });
+    document.addEventListener('click',function(e){ if(!wrap.contains(e.target)) close(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  }
+
+  // Mobile accordion
+  var accT = document.getElementById('artikelen-accordion-trigger');
+  var accP = document.getElementById('artikelen-accordion-panel');
+  if(accT && accP){ accT.addEventListener('click',function(){
+    var open = accP.style.display !== 'none';
+    accP.style.display = open ? 'none' : 'block';
+    accT.setAttribute('aria-expanded', open ? 'false' : 'true');
+  }); }
+
+  // Theme toggle
+  function isDark(){ return document.documentElement.classList.contains('dark'); }
+  function applyTheme(dark){
+    document.documentElement.classList.toggle('dark', dark);
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+    var moon = document.getElementById('tt-moon'), sunT = document.getElementById('tt-sun-t');
+    var sun = document.getElementById('tt-sun'), moonS = document.getElementById('tt-moon-s');
+    if(moon) moon.style.display = dark?'none':'block';
+    if(sunT) sunT.style.display = dark?'block':'none';
+    if(sun) sun.style.display = dark?'none':'block';
+    if(moonS) moonS.style.display = dark?'block':'none';
+  }
+  var tog = document.getElementById('theme-toggle');
+  var togM = document.getElementById('theme-toggle-mobile');
+  [tog,togM].forEach(function(el){ if(el) el.addEventListener('click', function(){ applyTheme(!isDark()); }); });
+  applyTheme(isDark());
+})();
+
+
+// ── EPD Checker App ──
+(function(){
+  // ── Data ──
+  var JAREN = [2022,2024,2026,2028,2030];
+  var PLAFONDS = {
+    "AC surf":[9.9,9.1,8.2,7.5,6.7],
+    "AC surf, minimaal 30% PR":[8.6,6.9,6.2,5.6,5.1],
+    "AC surf met gemodificeerd bitumen":[11.6,10.6,9.5,8.7,7.9],
+    "AC surf, minimaal 30% PR met gemodificeerd bitumen":[9.9,7.4,7.1,6.7,6.4],
+    "AC surf rood":[22.1,17.7,17.0,16.4,15.8],
+    "AC bin/base, minimaal 50% PR":[4.9,4.5,4.1,3.6,3.1],
+    "AC bin/base, minimaal 50% PR met gemodificeerd bitumen":[5.5,5.1,4.6,4.1,3.6],
+    "AC bin/base minimaal 60% PR":[null,3.9,3.5,3.2,2.9],
+    "SMA 8-11":[10.8,8.7,7.9,7.3,6.7],
+    "SMA 8-11 met gemodificeerd bitumen":[12.8,11.8,10.7,10.0,9.2],
+    "SMA 8-11 minimaal 30% PR":[null,7.2,6.5,5.9,5.4],
+    "SMA 5":[12.0,11.9,11.7,10.7,9.8],
+    "SMA geluidsreducerende deklaag (op basis van 8G+)":[13.2,13.1,12.9,11.8,10.8],
+    "SMA rood":[null,18.5,18.2,17.5,16.8],
+    "ZOAB regulier":[9.8,8.8,7.7,6.3,4.9],
+    "ZOAB regulier+ / DZOAB":[10.5,9.5,8.4,7.0,5.6],
+    "DZOAB, minimaal 30% PR":[8.8,8.8,7.8,6.5,5.2],
+    "2L ZOAB toplaag met gemodificeerd bitumen":[12.7,12.6,12.4,10.6,8.7],
+    "2L ZOAB onderlaag":[10.3,9.3,8.3,7.1,5.8],
+    "2L ZOAB onderlaag, minimaal 30% PR":[8.7,8.4,7.8,6.7,5.5]
+  };
+  var A4C4 = {
+    "AC surf":1.34,"AC surf, minimaal 30% PR":1.34,"AC surf met gemodificeerd bitumen":1.34,
+    "AC surf, minimaal 30% PR met gemodificeerd bitumen":1.34,"AC surf rood":1.38,
+    "AC bin/base, minimaal 50% PR":1.32,"AC bin/base, minimaal 50% PR met gemodificeerd bitumen":1.32,
+    "AC bin/base minimaal 60% PR":1.32,"SMA 8-11":1.38,"SMA 8-11 met gemodificeerd bitumen":1.38,
+    "SMA 8-11 minimaal 30% PR":1.38,"SMA 5":1.40,"SMA geluidsreducerende deklaag (op basis van 8G+)":1.40,
+    "SMA rood":1.38,"ZOAB regulier":1.96,"ZOAB regulier+ / DZOAB":1.80,"DZOAB, minimaal 30% PR":1.80,
+    "2L ZOAB toplaag met gemodificeerd bitumen":1.80,"2L ZOAB onderlaag":1.80,
+    "2L ZOAB onderlaag, minimaal 30% PR":1.80
+  };
+
+  // ── Helpers ──
+  function fmt(n){ return (typeof n!=='number'||isNaN(n)) ? '—' : n.toFixed(2).replace('.',','); }
+  function toast(msg, ok){
+    var t = document.getElementById('toast');
+    t.textContent = msg; t.style.background = ok!==false ? '#1E4D42' : '#991b1b';
+    t.style.display = 'block';
+    clearTimeout(t._timer);
+    t._timer = setTimeout(function(){ t.style.display='none'; }, 2800);
+  }
+  function parseNum(s){
+    if(!s && s!==0) return NaN;
+    var str = String(s).trim().replace(/\u202F/g,'').replace(/\u00A0/g,'');
+    str = str.replace(/\u2212/g,'-');
+    if(str.includes(',') && /[Ee][+\-]?\d+$/.test(str)) str=str.replace(',','.');
+    else if(str.includes(',') && !str.includes('.')) str=str.replace(',','.');
+    str = str.replace(/[^0-9eE+\-.]/g,'');
+    var n = Number(str);
+    return isFinite(n) ? n : NaN;
+  }
+
+  // ── Eisen tabel ──
+  function buildEisenTable(){
+    var tbl = document.getElementById('eisen-table');
+    var jaar = parseInt(document.getElementById('year-target').value);
+    var jIdx = JAREN.indexOf(jaar);
+    tbl.innerHTML = '';
+    var hdr = document.createElement('tr');
+    hdr.innerHTML = '<th>Asfaltsoort</th>' + JAREN.map(function(y){
+      return '<th class="'+(y===jaar?'year-highlight':'')+'">' + y + '</th>';
+    }).join('') + '<th>A4-C4</th>';
+    tbl.appendChild(hdr);
+    Object.keys(PLAFONDS).forEach(function(mix){
+      var tr = document.createElement('tr');
+      var cells = '<td>' + mix + '</td>';
+      PLAFONDS[mix].forEach(function(v, i){
+        var cls = (JAREN[i]===jaar ? 'year-highlight' : '');
+        cells += '<td class="'+cls+'">' + (v==null?'—':fmt(v)) + '</td>';
+      });
+      cells += '<td>' + fmt(A4C4[mix]) + '</td>';
+      tr.innerHTML = cells;
+      tbl.appendChild(tr);
+    });
+  }
+  buildEisenTable();
+  document.getElementById('year-target').addEventListener('change', function(){
+    buildEisenTable();
+    state.epds.forEach(function(epd){ if(epd.recalc) epd.recalc(); });
+  });
+
+  // ── State ──
+  var state = { epds: [], resultRows: [] };
+
+  var runBtn = document.getElementById('run-checks');
+  var excelBtn = document.getElementById('export-excel');
+  var clearBtn = document.getElementById('clear-all');
+
+  // ── PDF parsing ──
+  async function waitPdf(){ while(!window.pdfjsLib){ await new Promise(r=>setTimeout(r,120)); } }
+  async function pdfToText(file){
+    await waitPdf();
+    var buf = await file.arrayBuffer();
+    var pdf = await pdfjsLib.getDocument({data:buf}).promise;
+    var text = '';
+    for(var p=1; p<=Math.min(8, pdf.numPages); p++){
+      var page = await pdf.getPage(p);
+      var content = await page.getTextContent();
+      text += '\n' + content.items.map(function(it){ return it.str; }).join(' ');
+    }
+    return text;
+  }
+
+  function normMinus(s){ return s ? String(s).replace(/\u2212/g,'-') : s; }
+  function looksNum(s){
+    if(!s) return false;
+    var v = normMinus(String(s)).trim();
+    return /[Ee][+\-]?\d+/.test(v) || /[,.]/.test(v) || /^-?\d{2,}$/.test(v);
+  }
+  function extractECI(txt){
+    var t = txt.replace(/\s+/g,' ');
+    var re = /(ECI|MKI)\s*euro\s+([\-]?\d[\d.,]*(?:[Ee][+\-]?\d+)?)\s+([\-]?\d[\d.,]*(?:[Ee][+\-]?\d+)?)\s+([\-]?\d[\d.,]*(?:[Ee][+\-]?\d+)?)\s+([\-]?\d[\d.,]*(?:[Ee][+\-]?\d+)?)\s+([\-]?\d[\d.,]*(?:[Ee][+\-]?\d+)?)\s+([\-]?\d[\d.,]*(?:[Ee][+\-]?\d+)?)/i;
+    var m = t.match(re);
+    if(!m) return null;
+    if(!looksNum(m[5]) || !looksNum(m[6])) return null;
+    return { a13: parseNum(m[5]), d: parseNum(m[6]) };
+  }
+  function extractLabeled(txt){
+    var t = txt.replace(/\s+/g,' ');
+    var a13m = t.match(/\bA1\s*[-–—]\s*A3\b[^\d\-]*([\-]?\d[\d.,]*(?:[Ee][+\-]?\d+)?)/i);
+    var dm = t.match(/\bD\b[^\d\-]*([\-]?\d[\d.,]*(?:[Ee][+\-]?\d+)?)/i);
+    var a13Raw = a13m?.[1]||'', dRaw = dm?.[1]||'';
+    if(!looksNum(a13Raw)) a13Raw='';
+    if(!looksNum(dRaw)) dRaw='';
+    var a13 = a13Raw ? parseNum(a13Raw) : NaN;
+    var d = dRaw ? parseNum(dRaw) : NaN;
+    if(!isNaN(a13)||!isNaN(d)) return {a13,d};
+    return null;
+  }
+  async function parseEpd(file){
+    var text = await pdfToText(file);
+    var product = file.name.replace(/\.pdf$/i,'');
+    var a13=NaN, d=NaN;
+    var eci = extractECI(text);
+    if(eci){ a13=eci.a13; d=eci.d; }
+    if(isNaN(a13)||isNaN(d)){
+      var lab = extractLabeled(text);
+      if(lab){ if(isNaN(a13)) a13=lab.a13; if(isNaN(d)) d=lab.d; }
+    }
+    var mixHint = detectMix(text + ' ' + file.name);
+    return { product, a13, d, mixHint, text };
+  }
+
+  function detectPR(t){
+    if(/\bminimaal\s*60\s*%?\s*(pr|ka)\b/i.test(t)||/\b(60\s*%?\s*(pr|ka)|(pr|ka)\s*%?\s*60)\b/i.test(t)) return 60;
+    if(/\bminimaal\s*50\s*%?\s*(pr|ka)\b/i.test(t)||/\b(50\s*%?\s*(pr|ka)|(pr|ka)\s*%?\s*50)\b/i.test(t)) return 50;
+    if(/\bminimaal\s*30\s*%?\s*(pr|ka)\b/i.test(t)||/\b(30\s*%?\s*(pr|ka)|(pr|ka)\s*%?\s*30)\b/i.test(t)) return 30;
+    return null;
+  }
+  function detectMix(src){
+    if(!src) return '';
+    var t = src.toLowerCase().replace(/[._]/g,' ');
+    var gemod = /gemod|pmb|sfb|sbs|polymer/i.test(t);
+    var rood = /\brood\b|clobred|penbitumen/i.test(t);
+    var pr = detectPR(t);
+
+    if(/\b2\s*l\b.*\bzoab\b|\bzoab\b.*\b2\s*l\b/i.test(t)){
+      var onder = /onderlaag/i.test(t);
+      return onder ? (pr>=30 ? '2L ZOAB onderlaag, minimaal 30% PR' : '2L ZOAB onderlaag') : '2L ZOAB toplaag met gemodificeerd bitumen';
+    }
+    if(/dzoab|zoab\s*regulier\+/.test(t)) return pr>=30 ? 'DZOAB, minimaal 30% PR' : 'ZOAB regulier+ / DZOAB';
+    if(/\bzoab\b/.test(t)) return 'ZOAB regulier';
+    if(/8g\+?|geluidsreducer/i.test(t)) return 'SMA geluidsreducerende deklaag (op basis van 8G+)';
+    if(/\bsma\b/.test(t)){
+      if(rood) return 'SMA rood';
+      if(/sma\s*5\b/.test(t)) return 'SMA 5';
+      if(gemod) return 'SMA 8-11 met gemodificeerd bitumen';
+      return pr===30 ? 'SMA 8-11 minimaal 30% PR' : 'SMA 8-11';
+    }
+    if(/\bac\b|asfaltbeton/.test(t)){
+      var surf = /\bsurf\b/.test(t);
+      var bin = /\b(bin|base)\b/.test(t);
+      if(bin){
+        if(pr===60) return 'AC bin/base minimaal 60% PR';
+        return gemod ? 'AC bin/base, minimaal 50% PR met gemodificeerd bitumen' : 'AC bin/base, minimaal 50% PR';
+      }
+      if(rood) return 'AC surf rood';
+      if(pr) return gemod ? 'AC surf, minimaal 30% PR met gemodificeerd bitumen' : 'AC surf, minimaal 30% PR';
+      if(gemod) return 'AC surf met gemodificeerd bitumen';
+      return 'AC surf';
+    }
+    return '';
+  }
+
+  // ── Make EPD card ──
+  function makeCard(file){
+    var uid = crypto.randomUUID();
+    var card = document.createElement('div');
+    card.className = 'epd-card';
+    card.dataset.uid = uid;
+
+    card.innerHTML = `
+      <div class="flex items-start justify-between gap-3 mb-3">
+        <div class="min-w-0">
+          <div class="font-medium text-steel-dark truncate text-sm" style="max-width:300px;" title="${file.name}">${file.name}</div>
+          <div class="epd-meta text-xs text-slate-500 mt-0.5">Bezig met lezen…</div>
+        </div>
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <span class="epd-status badge-pass" style="display:none;">Gereed</span>
+          <span class="epd-err" style="display:none;background:#fef2f2;color:#991b1b;border:1px solid rgba(153,27,27,.15);padding:.2rem .6rem;border-radius:.5rem;font-size:.75rem;font-weight:600;">Leesfout</span>
+          <button class="epd-del" type="button" style="color:#94a3b8;background:none;border:none;cursor:pointer;padding:.25rem;" title="Verwijderen">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M5 4V2h6v2M6 7v5M10 7v5M3 4l1 10h8L13 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-3">
+        <div>
+          <label class="block text-xs font-semibold text-slate-500 mb-1.5 uppercase tracking-wider">Asfaltsoort</label>
+          <select class="epd-mix form-input form-select text-sm">
+            <option value="">— kies asfaltsoort —</option>
+            ${Object.keys(PLAFONDS).map(m=>`<option value="${m}">${m}</option>`).join('')}
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-500 mb-1.5 uppercase tracking-wider">MKI A1–A3</label>
+          <input type="number" step="any" class="epd-a13 form-input text-sm" placeholder="bijv. 7.42" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-500 mb-1.5 uppercase tracking-wider">MKI D</label>
+          <input type="number" step="any" class="epd-d form-input text-sm" placeholder="bijv. -1.30" />
+        </div>
+      </div>
+    `;
+
+    return { card, uid,
+      get mix(){ return card.querySelector('.epd-mix').value; },
+      get a13(){ return parseNum(card.querySelector('.epd-a13').value); },
+      get d(){ return parseNum(card.querySelector('.epd-d').value); },
+      status: card.querySelector('.epd-status'),
+      err: card.querySelector('.epd-err'),
+      meta: card.querySelector('.epd-meta'),
+      mixSel: card.querySelector('.epd-mix'),
+      a13In: card.querySelector('.epd-a13'),
+      dIn: card.querySelector('.epd-d'),
+      delBtn: card.querySelector('.epd-del')
+    };
+  }
+
+  // ── Add EPD ──
+  async function addEpd(file){
+    var ui = makeCard(file);
+    var list = document.getElementById('epd-list');
+    list.appendChild(ui.card);
+    runBtn.disabled = false;
+    clearBtn.disabled = false;
+
+    ui.delBtn.addEventListener('click', function(){
+      ui.card.remove();
+      state.epds = state.epds.filter(function(e){ return e.uid !== ui.uid; });
+      if(state.epds.length === 0){ runBtn.disabled=true; clearBtn.disabled=true; excelBtn.disabled=true; }
+    });
+
+    try {
+      var parsed = await parseEpd(file);
+      ui.meta.textContent = parsed.mixHint ? 'Asfaltsoort herkend' : 'Controleer asfaltsoort';
+      if(!isNaN(parsed.a13)) ui.a13In.value = parsed.a13;
+      if(!isNaN(parsed.d)) ui.dIn.value = parsed.d;
+      if(parsed.mixHint) ui.mixSel.value = parsed.mixHint;
+      ui.status.style.display = '';
+    } catch(e) {
+      ui.meta.textContent = 'PDF kon niet worden gelezen';
+      ui.err.style.display = '';
+    }
+
+    state.epds.push({ uid: ui.uid, file, ui, parsed: null });
+  }
+
+  // ── File input / drag-drop ──
+  var dropZone = document.getElementById('epd-drop');
+  var fileIn = document.getElementById('epd-files');
+
+  fileIn.addEventListener('change', function(){
+    Array.from(fileIn.files).forEach(function(f){ addEpd(f); });
+    fileIn.value = '';
+  });
+  ['dragenter','dragover'].forEach(function(ev){ dropZone.addEventListener(ev, function(e){ e.preventDefault(); dropZone.classList.add('drag-over'); }); });
+  ['dragleave','drop','dragend'].forEach(function(ev){ dropZone.addEventListener(ev, function(e){ e.preventDefault(); dropZone.classList.remove('drag-over'); }); });
+  dropZone.addEventListener('drop', function(e){
+    var files = Array.from(e.dataTransfer.files).filter(function(f){ return /\.pdf$/i.test(f.name); });
+    files.forEach(function(f){ addEpd(f); });
+  });
+
+  // ── Run checks ──
+  runBtn.addEventListener('click', function(){
+    var results = document.getElementById('results');
+    results.innerHTML = '';
+    state.resultRows = [];
+    var jaar = parseInt(document.getElementById('year-target').value);
+    var jIdx = JAREN.indexOf(jaar);
+
+    state.epds.forEach(function(epd){
+      var mix = epd.ui.mix;
+      var a13 = epd.ui.a13;
+      var d = epd.ui.d;
+      var a4 = mix ? (A4C4[mix] || NaN) : NaN;
+      var plaf = (mix && jIdx>=0) ? (PLAFONDS[mix][jIdx] || NaN) : NaN;
+      var tot = (!isNaN(a13) && !isNaN(a4) && !isNaN(d)) ? (a13 + a4 + d) : NaN;
+      var pass = !isNaN(tot) && !isNaN(plaf) && tot <= plaf;
+
+      var block = document.createElement('div');
+      block.className = mix ? (pass ? 'result-pass' : 'result-fail') : 'result-fail';
+
+      if(!mix){
+        block.innerHTML = `
+          <div class="flex items-center justify-between mb-1 gap-2">
+            <span class="font-semibold text-sm text-steel-dark">${epd.file.name}</span>
+            <span class="badge-fail">Geen asfaltsoort</span>
+          </div>
+          <p class="text-xs text-slate-500">Selecteer een asfaltsoort om te kunnen toetsen.</p>`;
+      } else {
+        var marg = (!isNaN(plaf) && !isNaN(tot)) ? (plaf - tot) : NaN;
+        block.innerHTML = `
+          <div class="flex items-center justify-between mb-3 gap-2 flex-wrap">
+            <span class="font-semibold text-sm text-steel-dark">${epd.file.name}</span>
+            <span class="${pass?'badge-pass':'badge-fail'}">${pass?'VOLDOET':'VOLDOET NIET'}</span>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+            <div><div class="text-slate-500 mb-0.5">Asfaltsoort</div><div class="font-medium mono" style="font-size:.8rem;">${mix}</div></div>
+            <div><div class="text-slate-500 mb-0.5">MKI A1–A3</div><div class="font-medium mono">${fmt(a13)}</div></div>
+            <div><div class="text-slate-500 mb-0.5">MKI A4–C4</div><div class="font-medium mono">${fmt(a4)}</div></div>
+            <div><div class="text-slate-500 mb-0.5">MKI D</div><div class="font-medium mono">${fmt(d)}</div></div>
+            <div><div class="text-slate-500 mb-0.5">Totaal A–D</div><div class="font-semibold mono ${pass?'':'text-red-700'}">${fmt(tot)}</div></div>
+            <div><div class="text-slate-500 mb-0.5">Plafondwaarde ${jaar}</div><div class="font-medium mono">${fmt(plaf)}</div></div>
+            <div><div class="text-slate-500 mb-0.5">Ruimte</div><div class="font-medium mono ${marg>=0?'text-teal-700':'text-red-700'}">${fmt(marg)}</div></div>
+          </div>`;
+      }
+      results.appendChild(block);
+
+      state.resultRows.push({
+        Bestand: epd.file.name,
+        Asfaltsoort: mix||'',
+        'MKI A1-A3': isNaN(a13)?'':a13,
+        'MKI A4-C4': isNaN(a4)?'':a4,
+        'MKI D': isNaN(d)?'':d,
+        'Totaal A-D': isNaN(tot)?'':tot,
+        Plafondwaarde: isNaN(plaf)?'':plaf,
+        Ruimte: (isNaN(plaf)||isNaN(tot))?'':(plaf-tot),
+        Voldoet: !mix ? 'Geen asfaltsoort' : (pass?'Ja':'Nee'),
+        Eisenset: 'Uniforme MKI-plafondwaarden 2025 (PCR 2.0)',
+        Jaar: jaar
+      });
+    });
+
+    excelBtn.disabled = state.resultRows.length === 0;
+    if(state.resultRows.length > 0) toast('Controle klaar: ' + state.resultRows.length + ' EPD' + (state.resultRows.length>1?'s':'') + ' getoetst.');
+  });
+
+  // ── Excel export ──
+  excelBtn.addEventListener('click', function(){
+    if(!window.XLSX){ toast('SheetJS nog aan het laden, probeer opnieuw.', false); return; }
+    if(!state.resultRows.length){ toast('Geen resultaten om te exporteren.', false); return; }
+
+    var ws = XLSX.utils.json_to_sheet(state.resultRows);
+    // Column widths
+    ws['!cols'] = [{wch:35},{wch:45},{wch:12},{wch:12},{wch:10},{wch:12},{wch:14},{wch:10},{wch:12},{wch:40},{wch:6}];
+    var wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'EPD Toetsing');
+
+    var datum = new Date().toISOString().slice(0,10);
+    XLSX.writeFile(wb, 'EPD-toetsing-' + datum + '.xlsx');
+    toast('Excel gedownload.');
+  });
+
+  // ── Clear all ──
+  clearBtn.addEventListener('click', function(){
+    document.getElementById('epd-list').innerHTML = '';
+    document.getElementById('results').innerHTML = '';
+    state.epds = [];
+    state.resultRows = [];
+    runBtn.disabled = true;
+    excelBtn.disabled = true;
+    clearBtn.disabled = true;
+  });
+
+})();
+</script>
+
+<script>
+// ── Wachtlijst Modal ──
+(function(){
+  var overlay  = document.getElementById('epd-waitlist-overlay');
+  var openBtn  = document.getElementById('epd-waitlist-open');
+  var closeBtn = document.getElementById('epd-waitlist-close');
+  var successClose = document.getElementById('wl-success-close');
+  var form     = document.getElementById('epd-waitlist-form');
+  var formState    = document.getElementById('wl-form-state');
+  var successState = document.getElementById('wl-success-state');
+  var errorEl  = document.getElementById('wl-error');
+  var submitBtn    = document.getElementById('wl-submit');
+  var submitLabel  = document.getElementById('wl-submit-label');
+  var spinner  = document.getElementById('wl-spinner');
+
+  function openModal(){
+    overlay.classList.add('wl-open');
+    document.body.style.overflow = 'hidden';
+    // focus first input after animation
+    setTimeout(function(){ var f = form.querySelector('input:not([type=hidden]):not([type=checkbox])'); if(f) f.focus(); }, 260);
+  }
+  function closeModal(){
+    overlay.classList.remove('wl-open');
+    document.body.style.overflow = '';
+  }
+
+  if(openBtn)   openBtn.addEventListener('click', openModal);
+  if(closeBtn)  closeBtn.addEventListener('click', closeModal);
+  if(successClose) successClose.addEventListener('click', closeModal);
+
+  // Close on backdrop click
+  overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
+  // Close on Escape
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && overlay.classList.contains('wl-open')) closeModal(); });
+
+  // Form submit
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    errorEl.style.display = 'none';
+
+    // Basic validation
+    var inputs = form.querySelectorAll('input[required]');
+    var valid = true;
+    inputs.forEach(function(inp){ if(!inp.value.trim()){ inp.focus(); valid = false; } });
+    if(!valid) return;
+
+    // Verify email format
+    var emailEl = form.querySelector('input[name="email"]');
+    if(emailEl && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)){
+      emailEl.focus(); return;
+    }
+
+    // Set submitting state
+    submitBtn.disabled = true;
+    spinner.style.display = 'block';
+    submitLabel.textContent = 'Bezig…';
+
+    // Build form data
+    var data = new FormData(form);
+
+    fetch('https://formspree.io/f/xdaayblp', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(json){
+      if(json.ok){
+        formState.style.display    = 'none';
+        successState.style.display = 'block';
+        // Personalise message with first name
+        var voornaam = form.querySelector('input[name="voornaam"]').value.trim();
+        var msg = document.getElementById('wl-success-msg');
+        if(voornaam && msg){
+          msg.textContent = 'Bedankt ' + voornaam + '! We sturen je een bevestiging per e-mail. Zodra de EPD Database beschikbaar is, laten we het je weten.';
+        }
+        form.reset();
+      } else {
+        errorEl.style.display = 'block';
+      }
+    })
+    .catch(function(){
+      errorEl.style.display = 'block';
+    })
+    .finally(function(){
+      submitBtn.disabled = false;
+      spinner.style.display = 'none';
+      submitLabel.textContent = 'Aanmelden';
+    });
+  });
+
+  // Reset modal state when closed
+  overlay.addEventListener('transitionend', function(){
+    if(!overlay.classList.contains('wl-open')){
+      formState.style.display    = 'block';
+      successState.style.display = 'none';
+      errorEl.style.display = 'none';
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
