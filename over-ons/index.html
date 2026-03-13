@@ -204,6 +204,9 @@
     }
     .nav-mobile-accordion-trigger .nav-chevron-m { transition: transform 0.2s ease; flex-shrink: 0; }
     .nav-mobile-accordion-trigger[aria-expanded="true"] .nav-chevron-m { transform: rotate(180deg); }
+    .nav-mobile-accordion-trigger::after { display: none !important; }
+    html.dark .nav-link { color: rgba(255,255,255,0.65) !important; }
+    html.dark .nav-link:hover { color: #3D8A73 !important; }
 
   </style>
   <link rel="icon" type="image/png" href="/brand_assets/infra_impact-icoon.png" />
@@ -227,6 +230,14 @@
   <meta name="twitter:title" content="Over ons, InfraImpact | LCA & MKI specialist" />
   <meta name="twitter:description" content="InfraImpact is opgericht door Jim van der Kooij, LCA en MKI-specialist met 7+ jaar GWW-praktijk. Milieuberekeningen voor bouw en infra." />
   <meta name="twitter:image" content="https://www.infraimpact.nl/brand_assets/jim_profile.webp" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0EC03F60S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D0EC03F60S');
+  </script>
 </head>
 <body>
 

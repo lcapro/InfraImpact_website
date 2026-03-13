@@ -90,6 +90,14 @@
     <lastmod>2026-03-12</lastmod>
   </url>
 
+  <!-- Tooling -->
+  <url>
+    <loc>https://www.infraimpact.nl/tooling/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-03-13</lastmod>
+  </url>
+
   <!-- Juridisch -->
   <url>
     <loc>https://www.infraimpact.nl/algemene-voorwaarden/</loc>

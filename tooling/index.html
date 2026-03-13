@@ -109,6 +109,10 @@
     .nav-mobile-accordion-trigger{background:none;border:none;cursor:pointer;font-family:inherit;width:100%;text-align:left;display:flex;align-items:center;justify-content:space-between}
     .nav-mobile-accordion-trigger .nav-chevron-m{transition:transform .2s;flex-shrink:0}
     .nav-mobile-accordion-trigger[aria-expanded="true"] .nav-chevron-m{transform:rotate(180deg)}
+    .nav-mobile-accordion-trigger::after { display: none !important; }
+    html.dark #mobile-menu { background: rgba(12,24,38,0.98) !important; border-color: rgba(255,255,255,0.06) !important; }
+    html.dark .nav-link { color: rgba(255,255,255,0.65) !important; }
+    html.dark .nav-link:hover { color: #3D8A73 !important; }
     /* Tool UI */
     .tool-card{background:#fff;border:1px solid rgba(45,110,94,.12);border-radius:1.5rem;padding:2rem;box-shadow:0 1px 1px rgba(30,50,65,.04),0 4px 8px rgba(30,50,65,.06),0 12px 32px rgba(30,50,65,.07)}
     .tool-badge{display:inline-flex;align-items:center;gap:.375rem;padding:.25rem .75rem;border-radius:9999px;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
@@ -300,6 +304,14 @@
   <meta name="twitter:title" content="Tooling voor LCA & MKI | InfraImpact" />
   <meta name="twitter:description" content="Gratis tools voor LCA en MKI professionals. Upload EPD's en controleer direct of ze voldoen aan de MKI-eisen van jouw uitvraag." />
   <meta name="twitter:image" content="https://www.infraimpact.nl/brand_assets/infra_impact.png" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0EC03F60S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D0EC03F60S');
+  </script>
 </head>
 <body>
 

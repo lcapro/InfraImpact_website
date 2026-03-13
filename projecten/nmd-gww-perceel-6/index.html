@@ -289,6 +289,10 @@
     }
     .nav-mobile-accordion-trigger .nav-chevron-m { transition: transform 0.2s ease; flex-shrink: 0; }
     .nav-mobile-accordion-trigger[aria-expanded="true"] .nav-chevron-m { transform: rotate(180deg); }
+    .nav-mobile-accordion-trigger::after { display: none !important; }
+    html.dark #mobile-menu { background: rgba(12,24,38,0.98) !important; border-color: rgba(255,255,255,0.06) !important; }
+    html.dark .nav-link { color: rgba(255,255,255,0.65) !important; }
+    html.dark .nav-link:hover { color: #3D8A73 !important; }
 
   </style>
   <link rel="icon" type="image/png" href="/brand_assets/infra_impact-icoon.png" />
@@ -308,6 +312,14 @@
     #navbar img[alt="InfraImpact"],
     #navbar .h-14 { height: 3rem !important; width: auto !important; }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0EC03F60S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D0EC03F60S');
+  </script>
 </head>
 <body>
 
