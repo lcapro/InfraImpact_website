@@ -814,7 +814,7 @@
       var t = document.getElementById(triggerId);
       var p = document.getElementById(panelId);
       if (!t || !p) return;
-      t.addEventListener('click', function(){ var open = p.style.display !== 'none'; p.style.display = open ? 'none' : 'block'; t.setAttribute('aria-expanded', open ? 'false' : 'true'); });
+      t.addEventListener('click', function(){ var open = p.style.display !== 'none'; p.style.display = open ? 'none' : 'flex'; t.setAttribute('aria-expanded', open ? 'false' : 'true'); });
     }
     makeDropdown('home-dropdown','home-trigger','home-panel');
     makeDropdown('artikelen-dropdown','artikelen-trigger','artikelen-panel');
