@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MKI-score verlagen bij een GWW-aanbesteding | InfraImpact</title>
+  <link rel="icon" type="image/png" href="/brand_assets/infra_impact-icoon.png" />
+  <link rel="apple-touch-icon" href="/brand_assets/infra_impact-icoon.png" />
+  <meta name="description" content="Hoe verlaag je de MKI-score bij een GWW-aanbesteding? Uitleg over materiaalsubstitutie, producent-specifieke EPD's, onderhoudsstrategie en iteratieve optimalisatie in de aanbiedingsfase." />
+  <meta name="keywords" content="MKI verlagen, MKI optimalisatie GWW, MKI score verbeteren, materiaalsubstitutie MKI, EPD MKI verlaging" />
+  <link rel="canonical" href="https://www.infraimpact.nl/kennisbank/mki-score-verlagen/" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.infraimpact.nl/kennisbank/mki-score-verlagen/" />
+  <meta property="og:title" content="MKI-score verlagen bij een GWW-aanbesteding | InfraImpact" />
+  <meta property="og:description" content="Hoe verlaag je de MKI-score bij een GWW-aanbesteding? Uitleg over materiaalsubstitutie, EPD's en iteratieve optimalisatie." />
+  <meta property="og:image" content="https://www.infraimpact.nl/brand_assets/infra_impact.png" />
+  <meta property="og:locale" content="nl_NL" />
+  <meta property="og:site_name" content="InfraImpact" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Hoeveel kan ik de MKI realistisch verlagen?","acceptedAnswer":{"@type":"Answer","text":"In de praktijk liggen verbeteringen tussen tien en dertig procent ten opzichte van een eerste doorrekening met generieke NMD-data. De exacte ruimte hangt af van de projectsamenstelling, de vrijheid in materiaalkeuze en de beschikbaarheid van producent-specifieke EPD's."}},{"@type":"Question","name":"Moet ik de MKI-aanpassingen ook echt uitvoeren?","acceptedAnswer":{"@type":"Answer","text":"Ja. Wat je in de aanbieding belooft, dien je in de uitvoering waar te maken. Verificatie achteraf is gebruikelijk bij grotere contracten. Een onhoudbare MKI-belofte kan leiden tot contractuele problemen en reputatieschade."}},{"@type":"Question","name":"Welke materialen bieden de meeste optimalisatieruimte?","acceptedAnswer":{"@type":"Answer","text":"Cement en staal hebben doorgaans de hoogste milieudruk per ton en bieden daarmee de meeste optimalisatieruimte. Bij beton is de cementinhoud een sleutelvariabele; bij staal maakt de productieroute (EAF versus BOF) een groot verschil in de MKI-waarde."}},{"@type":"Question","name":"Kan ik MKI verlagen zonder het ontwerp te veranderen?","acceptedAnswer":{"@type":"Answer","text":"Deels. Door te werken met producent-specifieke EPD's (tier 3-data) in plaats van generieke NMD-data, en door materiaalhoeveelheden nauwkeuriger te bepalen, is al verbetering mogelijk zonder het ontwerp te wijzigen. De grootste winst zit echter in de materiaalkeuze zelf."}},{"@type":"Question","name":"Hoe vroeg moet ik beginnen met MKI-optimalisatie?","acceptedAnswer":{"@type":"Answer","text":"Start bij voorkeur zodra het aanbiedingsontwerp voldoende concreet is, minimaal vier tot zes weken voor indiening. Hoe eerder je begint, hoe meer varianten je kunt doorrekenen en hoe meer tijd je hebt om leveranciers te benaderen voor EPD-data."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.infraimpact.nl/"},{"@type":"ListItem","position":2,"name":"Kennisbank","item":"https://www.infraimpact.nl/kennisbank/"},{"@type":"ListItem","position":3,"name":"MKI-score verlagen","item":"https://www.infraimpact.nl/kennisbank/mki-score-verlagen/"}]}]}
+  </script>
+  <script>(function(){var s=localStorage.getItem('theme'),p=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&p))document.documentElement.classList.add('dark')})();</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{teal:{DEFAULT:'#2D6E5E',dark:'#1E4D42',light:'#3D8A73',faint:'#EAF3F0'},steel:{DEFAULT:'#3B6080',dark:'#273F54',light:'#4E7A9E',faint:'#EDF2F7'}},fontFamily:{display:['"DM Serif Display"','Georgia','serif'],body:['Inter','system-ui','sans-serif']}}}}</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,sans-serif;color:#1a2c38;background:#F8F7F4;transition:background .3s,color .3s}
+    html.dark body{background:#0D1B26;color:#e2e8f0}
+    html.dark #navbar{background:rgba(13,27,38,.92);backdrop-filter:blur(12px)}html.dark #navbar.scrolled{background:rgba(13,27,38,.97)!important}
+    html.dark .faq-question{color:#e2e8f0!important}
+    html.dark .faq-answer-inner{color:#94a3b8!important}
+    html.dark .divider{border-color:rgba(255,255,255,.06)!important}
+    html.dark .step-card{background:#162e47!important;border-color:rgba(255,255,255,.06)!important}
+    body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")}
+    .heading-xl{font-family:'DM Serif Display',Georgia,serif;letter-spacing:-.03em;line-height:1.08}
+    .heading-lg{font-family:'DM Serif Display',Georgia,serif;letter-spacing:-.025em;line-height:1.15}
+    #navbar{transition:background .3s,box-shadow .3s}
+    #navbar.scrolled{background:rgba(248,247,244,.96);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(30,50,65,.08),0 4px 16px rgba(30,50,65,.06)}
+    .nav-pill-container{position:relative;display:flex;align-items:center;background:rgba(45,110,94,.06);border:1px solid rgba(45,110,94,.12);border-radius:9999px;padding:4px;gap:2px}
+    html.dark .nav-pill-container{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.08)}
+    .nav-link-pill{position:relative;z-index:1;padding:.45rem 1.1rem;border-radius:9999px;font-size:.9375rem;font-weight:500;color:#273F54;transition:color .18s;text-decoration:none;white-space:nowrap}
+    html.dark .nav-link-pill{color:rgba(255,255,255,.65)}
+    .nav-link-pill:hover,.nav-link-pill.active{color:#2D6E5E}
+    .btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:#2D6E5E;color:#fff;padding:.8rem 1.75rem;border-radius:.5rem;font-weight:500;font-size:.9375rem;transition:transform .18s cubic-bezier(.34,1.56,.64,1),background .18s;box-shadow:0 2px 8px rgba(45,110,94,.20),0 8px 24px rgba(45,110,94,.14);text-decoration:none;white-space:nowrap}
+    .btn-primary:hover{background:#1E4D42;transform:translateY(-2px)}
+    .btn-outline{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:#fff;padding:.75rem 1.5rem;border-radius:.5rem;font-weight:500;font-size:.9375rem;border:1.5px solid rgba(255,255,255,.3);transition:transform .18s,background .18s;text-decoration:none}
+    .btn-outline:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+    .nav-link{font-size:.9375rem;font-weight:500;color:#273F54;transition:color .18s;text-decoration:none}
+    .nav-link:hover{color:#2D6E5E}
+    .theme-toggle-wrap{display:flex;align-items:center;justify-content:space-between;width:56px;height:28px;padding:3px;border-radius:9999px;cursor:pointer;border:1px solid;flex-shrink:0;background:#f4f4f5;border-color:#d4d4d8}
+    html.dark .theme-toggle-wrap{background:#18181b;border-color:#3f3f46}
+    .theme-toggle-thumb{display:flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;flex-shrink:0;background:#e4e4e7}
+    html.dark .theme-toggle-thumb{background:#3f3f46}
+    .theme-toggle-secondary{display:flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;flex-shrink:0}
+    html.dark .theme-toggle-wrap .theme-toggle-thumb{order:2}
+    html.dark .theme-toggle-wrap .theme-toggle-secondary{order:1}
+    .section-label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#2D6E5E}
+    .divider{border:none;border-top:1px solid rgba(45,110,94,.10);margin:2.5rem 0}
+    .breadcrumb{font-size:.875rem;color:#94a3b8}
+    .breadcrumb a{color:#2D6E5E;text-decoration:none}
+    .breadcrumb a:hover{text-decoration:underline}
+    .faq-item{border-bottom:1px solid rgba(45,110,94,.12)}
+    .faq-btn{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:1.1rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+    .faq-question{font-family:'DM Serif Display',Georgia,serif;font-size:1rem;color:#273F54;transition:color .2s;line-height:1.4}
+    .faq-btn:hover .faq-question{color:#2D6E5E}
+    .faq-icon{flex-shrink:0;transition:transform .35s cubic-bezier(.22,1,.36,1);color:#2D6E5E}
+    .faq-item.open .faq-icon{transform:rotate(45deg)}
+    .faq-answer{overflow:hidden;max-height:0;transition:max-height .4s cubic-bezier(.22,1,.36,1)}
+    .faq-item.open .faq-answer{max-height:400px}
+    .faq-answer-inner{padding-bottom:1rem;line-height:1.75;color:#64748b;font-size:.9rem}
+    .toc-link{display:block;font-size:.875rem;color:#64748b;padding:.3rem 0;border-left:2px solid transparent;padding-left:.75rem;text-decoration:none;transition:color .15s,border-color .15s}
+    .toc-link:hover,.toc-link.active{color:#2D6E5E;border-left-color:#2D6E5E}
+    html.dark .toc-link{color:#94a3b8}
+    .cta-bg{background:radial-gradient(ellipse 60% 80% at 90% 50%,rgba(61,138,115,.18) 0%,transparent 60%),radial-gradient(ellipse 80% 60% at 10% 30%,rgba(78,122,158,.15) 0%,transparent 55%),#1E3A4A}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    .fade-up{animation:fadeUp .65s cubic-bezier(.22,1,.36,1) both}
+    @media(min-width:1024px){.toc-sticky{position:sticky;top:100px}}
+    .pillar-prose h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.5rem;letter-spacing:-.02em;line-height:1.2;color:#1a2c38;margin-top:2.75rem;margin-bottom:.875rem;scroll-margin-top:90px}
+    [id]{scroll-margin-top:90px}
+    html.dark .pillar-prose h2{color:#e2e8f0}
+    .pillar-prose p{line-height:1.8;color:#4a6070;font-size:1.0625rem;margin-bottom:1.25rem}
+    html.dark .pillar-prose p{color:#94a3b8}
+    .pillar-prose a{color:#2D6E5E;text-decoration:underline;text-decoration-color:rgba(45,110,94,.3)}
+    .pillar-prose a:hover{text-decoration-color:#2D6E5E}
+    .contact-block{background:rgba(45,110,94,.06);border:1px solid rgba(45,110,94,.15);border-radius:1rem;padding:1.5rem 2rem;margin-top:2rem}
+    .nav-dropdown-wrap{position:relative}
+    .nav-dropdown-trigger{display:flex;align-items:center;gap:.375rem;background:none;border:none;cursor:pointer;font-family:inherit;padding:0;font-size:.8125rem}
+    .nav-dropdown-trigger .nav-chevron{transition:transform .2s ease}
+    .nav-dropdown-wrap[data-open="true"] .nav-chevron{transform:rotate(180deg)}
+    .nav-dropdown-panel{position:absolute;top:calc(100% + .75rem);left:50%;transform:translateX(-50%) translateY(-8px);width:520px;background:#fff;border:1px solid rgba(59,96,128,.12);border-radius:1rem;box-shadow:0 8px 32px rgba(13,27,38,.12);padding:1.25rem;display:grid;grid-template-columns:1fr 1px 1fr;gap:.75rem;opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;z-index:200}
+    .nav-dropdown-panel.is-open{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}
+    html.dark .nav-dropdown-panel{background:#162e47;border-color:rgba(255,255,255,.08)}
+    .nav-dropdown-divider{background:rgba(59,96,128,.10)}
+    .nav-dropdown-col-label{font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#2D6E5E;margin-bottom:.375rem;padding:0 .75rem}
+    .nav-dropdown-item{display:block;padding:.625rem .75rem;border-radius:.625rem;text-decoration:none;transition:background .15s ease}
+    .nav-dropdown-item:hover{background:rgba(45,110,94,.07)}
+    .nav-dropdown-item-title{font-size:.875rem;font-weight:600;color:#1a2c38;margin-bottom:.125rem}
+    html.dark .nav-dropdown-item-title{color:#e2e8f0}
+    .nav-dropdown-item-desc{font-size:.8rem;color:#64748b;line-height:1.4}
+    .nav-dropdown-all-link{display:block;margin-top:.5rem;padding:.5rem .75rem;font-size:.875rem;font-weight:600;color:#2D6E5E;border-top:1px solid rgba(45,110,94,.12);text-decoration:none}
+    html.dark #mobile-menu{background:rgba(12,24,38,.98)!important}
+    html.dark .nav-link{color:rgba(255,255,255,.65)!important}
+    html.dark .nav-link:hover{color:#3D8A73!important}
+    
+    .nav-mobile-accordion-trigger{background:none;border:none;cursor:pointer;font-family:inherit;width:100%;text-align:left;display:flex;align-items:center;justify-content:space-between}
+    .nav-mobile-accordion-trigger .nav-chevron-m{transition:transform .2s ease;flex-shrink:0}
+    .nav-mobile-accordion-trigger[aria-expanded="true"] .nav-chevron-m{transform:rotate(180deg)}
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0EC03F60S"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-D0EC03F60S');</script>
+
+  <style>/* nav-fix-v2 */
+    .btn-primary { white-space: nowrap !important; }
+    #navbar > div > a:first-child { flex-shrink: 0 !important; }
+    #navbar .hidden.md:flex.items-center.gap-3 { flex-shrink: 0 !important; }
+    .nav-link-pill { padding: .35rem .75rem !important; font-size: .8125rem !important; }
+    .nav-dropdown-trigger { font-size: .8125rem !important; }
+    #navbar img[alt="InfraImpact"],
+    #navbar .h-14 { height: 3rem !important; width: auto !important; }
+    html.dark section[style]{background:#0D1B26!important}html.dark .filter-bar{background:rgba(13,27,38,.96)!important}
+  </style>
+</head>
+<body>
+
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 h-18 flex items-center justify-between py-4">
+    <a href="/" style="flex-shrink:0" aria-label="InfraImpact home"><img src="/brand_assets/infra_impact.png" alt="InfraImpact" class="h-14 w-auto" /></a>
+    <nav class="hidden md:flex items-center" aria-label="Hoofdnavigatie">
+      <div class="nav-pill-container">
+        <div class="nav-dropdown-wrap" id="home-dropdown">
+          <button class="nav-link-pill nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="home-trigger">Home <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-dropdown-panel" id="home-panel" role="menu">
+            <div>
+              <div class="nav-dropdown-col-label">InfraImpact</div>
+              <a href="/" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Homepagina</div><div class="nav-dropdown-item-desc">Terug naar het overzicht</div></a>
+              <a href="/#diensten" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Voor wie</div><div class="nav-dropdown-item-desc">Onze doelgroepen en sectoren</div></a>
+              <a href="/#contact" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Contact</div><div class="nav-dropdown-item-desc">Neem contact op</div></a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-dropdown-wrap" id="projecten-dropdown">
+          <button class="nav-link-pill nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="projecten-trigger">Projecten <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-dropdown-panel" id="projecten-panel" role="menu" style="grid-template-columns:1fr;width:260px;">
+            <div>
+              <div class="nav-dropdown-col-label">Projecten</div>
+              <a href="/projecten" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Projectoverzicht</div><div class="nav-dropdown-item-desc">Alle uitgevoerde projecten</div></a>
+              <a href="/projecten/bruggen" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Bruggen</div><div class="nav-dropdown-item-desc">LCA en MKI voor brugprojecten</div></a>
+              <a href="/projecten/wegen" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Wegen</div><div class="nav-dropdown-item-desc">LCA en MKI voor wegprojecten</div></a>
+              <a href="/projecten/spoor" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Spoor</div><div class="nav-dropdown-item-desc">LCA en MKI voor spoorprojecten</div></a>
+              <a href="/projecten/waterkeringen" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Waterkeringen</div><div class="nav-dropdown-item-desc">LCA en MKI voor waterkeringen</div></a>
+            </div>
+          </div>
+        </div>
+        <a href="/tooling" class="nav-link-pill">Tooling</a>
+        <div class="nav-dropdown-wrap" id="artikelen-dropdown">
+          <button class="nav-link-pill nav-dropdown-trigger active" aria-haspopup="true" aria-expanded="false" id="artikelen-trigger">Artikelen <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-dropdown-panel" id="artikelen-panel" role="menu">
+            <div>
+              <div class="nav-dropdown-col-label">Artikelen</div>
+              <a href="/artikelen/wat-is-een-lca" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Wat is een LCA?</div><div class="nav-dropdown-item-desc">Levenscyclusanalyse uitgelegd</div></a>
+              <a href="/artikelen/wat-is-mki" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Wat is MKI?</div><div class="nav-dropdown-item-desc">De Milieu Kosten Indicator</div></a>
+              <a href="/artikelen" class="nav-dropdown-all-link">Alle artikelen &rarr;</a>
+            </div>
+            <div class="nav-dropdown-divider"></div>
+            <div>
+              <div class="nav-dropdown-col-label"><a href="/kennisbank" style="color:#2D6E5E;text-decoration:none;">Kennisbank</a></div>
+              <a href="/kennisbank/lca-in-de-gww" class="nav-dropdown-item"><div class="nav-dropdown-item-title">LCA in de GWW</div><div class="nav-dropdown-item-desc">Basiskennis voor de infrasector</div></a>
+              <a href="/kennisbank/mki-berekeningen" class="nav-dropdown-item"><div class="nav-dropdown-item-title">MKI-berekeningen</div><div class="nav-dropdown-item-desc">Hoe werkt de berekening?</div></a>
+              <a href="/kennisbank/epd-en-normen" class="nav-dropdown-item"><div class="nav-dropdown-item-title">EPD en normen</div><div class="nav-dropdown-item-desc">NMD, PCR en bepalingsmethode</div></a>
+              <a href="/kennisbank/lca-in-aanbestedingen" class="nav-dropdown-item"><div class="nav-dropdown-item-title">LCA in aanbestedingen</div><div class="nav-dropdown-item-desc">EMVI en duurzaam aanbesteden</div></a>
+              <a href="/kennisbank/mki-aanbesteding" class="nav-dropdown-item"><div class="nav-dropdown-item-title">MKI bij aanbesteding</div><div class="nav-dropdown-item-desc">Gunningscriterium en strategie</div></a>
+              <a href="/kennisbank/dubocalc-uitleg" class="nav-dropdown-item"><div class="nav-dropdown-item-title">DuboCalc uitgelegd</div><div class="nav-dropdown-item-desc">Hoe werkt het rekenplatform?</div></a>
+              <a href="/kennisbank/mki-score-verlagen" class="nav-dropdown-item"><div class="nav-dropdown-item-title">MKI-score verlagen</div><div class="nav-dropdown-item-desc">Optimalisatie bij aanbesteding</div></a>
+              <a href="/kennisbank/verschil-lca-mki-epd" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Verschil LCA, MKI en EPD</div><div class="nav-dropdown-item-desc">Drie kernbegrippen uitgelegd</div></a>
+              <a href="/kennisbank/en-15804-uitgelegd" class="nav-dropdown-item"><div class="nav-dropdown-item-title">EN 15804 uitgelegd</div><div class="nav-dropdown-item-desc">Europese EPD-norm voor GWW</div></a>
+              <a href="/kennisbank" class="nav-dropdown-all-link">Alle kennisartikelen &rarr;</a>
+            </div>
+          </div>
+        </div>
+        <a href="/over-ons" class="nav-link-pill">Over ons</a>
+      </div>
+    </nav>
+    <div class="hidden md:flex items-center gap-3" style="flex-shrink:0">
+      <div id="theme-toggle" class="theme-toggle-wrap" role="button" tabindex="0" aria-label="Thema wisselen">
+        <div class="theme-toggle-thumb"><svg id="tt-moon" width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M12 9.5A5.5 5.5 0 016.5 4a5.5 5.5 0 00.5 11 5.5 5.5 0 005-5.5z" fill="#3f3f46" stroke="#3f3f46" stroke-width="0.5"/></svg><svg id="tt-sun-t" width="12" height="12" viewBox="0 0 16 16" fill="none" style="display:none"><circle cx="8" cy="8" r="3" stroke="#e4e4e7" stroke-width="1.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2" stroke="#e4e4e7" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div class="theme-toggle-secondary"><svg id="tt-sun" width="12" height="12" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" stroke="#a1a1aa" stroke-width="1.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2" stroke="#a1a1aa" stroke-width="1.5" stroke-linecap="round"/></svg><svg id="tt-moon-s" width="12" height="12" viewBox="0 0 16 16" fill="none" style="display:none"><path d="M12 9.5A5.5 5.5 0 016.5 4a5.5 5.5 0 00.5 11 5.5 5.5 0 005-5.5z" fill="#52525b" stroke="#52525b" stroke-width="0.5"/></svg></div>
+      </div>
+      <a href="mailto:info@infraimpact.nl?subject=Kennismakingsafspraak%20plannen" class="btn-primary">Plan een kennismaking <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <div class="md:hidden flex items-center gap-2">
+      <div id="theme-toggle-mobile" class="theme-toggle-wrap" role="button" tabindex="0" aria-label="Thema wisselen"><div class="theme-toggle-thumb"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M12 9.5A5.5 5.5 0 016.5 4a5.5 5.5 0 00.5 11 5.5 5.5 0 005-5.5z" fill="#3f3f46" stroke="#3f3f46" stroke-width="0.5"/></svg></div><div class="theme-toggle-secondary"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" stroke="#a1a1aa" stroke-width="1.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2" stroke="#a1a1aa" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
+      <button id="mobile-menu-btn" class="p-2 rounded-lg" style="color:#273F54;" aria-label="Menu openen">
+        <svg id="icon-hamburger" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+        <svg id="icon-close" width="22" height="22" viewBox="0 0 22 22" fill="none" class="hidden"><path d="M5 5l12 12M17 5L5 17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-lg border-t border-steel-faint px-6 pb-6 pt-4">
+    <nav class="flex flex-col gap-4">
+      <div>
+        <button class="nav-mobile-accordion-trigger nav-link py-2 text-base w-full" id="home-accordion-trigger" aria-expanded="false">
+          <span>Home</span>
+          <svg class="nav-chevron-m" width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div id="home-accordion-panel" style="display:none;" class="pl-4 flex flex-col gap-2 mt-1">
+          <a href="/" class="nav-link py-1.5 text-sm">Homepagina</a>
+          <a href="/#diensten" class="nav-link py-1.5 text-sm">Voor wie</a>
+          <a href="/#aanpak" class="nav-link py-1.5 text-sm">Aanpak</a>
+          <a href="/#waarom" class="nav-link py-1.5 text-sm">Waarom ons</a>
+          <a href="/#faq" class="nav-link py-1.5 text-sm">FAQ</a>
+          <a href="/#contact" class="nav-link py-1.5 text-sm">Contact</a>
+        </div>
+      </div>
+      <a href="/projecten" class="nav-link py-2 text-base">Projecten</a>
+      <a href="/tooling" class="nav-link py-2 text-base">Tooling</a>
+      <div>
+        <button class="nav-mobile-accordion-trigger nav-link py-2 text-base w-full" id="artikelen-accordion-trigger" aria-expanded="false">
+          <span>Artikelen</span>
+          <svg class="nav-chevron-m" width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div id="artikelen-accordion-panel" style="display:none;" class="pl-4 flex flex-col gap-2 mt-1">
+          <a href="/artikelen/wat-is-een-lca" class="nav-link py-1.5 text-sm">Wat is een LCA?</a>
+          <a href="/artikelen/wat-is-mki" class="nav-link py-1.5 text-sm">Wat is MKI?</a>
+          <a href="/artikelen/wat-zegt-milieu-impact-echt" class="nav-link py-1.5 text-sm">Wat zegt milieuimpact echt?</a>
+          <a href="/kennisbank/lca-in-de-gww" class="nav-link py-1.5 text-sm">LCA in de GWW</a>
+          <a href="/kennisbank/mki-berekeningen" class="nav-link py-1.5 text-sm">MKI-berekeningen</a>
+          <a href="/kennisbank/epd-en-normen" class="nav-link py-1.5 text-sm">EPD &amp; normen</a>
+          <a href="/kennisbank/lca-in-aanbestedingen" class="nav-link py-1.5 text-sm">LCA in aanbestedingen</a>
+          <a href="/artikelen" class="nav-link py-1.5 text-sm font-semibold">Alle artikelen →</a>
+        </div>
+      </div>
+      <a href="/over-ons" class="nav-link py-2 text-base">Over ons</a>
+      <a href="mailto:info@infraimpact.nl?subject=Kennismakingsafspraak%20plannen" class="btn-primary mt-2 w-full justify-center">Plan een kennismaking</a>
+    </nav>
+  </div>
+</header>
+
+<section class="pt-28 pb-14" style="background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(59,96,128,.12) 0%,transparent 65%),radial-gradient(ellipse 60% 80% at 10% 80%,rgba(45,110,94,.10) 0%,transparent 60%),#F8F7F4;">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="breadcrumb mb-5"><a href="/kennisbank">Kennisbank</a><span class="mx-2">/</span><span>MKI-score verlagen</span></div>
+    <span class="section-label block mb-3">Kennisbank</span>
+    <h1 class="heading-xl fade-up" style="font-size:clamp(2rem,5vw,3.25rem);max-width:720px;color:#1a2c38;">MKI-score verlagen bij een GWW-aanbesteding</h1>
+    <p class="mt-4 fade-up" style="font-size:1.125rem;line-height:1.75;color:#4a6070;max-width:600px;animation-delay:.1s;">Op deze pagina lees je welke strategieen aannemers kunnen inzetten om hun MKI-score te verlagen bij een GWW-aanbesteding. Aan bod komen materiaalsubstitutie, het gebruik van producent-specifieke EPD's, de rol van onderhoud en levensduur, en hoe een iteratieve aanpak in de aanbiedingsfase leidt tot de meest effectieve resultaten.</p>
+  </div>
+</section>
+
+<main class="max-w-7xl mx-auto px-6 lg:px-10 py-12 lg:py-16">
+  <div class="lg:grid lg:grid-cols-[220px_1fr] lg:gap-14 xl:gap-20">
+    <aside class="hidden lg:block">
+      <div class="toc-sticky">
+        <p class="text-xs font-semibold uppercase tracking-widest mb-4" style="color:#94a3b8;">Inhoudsopgave</p>
+        <nav class="flex flex-col">
+          <a href="#waarom-optimaliseren" class="toc-link">Waarom MKI-optimalisatie loont</a>
+          <a href="#materiaalsubstitutie" class="toc-link">Materiaalsubstitutie</a>
+          <a href="#epd-data" class="toc-link">Producent-specifieke EPD's</a>
+          <a href="#levensduur" class="toc-link">Onderhoud en levensduur</a>
+          <a href="#iteratief" class="toc-link">Iteratief optimaliseren</a>
+          <a href="#praktijk" class="toc-link">Praktijkvoorbeeld</a>
+          <a href="#faq" class="toc-link">Veelgestelde vragen</a>
+        </nav>
+      </div>
+    </aside>
+
+    <div class="pillar-prose min-w-0 max-w-3xl">
+
+      <div id="waarom-optimaliseren">
+        <h2 style="margin-top:0;">Waarom MKI-optimalisatie loont</h2>
+        <p>In aanbestedingen waarbij de MKI meetelt als gunningscriterium, heeft elke verlaging van de score direct effect op de inschrijfpositie. Afhankelijk van de gunningssystematiek vertaalt een lagere MKI zich naar een fictieve korting op de inschrijfprijs of naar extra kwaliteitspunten. Dat maakt milieu-optimalisatie geen ideologische keuze, maar een zakelijke overweging.</p>
+        <p>Tegelijk is optimalisatie geen vrijblijvende exercitie. Wat een aannemer in de aanbieding belooft, moet worden gerealiseerd tijdens de uitvoering. Opdrachtgevers en hun toetsers controleren in toenemende mate of de ingediende MKI-waarden onderbouwd en realistisch zijn. Een geloofwaardige, haalbare verlaging is dan ook altijd beter dan een scherpe waarde die niet standhoudt bij verificatie.</p>
+        <p>De optimalisatieruimte is per project verschillend. Bij projecten met veel staal en beton is die ruimte doorgaans groter dan bij projecten die voornamelijk uit grondverzet bestaan. De eerste stap is dan ook altijd het in kaart brengen van de grootste bijdragen aan de MKI: welke materiaalstromen domineren, en waar zit de meeste milieudruk? Daarna wordt gericht gezocht naar alternatieven of betere databronnen.</p>
+      </div>
+
+      <h2 id="materiaalsubstitutie">Materiaalsubstitutie als grootste hefboom</h2>
+      <p>De materiaalsamenstelling van een project is de directe determinant van de MKI-score. Wie de materialen verandert, verandert de score. Materiaalsubstitutie is daarmee de meest krachtige maar ook de meest beperkende strategie: het ontwerp en de bestekseisen bepalen hoeveel vrijheid er is.</p>
+      <p>Bij beton is de cementinhoud de kritieke variabele. Portlandcement heeft een relatief hoge MKI per ton. Door een deel van het cement te vervangen door hoogovenslak (GGBS) of vliegas, daalt de cementinhoud van de mix en daalt de MKI aanzienlijk. Veel betonleveranciers bieden mengseldesigns aan met een hoog slakgehalte, soms tot vijftig of zeventig procent. Zolang de sterkteklasse en de duurzaamheidseisen worden gehaald, is dit technisch doorgaans mogelijk.</p>
+      <p>Bij staal maakt de productieroute een groot verschil. Staal geproduceerd via de elektrische boogoven (EAF) op basis van schroot heeft een aanzienlijk lagere MKI dan staal dat via de hoogovenroute (BOF) met primair ijzererts is gemaakt. Als het bestek staalsoort en sterkteklasse specificeert maar niet de productieroute, is er soms ruimte om een EAF-staalproducent te kiezen die beschikt over een NMD-geregistreerde EPD.</p>
+      <p>In de asfaltsector biedt het verhogen van het percentage gerecycled asfaltgranulaat (RAG of RAP) een vergelijkbaar voordeel. Primaire grondstoffen worden vervangen door recycled materiaal, wat de MKI van de asfaltmix verlaagt. Hoe hoog het gerecycled aandeel kan zijn, hangt af van de functie van de asfaltlaag en de eisen van de opdrachtgever.</p>
+
+      <h2 id="epd-data">Producent-specifieke EPD's als databron</h2>
+      <p>Wanneer in DuboCalc generieke NMD-data (tier 1) wordt gebruikt, zijn de ingevulde milieuprofielen conservatief en representatief voor een breed gemiddelde van producenten. Dat is logisch als geen specifieke data beschikbaar is, maar het betekent ook dat de werkelijke milieubelasting van een specifiek product doorgaans lager kan zijn dan de tier 1-waarde suggereert.</p>
+      <p>Producent-specifieke EPD's, opgenomen in de NMD als tier 3-data, reflecteren de werkelijke productiecondities van die specifieke producent. Een leverancier die zijn fabriek op groene stroom laat draaien, of die een mix met hoog slakgehalte produceert, heeft een lagere MKI dan de sectorgemiddelden. Door die EPD-data in DuboCalc in te voeren, daalt de berekende score.</p>
+      <p>Het ophalen van EPD's vraagt een actieve inzet aan het begin van het aanbiedingstraject. Niet elke leverancier heeft een NMD-geregistreerde EPD beschikbaar. Als die ontbreekt, kan een adviseur de producent informeren over het opstellen van een EPD. Dat is echter een traject van meerdere maanden en helpt dus alleen voor projecten op langere termijn, niet voor een lopende tender met een korte deadline.</p>
+      <p>Voor aannemers die regelmatig deelnemen aan aanbestedingen met MKI als criterium, loont het om een eigen leveranciersnetwerk op te bouwen van producenten met NMD-geregistreerde EPD's. Dat geeft bij elke tender direct toegang tot betere data, zonder dat er telkens opnieuw gezocht hoeft te worden.</p>
+
+      <h2 id="levensduur">Onderhoud en levensduur in de MKI-score</h2>
+      <p>Bij projecten waarbij ook de gebruiksfase in de MKI wordt meegenomen, speelt de onderhoudsstrategie een significante rol. Infrastructuur die vaker onderhoud nodig heeft, verbruikt meer materialen en energie over de levensduur, wat leidt tot een hogere MKI. Een ontwerp dat minder onderhoud nodig heeft, of dat gebruik maakt van materialen met een langere levensduur, kan de totale MKI-score substantieel drukken.</p>
+      <p>Concreet betekent dit dat het kiezen van een duurzamere asfaltlaag met een langere onderhoudscyclus, of een betonkwaliteit die minder gevoelig is voor aantasting, direct effect heeft op de MKI. Die afweging vraagt een combinatie van technische kennis over materiaalprestaties en inzicht in de LCA-rekenmethode.</p>
+      <p>De eindfase van het project, de sloopfase en de herbruikbaarheid van materialen, is een ander aandachtspunt. Materialen die aan het einde van hun levensduur goed recyclebaar zijn, hebben een lagere MKI in module D. Dat is weliswaar geen verplichte module in alle aanbestedingen, maar waar het wel wordt meegenomen, loont het om aandacht te besteden aan de recycleerbaarheid van de ingezette materialen.</p>
+
+      <h2 id="iteratief">Iteratief optimaliseren in de aanbiedingsfase</h2>
+      <p>De meest effectieve aanpak voor MKI-optimalisatie is iteratief: begin vroeg, doorloop meerdere ontwerpvarianten en beoordeel elke variant op zowel technische als milieuprestatie. Hoe eerder in het aanbiedingsproces de MKI-berekening wordt opgezet, hoe meer ruimte er is om te variëren.</p>
+      <p>De eerste stap is het uitvoeren van een hotspot-analyse: welke materiaalstromen dragen het meest bij aan de totale MKI? Die analyse geeft direct richting aan het optimalisatiewerk. Als beton goed is voor zestig procent van de score, is dat de plek om te beginnen. Als staal veertien procent bijdraagt en asfalt vier procent, dan is de prioriteit helder.</p>
+      <p>Vervolgens worden alternatieven doorgerekend. Dat kan gaan om een andere mengselsamenstelling, een andere staalsoort, of het gebruik van een EPD-dataset in plaats van generieke NMD-data. Elke variant wordt doorgerekend in DuboCalc en vergeleken met de basisvariant. De variant die de laagste MKI combineert met technische en financiele haalbaarheid, wordt ingediend als aanbieding.</p>
+      <p>Documenteer alle varianten en de gemaakte keuzes. Mocht er bij verificatie of in de bouwfase vragen rijzen over de MKI, dan biedt een goed gedocumenteerd iteratieproces de onderbouwing die nodig is om de waarde te verdedigen.</p>
+
+      <h2 id="praktijk">Praktijkvoorbeeld: viaductontwerp met MKI-optimalisatie</h2>
+      <p>Een aannemer werkt aan een aanbieding voor een nieuw viaduct van driehonderd meter in een provinciale aanbesteding. De MKI telt mee als EMVI-criterium met een gewicht van twintig procent. Een eerste doorrekening van de betonnen constructie met generieke NMD-data levert een MKI op van 1.200.000 euro. Uit de hotspot-analyse blijkt dat beton goed is voor ruim zestig procent van de totale score.</p>
+      <p>De aannemer besluit drie aanpassingen door te rekenen. Ten eerste: het toepassen van een betonmix met dertig procent GGBS bij de leverancier die beschikt over een NMD-geregistreerde EPD. Ten tweede: het gebruik van EAF-staal voor de wapening, ook gedekt door een specifieke EPD. Ten derde: een nauwkeurigere kwantificering van de materiaalhoeveelheden op basis van het definitieve constructieontwerp in plaats van een eerder globale raming. De gecombineerde aanpassingen brengen de MKI terug naar 940.000 euro, een verlaging van bijna twintig procent. In de gunningssystematiek levert die verlaging een fictieve korting op die de concurrentiepositie van de aannemer aanzienlijk versterkt.</p>
+
+      <hr class="divider" />
+
+      <h2 id="faq" style="margin-top:1.5rem;">Veelgestelde vragen</h2>
+      <div class="mt-4">
+        <div class="faq-item">
+          <button class="faq-btn"><span class="faq-question">Hoeveel kan ik de MKI realistisch verlagen?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">In de praktijk liggen verbeteringen tussen tien en dertig procent ten opzichte van een eerste doorrekening met generieke NMD-data. De exacte ruimte hangt af van de projectsamenstelling, de vrijheid in materiaalkeuze en de beschikbaarheid van producent-specifieke EPD's.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn"><span class="faq-question">Moet ik de MKI-aanpassingen ook echt uitvoeren?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">Ja. Wat je in de aanbieding belooft, dien je in de uitvoering waar te maken. Verificatie achteraf is gebruikelijk bij grotere contracten. Een onhoudbare MKI-belofte kan leiden tot contractuele problemen en reputatieschade.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn"><span class="faq-question">Welke materialen bieden de meeste optimalisatieruimte?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">Cement en staal hebben doorgaans de hoogste milieudruk per ton en bieden daarmee de meeste optimalisatieruimte. Bij beton is de cementinhoud een sleutelvariabele; bij staal maakt de productieroute (EAF versus BOF) een groot verschil in de MKI-waarde.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn"><span class="faq-question">Kan ik MKI verlagen zonder het ontwerp te veranderen?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">Deels. Door te werken met producent-specifieke EPD's (tier 3-data) in plaats van generieke NMD-data, en door materiaalhoeveelheden nauwkeuriger te bepalen, is al verbetering mogelijk zonder het ontwerp te wijzigen. De grootste winst zit echter in de materiaalkeuze zelf.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn"><span class="faq-question">Hoe vroeg moet ik beginnen met MKI-optimalisatie?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">Start bij voorkeur zodra het aanbiedingsontwerp voldoende concreet is, minimaal vier tot zes weken voor indiening. Hoe eerder je begint, hoe meer varianten je kunt doorrekenen en hoe meer tijd je hebt om leveranciers te benaderen voor EPD-data.</p></div>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <p>Meer achtergrond over hoe MKI werkt als gunningscriterium en hoe een aanbesteding is opgebouwd, staat op de pagina <a href="/kennisbank/mki-aanbesteding">MKI als gunningscriterium in aanbestedingen</a>. De technische werking van de MKI-berekening zelf komt aan bod op de pagina <a href="/kennisbank/mki-berekeningen">MKI-berekeningen</a>. InfraImpact biedt gerichte ondersteuning bij de optimalisatie van MKI-scores via de <a href="/diensten/mki-berekening">MKI-berekeningsdienst</a>.</p>
+
+    </div>
+  </div>
+</main>
+
+<section class="cta-bg py-20 mt-8">
+  <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center">
+    <span class="section-label" style="color:rgba(255,255,255,.55);">Stel een vraag</span>
+    <h2 class="heading-lg text-white mt-3 mb-4" style="font-size:clamp(1.75rem,3.5vw,2.5rem);">MKI-score verlagen voor jouw aanbesteding?</h2>
+    <p class="mb-8" style="color:rgba(255,255,255,.65);font-size:1.0625rem;line-height:1.75;">InfraImpact helpt aannemers bij het optimaliseren van de MKI in de aanbiedingsfase. Neem contact op voor een vrijblijvend gesprek over de mogelijkheden voor jouw project.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="mailto:info@infraimpact.nl?subject=Vraag%20over%20MKI-score%20verlagen" class="btn-primary">Neem contact op <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="/kennisbank/mki-aanbesteding" class="btn-outline">MKI bij aanbesteding lezen</a>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#0D1B26;" class="py-14">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="grid md:grid-cols-3 gap-10 pb-10 border-b" style="border-color:rgba(255,255,255,.08);">
+      <div>
+        <a href="/" class="inline-block mb-4"><img src="/brand_assets/infra_impact.png" alt="InfraImpact" class="h-12 w-auto" style="filter:brightness(0) invert(1) opacity(.85);" /></a>
+        <p class="text-sm mb-1" style="color:rgba(255,255,255,.40);">Making sustainability count</p>
+        <p class="text-xs" style="color:rgba(255,255,255,.25);">LCA &amp; MKI advies voor de Nederlandse bouwsector</p>
+      </div>
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest mb-4" style="color:rgba(255,255,255,.30);">Navigatie</p>
+        <nav class="flex flex-col gap-3">
+          <a href="/projecten" class="text-sm" style="color:rgba(255,255,255,.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.50)'">Projecten</a>
+          <a href="/artikelen" class="text-sm" style="color:rgba(255,255,255,.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.50)'">Artikelen</a>
+          <a href="/over-ons" class="text-sm" style="color:rgba(255,255,255,.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.50)'">Over ons</a>
+          <a href="/#contact" class="text-sm" style="color:rgba(255,255,255,.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.50)'">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest mb-4" style="color:rgba(255,255,255,.30);">Contact</p>
+        <div class="flex flex-col gap-2.5 text-sm" style="color:rgba(255,255,255,.50);">
+          <span>InfraImpact B.V.</span>
+          <span>Westzeedijk 639, 3024 PJ Rotterdam</span>
+          <a href="tel:+31621350805" style="color:rgba(255,255,255,.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.50)'">+31 (0)6 2135 0805</a>
+          <a href="mailto:info@infraimpact.nl" style="color:rgba(255,255,255,.50);" onmouseenter="this.style.color='#3D8A73'" onmouseleave="this.style.color='rgba(255,255,255,.50)'">info@infraimpact.nl</a>
+        </div>
+      </div>
+    </div>
+    <div class="pt-7 flex flex-col md:flex-row items-center justify-between gap-3">
+      <p class="text-xs" style="color:rgba(255,255,255,.25);">&#169; 2026 InfraImpact B.V. Alle rechten voorbehouden.</p>
+      <div class="flex gap-5">
+        <a href="/privacybeleid" class="text-xs" style="color:rgba(255,255,255,.25);" onmouseenter="this.style.color='rgba(255,255,255,.5)'" onmouseleave="this.style.color='rgba(255,255,255,.25)'">Privacybeleid</a>
+        <a href="/algemene-voorwaarden" class="text-xs" style="color:rgba(255,255,255,.25);" onmouseenter="this.style.color='rgba(255,255,255,.5)'" onmouseleave="this.style.color='rgba(255,255,255,.25)'">Algemene voorwaarden</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var nb=document.getElementById('navbar');
+  window.addEventListener('scroll',function(){nb.classList[window.scrollY>20?'add':'remove']('scrolled')},{passive:true});
+  function updateIcons(d){[['tt-moon',!d],['tt-sun-t',d],['tt-sun',!d],['tt-moon-s',d]].forEach(function(x){var el=document.getElementById(x[0]);if(el)el.style.display=x[1]?'block':'none'});}
+  updateIcons(document.documentElement.classList.contains('dark'));
+  function toggleTheme(){var d=document.documentElement.classList.toggle('dark');localStorage.setItem('theme',d?'dark':'light');updateIcons(d);}
+  ['theme-toggle','theme-toggle-mobile'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('click',toggleTheme)});
+  var mmBtn=document.getElementById('mobile-menu-btn'),mm=document.getElementById('mobile-menu');
+  if(mmBtn)mmBtn.addEventListener('click',function(){var h=mm.classList.toggle('hidden');document.getElementById('icon-hamburger').classList.toggle('hidden',!h);document.getElementById('icon-close').classList.toggle('hidden',h)});
+  document.querySelectorAll('.faq-btn').forEach(function(btn){btn.addEventListener('click',function(){var item=btn.closest('.faq-item');var wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});if(!wasOpen)item.classList.add('open')})});
+  var tocLinks=document.querySelectorAll('.toc-link');
+  var sections=[];
+  tocLinks.forEach(function(l){var id=l.getAttribute('href').replace('#','');var el=document.getElementById(id);if(el)sections.push({el:el,link:l})});
+  window.addEventListener('scroll',function(){var y=window.scrollY+120;var current=null;sections.forEach(function(s){if(s.el.offsetTop<=y)current=s});tocLinks.forEach(function(l){l.classList.remove('active')});if(current)current.link.classList.add('active')},{passive:true});
+  (function(){
+    function makeDropdown(wrapId,triggerId,panelId){var wrap=document.getElementById(wrapId),trigger=document.getElementById(triggerId),panel=document.getElementById(panelId);if(!wrap||!trigger||!panel)return;var t;function open(){clearTimeout(t);panel.classList.add('is-open');trigger.setAttribute('aria-expanded','true');wrap.dataset.open='true';}function close(){t=setTimeout(function(){panel.classList.remove('is-open');trigger.setAttribute('aria-expanded','false');delete wrap.dataset.open;},120);}wrap.addEventListener('mouseenter',open);wrap.addEventListener('mouseleave',close);trigger.addEventListener('click',function(){panel.classList.contains('is-open')?close():open();});document.addEventListener('click',function(e){if(!wrap.contains(e.target)){panel.classList.remove('is-open');trigger.setAttribute('aria-expanded','false');delete wrap.dataset.open;}});}
+    makeDropdown('home-dropdown','home-trigger','home-panel');
+    makeDropdown('artikelen-dropdown','artikelen-trigger','artikelen-panel');
+    makeDropdown('projecten-dropdown','projecten-trigger','projecten-panel');
+    
+    function makeAccordion(triggerId, panelId) {
+      var t = document.getElementById(triggerId);
+      var p = document.getElementById(panelId);
+      if (!t || !p) return;
+      t.addEventListener('click', function(){ var open = p.style.display !== 'none'; p.style.display = open ? 'none' : 'flex'; t.setAttribute('aria-expanded', open ? 'false' : 'true'); });
+    }
+    makeAccordion('home-accordion-trigger','home-accordion-panel');
+    makeAccordion('artikelen-accordion-trigger','artikelen-accordion-panel');
+    
+  })();
+</script>
+</body>
+</html>

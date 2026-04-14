@@ -34,7 +34,7 @@
     html.dark .text-steel-dark{color:#e2e8f0!important}
     html.dark .text-slate-600{color:#94a3b8!important}
     html.dark .text-slate-500{color:#94a3b8!important}
-    html.dark #navbar.scrolled{background:rgba(13,27,38,.97)!important}
+    html.dark #navbar{background:rgba(13,27,38,.92);backdrop-filter:blur(12px)}html.dark #navbar.scrolled{background:rgba(13,27,38,.97)!important}
     html.dark .prose-body{color:#94a3b8!important}
     html.dark .content-card{background:#162e47!important;border-color:rgba(255,255,255,.06)!important}
     html.dark .meta-panel{background:#162e47!important;border-color:rgba(255,255,255,.06)!important}
@@ -222,6 +222,7 @@
     /* Logo bigger */
     #navbar img[alt="InfraImpact"],
     #navbar .h-14 { height: 3rem !important; width: auto !important; }
+    html.dark section[style]{background:#0D1B26!important}html.dark .filter-bar{background:rgba(13,27,38,.96)!important}
   </style>
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Wat zegt milieuimpact écht?, InfraImpact" />
@@ -260,7 +261,19 @@
             </div>
           </div>
         </div>
-        <a href="/projecten" class="nav-link-pill">Projecten</a>
+        <div class="nav-dropdown-wrap" id="projecten-dropdown">
+          <button class="nav-link-pill nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="projecten-trigger">Projecten <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-dropdown-panel" id="projecten-panel" role="menu" style="grid-template-columns:1fr;width:260px;">
+            <div>
+              <div class="nav-dropdown-col-label">Projecten</div>
+              <a href="/projecten" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Projectoverzicht</div><div class="nav-dropdown-item-desc">Alle uitgevoerde projecten</div></a>
+              <a href="/projecten/bruggen" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Bruggen</div><div class="nav-dropdown-item-desc">LCA en MKI voor brugprojecten</div></a>
+              <a href="/projecten/wegen" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Wegen</div><div class="nav-dropdown-item-desc">LCA en MKI voor wegprojecten</div></a>
+              <a href="/projecten/spoor" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Spoor</div><div class="nav-dropdown-item-desc">LCA en MKI voor spoorprojecten</div></a>
+              <a href="/projecten/waterkeringen" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Waterkeringen</div><div class="nav-dropdown-item-desc">LCA en MKI voor waterkeringen</div></a>
+            </div>
+          </div>
+        </div>
         <a href="/tooling" class="nav-link-pill">Tooling</a>
         <div class="nav-dropdown-wrap" id="artikelen-dropdown">
           <button class="nav-link-pill nav-dropdown-trigger active" aria-haspopup="true" aria-expanded="false" id="artikelen-trigger">Artikelen <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -274,11 +287,17 @@
             </div>
             <div class="nav-dropdown-divider"></div>
             <div>
-              <div class="nav-dropdown-col-label">Kennisbank</div>
+              <div class="nav-dropdown-col-label"><a href="/kennisbank" style="color:#2D6E5E;text-decoration:none;">Kennisbank</a></div>
               <a href="/kennisbank/lca-in-de-gww" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">LCA in de GWW</div><div class="nav-dropdown-item-desc">Basiskennis voor de infrasector</div></a>
               <a href="/kennisbank/mki-berekeningen" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">MKI-berekeningen</div><div class="nav-dropdown-item-desc">Hoe werkt de berekening?</div></a>
               <a href="/kennisbank/epd-en-normen" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">EPD en normen</div><div class="nav-dropdown-item-desc">NMD, PCR 2.0 en bepalingsmethode</div></a>
               <a href="/kennisbank/lca-in-aanbestedingen" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">LCA in aanbestedingen</div><div class="nav-dropdown-item-desc">EMVI en duurzaam aanbesteden</div></a>
+              <a href="/kennisbank/mki-aanbesteding" class="nav-dropdown-item"><div class="nav-dropdown-item-title">MKI bij aanbesteding</div><div class="nav-dropdown-item-desc">Gunningscriterium en strategie</div></a>
+              <a href="/kennisbank/dubocalc-uitleg" class="nav-dropdown-item"><div class="nav-dropdown-item-title">DuboCalc uitgelegd</div><div class="nav-dropdown-item-desc">Hoe werkt het rekenplatform?</div></a>
+              <a href="/kennisbank/mki-score-verlagen" class="nav-dropdown-item"><div class="nav-dropdown-item-title">MKI-score verlagen</div><div class="nav-dropdown-item-desc">Optimalisatie bij aanbesteding</div></a>
+              <a href="/kennisbank/verschil-lca-mki-epd" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Verschil LCA, MKI en EPD</div><div class="nav-dropdown-item-desc">Drie kernbegrippen uitgelegd</div></a>
+              <a href="/kennisbank/en-15804-uitgelegd" class="nav-dropdown-item"><div class="nav-dropdown-item-title">EN 15804 uitgelegd</div><div class="nav-dropdown-item-desc">Europese EPD-norm voor GWW</div></a>
+              <a href="/kennisbank" class="nav-dropdown-all-link">Alle kennisartikelen &rarr;</a>
             </div>
           </div>
         </div>
@@ -295,8 +314,8 @@
     <div class="md:hidden flex items-center gap-2">
       <div id="theme-toggle-mobile" class="theme-toggle-wrap" role="button" tabindex="0" aria-label="Thema wisselen"><div class="theme-toggle-thumb"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M12 9.5A5.5 5.5 0 016.5 4a5.5 5.5 0 00.5 11 5.5 5.5 0 005-5.5z" fill="#3f3f46" stroke="#3f3f46" stroke-width="0.5"/></svg></div><div class="theme-toggle-secondary"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" stroke="#a1a1aa" stroke-width="1.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2" stroke="#a1a1aa" stroke-width="1.5" stroke-linecap="round"/></svg></div></div>
       <button id="mobile-menu-btn" class="p-2 rounded-lg" style="color:#273F54;" aria-label="Menu openen">
-        <svg id="icon-ham" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
-        <svg id="icon-x" width="22" height="22" viewBox="0 0 22 22" fill="none" class="hidden"><path d="M5 5l12 12M17 5L5 17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+        <svg id="icon-hamburger" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+        <svg id="icon-close" width="22" height="22" viewBox="0 0 22 22" fill="none" class="hidden"><path d="M5 5l12 12M17 5L5 17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
       </button>
     </div>
   </div>
@@ -626,7 +645,7 @@
   function toggleTheme(){var d=document.documentElement.classList.toggle('dark');localStorage.setItem('theme',d?'dark':'light');updateIcons(d);}
   ['theme-toggle','theme-toggle-mobile'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('click',toggleTheme)});
   var mmBtn=document.getElementById('mobile-menu-btn'),mm=document.getElementById('mobile-menu');
-  if(mmBtn)mmBtn.addEventListener('click',function(){var h=mm.classList.toggle('hidden');document.getElementById('icon-ham').classList.toggle('hidden',!h);document.getElementById('icon-x').classList.toggle('hidden',h)});
+  if(mmBtn)mmBtn.addEventListener('click',function(){var h=mm.classList.toggle('hidden');document.getElementById('icon-hamburger').classList.toggle('hidden',!h);document.getElementById('icon-close').classList.toggle('hidden',h)});
   document.querySelectorAll('.faq-btn').forEach(function(btn){btn.addEventListener('click',function(){var item=btn.closest('.faq-item');var wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});if(!wasOpen)item.classList.add('open')})});
   // TOC active on scroll
   var tocLinks=document.querySelectorAll('.toc-link');
@@ -659,6 +678,7 @@
     }
     makeDropdown('home-dropdown','home-trigger','home-panel');
     makeDropdown('artikelen-dropdown','artikelen-trigger','artikelen-panel');
+    makeDropdown('projecten-dropdown','projecten-trigger','projecten-panel');
     makeAccordion('home-accordion-trigger','home-accordion-panel');
     makeAccordion('artikelen-accordion-trigger','artikelen-accordion-panel');
   })();

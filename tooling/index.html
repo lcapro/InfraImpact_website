@@ -16,6 +16,10 @@
   <meta property="og:description" content="Gratis tools voor LCA en MKI professionals. Upload EPD's en controleer direct of ze voldoen aan de MKI-eisen van jouw uitvraag." />
   <meta property="og:image" content="https://www.infraimpact.nl/brand_assets/infra_impact.png" />
   <meta property="og:locale" content="nl_NL" />
+  <meta property="og:site_name" content="InfraImpact" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.infraimpact.nl/"},{"@type":"ListItem","position":2,"name":"Tooling","item":"https://www.infraimpact.nl/tooling/"}]}
+  </script>
 
   <script>(function(){var s=localStorage.getItem('theme'),p=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&p))document.documentElement.classList.add('dark')})();</script>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -41,7 +45,7 @@
     html.dark .text-steel-dark{color:#e2e8f0!important}
     html.dark .text-slate-500{color:#94a3b8!important}
     html.dark .text-slate-600{color:#94a3b8!important}
-    html.dark #navbar.scrolled{background:rgba(13,27,38,.97)!important}
+    html.dark #navbar{background:rgba(13,27,38,.92);backdrop-filter:blur(12px)}html.dark #navbar.scrolled{background:rgba(13,27,38,.97)!important}
     html.dark .tool-card{background:#162e47!important;border-color:rgba(255,255,255,.08)!important}
     html.dark .eisen-table th{background:#1a3550!important}
     html.dark .eisen-table td{border-color:rgba(255,255,255,.06)!important}
@@ -157,6 +161,7 @@
     /* Logo bigger */
     #navbar img[alt="InfraImpact"],
     #navbar .h-14 { height: 3rem !important; width: auto !important; }
+    html.dark section[style]{background:#0D1B26!important}html.dark .filter-bar{background:rgba(13,27,38,.96)!important}
   </style>
 
   <style>
@@ -339,7 +344,19 @@
             </div>
           </div>
         </div>
-        <a href="/projecten" class="nav-link-pill">Projecten</a>
+        <div class="nav-dropdown-wrap" id="projecten-dropdown">
+          <button class="nav-link-pill nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="projecten-trigger">Projecten <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-dropdown-panel" id="projecten-panel" role="menu" style="grid-template-columns:1fr;width:260px;">
+            <div>
+              <div class="nav-dropdown-col-label">Projecten</div>
+              <a href="/projecten" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Projectoverzicht</div><div class="nav-dropdown-item-desc">Alle uitgevoerde projecten</div></a>
+              <a href="/projecten/bruggen" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Bruggen</div><div class="nav-dropdown-item-desc">LCA en MKI voor brugprojecten</div></a>
+              <a href="/projecten/wegen" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Wegen</div><div class="nav-dropdown-item-desc">LCA en MKI voor wegprojecten</div></a>
+              <a href="/projecten/spoor" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Spoor</div><div class="nav-dropdown-item-desc">LCA en MKI voor spoorprojecten</div></a>
+              <a href="/projecten/waterkeringen" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Waterkeringen</div><div class="nav-dropdown-item-desc">LCA en MKI voor waterkeringen</div></a>
+            </div>
+          </div>
+        </div>
         <a href="/tooling" class="nav-link-pill active">Tooling</a>
         <div class="nav-dropdown-wrap" id="artikelen-dropdown">
           <button class="nav-link-pill nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="artikelen-trigger">Artikelen <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -353,11 +370,17 @@
             </div>
             <div class="nav-dropdown-divider"></div>
             <div>
-              <div class="nav-dropdown-col-label">Kennisbank</div>
+              <div class="nav-dropdown-col-label"><a href="/kennisbank" style="color:#2D6E5E;text-decoration:none;">Kennisbank</a></div>
               <a href="/kennisbank/lca-in-de-gww" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">LCA in de GWW</div><div class="nav-dropdown-item-desc">Basiskennis voor de infrasector</div></a>
               <a href="/kennisbank/mki-berekeningen" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">MKI-berekeningen</div><div class="nav-dropdown-item-desc">Hoe werkt de berekening?</div></a>
               <a href="/kennisbank/epd-en-normen" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">EPD en normen</div><div class="nav-dropdown-item-desc">NMD, PCR 2.0 en bepalingsmethode</div></a>
               <a href="/kennisbank/lca-in-aanbestedingen" class="nav-dropdown-item" role="menuitem"><div class="nav-dropdown-item-title">LCA in aanbestedingen</div><div class="nav-dropdown-item-desc">EMVI en duurzaam aanbesteden</div></a>
+              <a href="/kennisbank/mki-aanbesteding" class="nav-dropdown-item"><div class="nav-dropdown-item-title">MKI bij aanbesteding</div><div class="nav-dropdown-item-desc">Gunningscriterium en strategie</div></a>
+              <a href="/kennisbank/dubocalc-uitleg" class="nav-dropdown-item"><div class="nav-dropdown-item-title">DuboCalc uitgelegd</div><div class="nav-dropdown-item-desc">Hoe werkt het rekenplatform?</div></a>
+              <a href="/kennisbank/mki-score-verlagen" class="nav-dropdown-item"><div class="nav-dropdown-item-title">MKI-score verlagen</div><div class="nav-dropdown-item-desc">Optimalisatie bij aanbesteding</div></a>
+              <a href="/kennisbank/verschil-lca-mki-epd" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Verschil LCA, MKI en EPD</div><div class="nav-dropdown-item-desc">Drie kernbegrippen uitgelegd</div></a>
+              <a href="/kennisbank/en-15804-uitgelegd" class="nav-dropdown-item"><div class="nav-dropdown-item-title">EN 15804 uitgelegd</div><div class="nav-dropdown-item-desc">Europese EPD-norm voor GWW</div></a>
+              <a href="/kennisbank" class="nav-dropdown-all-link">Alle kennisartikelen &rarr;</a>
             </div>
           </div>
         </div>
@@ -383,8 +406,8 @@
         <div class="theme-toggle-secondary"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" stroke="#a1a1aa" stroke-width="1.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2" stroke="#a1a1aa" stroke-width="1.5" stroke-linecap="round"/></svg></div>
       </div>
       <button id="mobile-menu-btn" class="p-2 rounded-lg" style="color:#273F54;" aria-label="Menu openen">
-        <svg id="icon-ham" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
-        <svg id="icon-x" width="22" height="22" viewBox="0 0 22 22" fill="none" class="hidden"><path d="M5 5l12 12M17 5L5 17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+        <svg id="icon-hamburger" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+        <svg id="icon-close" width="22" height="22" viewBox="0 0 22 22" fill="none" class="hidden"><path d="M5 5l12 12M17 5L5 17" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
       </button>
     </div>
   </div>
@@ -603,7 +626,7 @@
     <div id="wl-form-state" class="wl-body">
       <form id="epd-waitlist-form" novalidate>
         <!-- Formspree hidden fields -->
-        <input type="hidden" name="_subject" value="Nieuwe aanmelding — EPD Database wachtlijst">
+        <input type="hidden" name="_subject" value="Nieuwe aanmelding - EPD Database wachtlijst">
         <!-- Honeypot spam protection -->
         <input type="text" name="_gotcha" style="display:none;" tabindex="-1" aria-hidden="true">
 
@@ -717,8 +740,8 @@
   // Mobile menu
   var btn = document.getElementById('mobile-menu-btn');
   var menu = document.getElementById('mobile-menu');
-  var ham = document.getElementById('icon-ham');
-  var x = document.getElementById('icon-x');
+  var ham = document.getElementById('icon-hamburger');
+  var x = document.getElementById('icon-close');
   if(btn && menu){ btn.addEventListener('click', function(){
     var open = !menu.classList.contains('hidden');
     menu.classList.toggle('hidden', open);
@@ -829,7 +852,7 @@
   };
 
   // ── Helpers ──
-  function fmt(n){ return (typeof n!=='number'||isNaN(n)) ? '—' : n.toFixed(2).replace('.',','); }
+  function fmt(n){ return (typeof n!=='number'||isNaN(n)) ? '-' : n.toFixed(2).replace('.',','); }
   function toast(msg, ok){
     var t = document.getElementById('toast');
     t.textContent = msg; t.style.background = ok!==false ? '#1E4D42' : '#991b1b';
@@ -864,7 +887,7 @@
       var cells = '<td>' + mix + '</td>';
       PLAFONDS[mix].forEach(function(v, i){
         var cls = (JAREN[i]===jaar ? 'year-highlight' : '');
-        cells += '<td class="'+cls+'">' + (v==null?'—':fmt(v)) + '</td>';
+        cells += '<td class="'+cls+'">' + (v==null?'-':fmt(v)) + '</td>';
       });
       cells += '<td>' + fmt(A4C4[mix]) + '</td>';
       tr.innerHTML = cells;
@@ -915,7 +938,7 @@
   }
   function extractLabeled(txt){
     var t = txt.replace(/\s+/g,' ');
-    var a13m = t.match(/\bA1\s*[-–—]\s*A3\b[^\d\-]*([\-]?\d[\d.,]*(?:[Ee][+\-]?\d+)?)/i);
+    var a13m = t.match(/\bA1\s*[---]\s*A3\b[^\d\-]*([\-]?\d[\d.,]*(?:[Ee][+\-]?\d+)?)/i);
     var dm = t.match(/\bD\b[^\d\-]*([\-]?\d[\d.,]*(?:[Ee][+\-]?\d+)?)/i);
     var a13Raw = a13m?.[1]||'', dRaw = dm?.[1]||'';
     if(!looksNum(a13Raw)) a13Raw='';
@@ -1005,12 +1028,12 @@
         <div>
           <label class="block text-xs font-semibold text-slate-500 mb-1.5 uppercase tracking-wider">Asfaltsoort</label>
           <select class="epd-mix form-input form-select text-sm">
-            <option value="">— kies asfaltsoort —</option>
+            <option value="">- kies asfaltsoort -</option>
             ${Object.keys(PLAFONDS).map(m=>`<option value="${m}">${m}</option>`).join('')}
           </select>
         </div>
         <div>
-          <label class="block text-xs font-semibold text-slate-500 mb-1.5 uppercase tracking-wider">MKI A1–A3</label>
+          <label class="block text-xs font-semibold text-slate-500 mb-1.5 uppercase tracking-wider">MKI A1-A3</label>
           <input type="number" step="any" class="epd-a13 form-input text-sm" placeholder="bijv. 7.42" />
         </div>
         <div>
@@ -1114,10 +1137,10 @@
           </div>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
             <div><div class="text-slate-500 mb-0.5">Asfaltsoort</div><div class="font-medium mono" style="font-size:.8rem;">${mix}</div></div>
-            <div><div class="text-slate-500 mb-0.5">MKI A1–A3</div><div class="font-medium mono">${fmt(a13)}</div></div>
-            <div><div class="text-slate-500 mb-0.5">MKI A4–C4</div><div class="font-medium mono">${fmt(a4)}</div></div>
+            <div><div class="text-slate-500 mb-0.5">MKI A1-A3</div><div class="font-medium mono">${fmt(a13)}</div></div>
+            <div><div class="text-slate-500 mb-0.5">MKI A4-C4</div><div class="font-medium mono">${fmt(a4)}</div></div>
             <div><div class="text-slate-500 mb-0.5">MKI D</div><div class="font-medium mono">${fmt(d)}</div></div>
-            <div><div class="text-slate-500 mb-0.5">Totaal A–D</div><div class="font-semibold mono ${pass?'':'text-red-700'}">${fmt(tot)}</div></div>
+            <div><div class="text-slate-500 mb-0.5">Totaal A-D</div><div class="font-semibold mono ${pass?'':'text-red-700'}">${fmt(tot)}</div></div>
             <div><div class="text-slate-500 mb-0.5">Plafondwaarde ${jaar}</div><div class="font-medium mono">${fmt(plaf)}</div></div>
             <div><div class="text-slate-500 mb-0.5">Ruimte</div><div class="font-medium mono ${marg>=0?'text-teal-700':'text-red-700'}">${fmt(marg)}</div></div>
           </div>`;
