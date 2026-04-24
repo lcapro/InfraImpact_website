@@ -23,6 +23,41 @@
       "source": "/home",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/over.html",
+      "destination": "/over-ons/",
+      "permanent": true
+    },
+    {
+      "source": "/projecten.html",
+      "destination": "/projecten/",
+      "permanent": true
+    },
+    {
+      "source": "/artikelen/wat-is-lca/",
+      "destination": "/artikelen/wat-is-een-lca/",
+      "permanent": true
+    },
+    {
+      "source": "/mki-berekening-gww/",
+      "destination": "/diensten/mki-berekening/",
+      "permanent": true
+    },
+    {
+      "source": "/epd-en-15804/",
+      "destination": "/kennisbank/epd-en-normen/",
+      "permanent": true
+    },
+    {
+      "source": "/epd-checker.html",
+      "destination": "/tooling/",
+      "permanent": true
+    },
+    {
+      "source": "/lca-project-tool/",
+      "destination": "/tooling/",
+      "permanent": true
     }
   ]
 }

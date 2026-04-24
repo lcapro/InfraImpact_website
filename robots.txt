@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /brand_assets/
+Disallow: /assets/
 
 # Sitemap
 Sitemap: https://www.infraimpact.nl/sitemap.xml
