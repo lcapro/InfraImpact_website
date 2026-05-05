@@ -40,6 +40,11 @@
       "permanent": true
     },
     {
+      "source": "/over/",
+      "destination": "/over-ons/",
+      "permanent": true
+    },
+    {
       "source": "/projecten.html",
       "destination": "/projecten/",
       "permanent": true
@@ -65,8 +70,23 @@
       "permanent": true
     },
     {
+      "source": "/epd-checker/",
+      "destination": "/tooling/",
+      "permanent": true
+    },
+    {
       "source": "/lca-project-tool/",
       "destination": "/tooling/",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/contact/",
+      "destination": "/",
       "permanent": true
     }
   ]
