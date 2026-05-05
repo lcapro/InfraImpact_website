@@ -49,6 +49,18 @@
     <priority>0.7</priority>
     <lastmod>2026-04-09</lastmod>
   </url>
+  <url>
+    <loc>https://www.infraimpact.nl/projecten/eco-monitor/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-05</lastmod>
+  </url>
+  <url>
+    <loc>https://www.infraimpact.nl/projecten/nmd-gww-perceel-6/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-05-05</lastmod>
+  </url>
 
   <!-- Diensten -->
   <url>
@@ -170,26 +182,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2026-04-09</lastmod>
-  </url>
-
-  <!-- Juridisch -->
-  <url>
-    <loc>https://www.infraimpact.nl/algemene-voorwaarden/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <lastmod>2026-03-12</lastmod>
-  </url>
-  <url>
-    <loc>https://www.infraimpact.nl/privacybeleid/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <lastmod>2026-03-12</lastmod>
-  </url>
-  <url>
-    <loc>https://www.infraimpact.nl/cookiebeleid/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <lastmod>2026-03-12</lastmod>
   </url>
 
 </urlset>
