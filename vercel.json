@@ -25,6 +25,16 @@
       "permanent": true
     },
     {
+      "source": "/lca-gww/",
+      "destination": "/kennisbank/lca-in-de-gww/",
+      "permanent": true
+    },
+    {
+      "source": "/lca-aanbestedingen-gww/",
+      "destination": "/kennisbank/lca-in-aanbestedingen/",
+      "permanent": true
+    },
+    {
       "source": "/over.html",
       "destination": "/over-ons/",
       "permanent": true
