@@ -50,6 +50,11 @@
       "permanent": true
     },
     {
+      "source": "/projecten/infraimpact-ecomonitor-mki-stuurinstrument/",
+      "destination": "/projecten/eco-monitor/",
+      "permanent": true
+    },
+    {
       "source": "/artikelen/wat-is-lca/",
       "destination": "/artikelen/wat-is-een-lca/",
       "permanent": true
