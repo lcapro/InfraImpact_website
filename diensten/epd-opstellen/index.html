@@ -136,6 +136,14 @@
     .compare-col{border-radius:.875rem;padding:1.25rem 1.5rem}
     .compare-col-green{background:rgba(45,110,94,.06);border:1px solid rgba(45,110,94,.15)}
     html.dark .compare-col-green{background:rgba(45,110,94,.12);border-color:rgba(45,110,94,.25)}
+    /* dark-mode-aware text utilities for hero + new sections */
+    .hero-intro{color:#4a6070}
+    html.dark .hero-intro{color:#94a3b8}
+    .section-h3{font-family:'DM Serif Display',Georgia,serif;font-size:1.15rem;color:#273F54;letter-spacing:-.01em}
+    html.dark .section-h3{color:#e2e8f0}
+    .ref-card-body{color:#4a6070}
+    html.dark .ref-card-body{color:#94a3b8}
+    html.dark .heading-xl{color:#e2e8f0}
   </style>
   <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"Service","name":"EPD opstellen voor GWW","description":"LCA uitvoeren en EPD opstellen voor bouwproducten en GWW-materialen volgens EN 15804, inclusief NMD-publicatie.","url":"https://www.infraimpact.nl/diensten/epd-opstellen/","provider":{"@type":"Organization","name":"InfraImpact","logo":"https://www.infraimpact.nl/brand_assets/infra_impact.png"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.infraimpact.nl/"},{"@type":"ListItem","position":2,"name":"Diensten","item":"https://www.infraimpact.nl/diensten/"},{"@type":"ListItem","position":3,"name":"EPD opstellen","item":"https://www.infraimpact.nl/diensten/epd-opstellen/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Hoe lang is een EPD geldig?","acceptedAnswer":{"@type":"Answer","text":"Een EPD is doorgaans vijf jaar geldig. Na die periode moet de EPD worden herzien en opnieuw geverifieerd om de geldigheid te behouden. Tussentijdse updates zijn mogelijk als productieprocessen significant wijzigen."}},{"@type":"Question","name":"Kan ik een EPD opstellen voor een productfamilie?","acceptedAnswer":{"@type":"Answer","text":"Ja, dat is mogelijk als de producten in de familie voldoende vergelijkbaar zijn in samenstelling en productieproces. De PCR bepaalt de randvoorwaarden voor groeps-EPD's."}},{"@type":"Question","name":"Welke norm is van toepassing?","acceptedAnswer":{"@type":"Answer","text":"De basisnorm is EN 15804. Aanvullend gelden productcategorieregels (PCR's) die per producttype specifieke eisen stellen. Voor gebruik in de Nederlandse GWW-markt moet de EPD ook aansluiten op de Bepalingsmethode Milieuprestatie GWW en de NMD-vereisten."}},{"@type":"Question","name":"Wat heb ik nodig om een EPD-traject te starten?","acceptedAnswer":{"@type":"Answer","text":"Primair zijn fabrieksdata nodig over grondstoffengebruik, energieverbruik en productieprocessen. Hoe gedetailleerder en betrouwbaarder die data, hoe representatiever de EPD."}},{"@type":"Question","name":"Is een EPD hetzelfde als een milieukeur of certificaat?","acceptedAnswer":{"@type":"Answer","text":"Nee. Een EPD is geen keurmerk en zegt niets over of een product goed of slecht scoort. Het is een gestandaardiseerde rapportage van de milieubelasting. De beoordeling of dat hoog of laag is, gebeurt in de vergelijking met alternatieven, bijvoorbeeld via een MKI-berekening in een project."}},{"@type":"Question","name":"Hoe lang duurt een volledig EPD-traject?","acceptedAnswer":{"@type":"Answer","text":"Een compleet traject duurt doorgaans 4 tot 7 maanden, afhankelijk van productcomplexiteit en datakwaliteit. De LCA-fase is met 3-6 maanden de grootste tijdsinvestering."}},{"@type":"Question","name":"Welke productdata moet ik aanleveren om te starten?","acceptedAnswer":{"@type":"Answer","text":"Alle materialen en processen die komen kijken bij het vervaardigen van je product: bill of materials, productiedata, energieverbruik, transportafstanden van grondstoffen, en het end-of-life scenario. Hoe specifieker je data, hoe nauwkeuriger de LCA en hoe competitiever je uiteindelijke MKI-score."}},{"@type":"Question","name":"Is een EPD verplicht?","acceptedAnswer":{"@type":"Answer","text":"In de Nederlandse GWW is een EPD niet wettelijk verplicht voor elk product, maar wel praktisch noodzakelijk bij aanbestedingen die om productspecifieke MKI-data vragen en bij opname in de NMD met een hogere betrouwbaarheidsklasse. Zonder EPD val je terug op generieke NMD-data, meestal categorie 3."}},{"@type":"Question","name":"Wat is het verschil tussen een EPD en een MKI-berekening?","acceptedAnswer":{"@type":"Answer","text":"Een EPD is een geverifieerd milieudossier op productniveau, gepubliceerd in de NMD. Een MKI-berekening is de toepassing van die productdata op projectniveau. EPD's vormen daarmee de bouwstenen voor MKI-berekeningen."}},{"@type":"Question","name":"Wat bepaalt de kosten van een EPD-traject?","acceptedAnswer":{"@type":"Answer","text":"Vier factoren: complexiteit van het product, het aantal productvarianten dat onder één EPD valt, de datakwaliteit van productiegegevens, en het type verificatie. We stellen graag een maatwerk inschatting op."}}]}]}
@@ -274,8 +282,8 @@
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
     <div class="breadcrumb mb-5"><span>Diensten</span><span class="mx-2">/</span><span>EPD opstellen</span></div>
     <span class="section-label block mb-3">Dienst</span>
-    <h1 class="heading-xl fade-up" style="font-size:clamp(2rem,5vw,3.25rem);max-width:720px;color:#1a2c38;">EPD laten opstellen voor je bouwproduct of GWW-materiaal</h1>
-    <p class="mt-4 fade-up" style="font-size:1.125rem;line-height:1.75;color:#4a6070;max-width:680px;animation-delay:.1s;">Producenten in de GWW krijgen steeds vaker de vraag om een EPD aan te leveren: voor aanbestedingen, opname in de Nationale Milieudatabase (NMD), of om concurrerend te blijven met productspecifieke MKI-data in plaats van generieke categorie-3-waarden. InfraImpact begeleidt het hele traject: van LCA en EPD-rapportage tot verificatie en publicatie in de NMD.</p>
+    <h1 class="heading-xl fade-up" style="font-size:clamp(2rem,5vw,3.25rem);max-width:720px;">EPD laten opstellen voor je bouwproduct of GWW-materiaal</h1>
+    <p class="mt-4 fade-up hero-intro" style="font-size:1.125rem;line-height:1.75;max-width:680px;animation-delay:.1s;">Producenten in de GWW krijgen steeds vaker de vraag om een EPD aan te leveren: voor aanbestedingen, opname in de Nationale Milieudatabase (NMD), of om concurrerend te blijven met productspecifieke MKI-data in plaats van generieke categorie-3-waarden. InfraImpact begeleidt het hele traject: van LCA en EPD-rapportage tot verificatie en publicatie in de NMD.</p>
   </div>
 </section>
 
@@ -340,7 +348,7 @@
         </div>
       </div>
 
-      <h3 style="font-family:'DM Serif Display',Georgia,serif;font-size:1.15rem;color:#273F54;margin:2rem 0 .75rem;letter-spacing:-.01em;">Doorlooptijd en wat we van je nodig hebben</h3>
+      <h3 class="section-h3" style="margin:2rem 0 .75rem;">Doorlooptijd en wat we van je nodig hebben</h3>
       <div class="timeline-table-wrap">
         <table class="timeline-table">
           <thead>
@@ -402,7 +410,7 @@
           <div class="flex items-start justify-between gap-3 mb-2">
             <p class="text-sm font-semibold" style="color:#2D6E5E;margin:0;">NMD-GWW Perceel 6</p>
           </div>
-          <p class="text-sm" style="color:#4a6070;line-height:1.7;margin:0 0 .85rem;">Opstellen van EPD's voor GWW-productcategorieën in het kader van de Nationale Milieudatabase.</p>
+          <p class="text-sm ref-card-body" style="line-height:1.7;margin:0 0 .85rem;">Opstellen van EPD's voor GWW-productcategorieën in het kader van de Nationale Milieudatabase.</p>
           <a href="/projecten/nmd-gww-perceel-6/" class="text-sm font-medium inline-flex items-center gap-1" style="color:#2D6E5E;text-decoration:none;">Lees meer over dit project <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
         <div class="compare-col compare-col-green">
@@ -410,7 +418,7 @@
             <p class="text-sm font-semibold" style="color:#2D6E5E;margin:0;">PVO LCA-model voor voegovergangen</p>
             <span class="text-xs font-semibold px-2 py-0.5 rounded-full" style="background:rgba(45,110,94,.10);color:#2D6E5E;white-space:nowrap;">In ontwikkeling</span>
           </div>
-          <p class="text-sm" style="color:#4a6070;line-height:1.7;margin:0;">Samen met het Platform Voegovergangen en Opleggingen (PVO) ontwikkelt InfraImpact een branche-LCA-model voor alle typen voegovergangen, dat de basis vormt voor toekomstige EPD's in deze categorie.</p>
+          <p class="text-sm ref-card-body" style="line-height:1.7;margin:0;">Samen met het Platform Voegovergangen en Opleggingen (PVO) ontwikkelt InfraImpact een branche-LCA-model voor alle typen voegovergangen, dat de basis vormt voor toekomstige EPD's in deze categorie.</p>
         </div>
       </div>
 
