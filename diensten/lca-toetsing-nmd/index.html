@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DuboCalc voor GWW | InfraImpact</title>
+  <title>Erkende LCA-toetser voor de NMD | InfraImpact</title>
   <link rel="icon" type="image/png" href="/brand_assets/infra_impact-icoon.png" />
   <link rel="apple-touch-icon" href="/brand_assets/infra_impact-icoon.png" />
-  <meta name="description" content="DuboCalc berekeningen voor GWW-projecten. InfraImpact helpt bij modellering, dataverificatie en interpretatie van DuboCalc-uitkomsten. Neem contact op." />
-  <meta name="keywords" content="DuboCalc GWW, DuboCalc MKI berekening, DuboCalc Rijkswaterstaat, duurzame infra berekening" />
-  <link rel="canonical" href="https://www.infraimpact.nl/diensten/dubocalc/" />
+  <meta name="description" content="InfraImpact is door Stichting NMD erkende LCA-toetser. Laat je LCA of EPD onafhankelijk toetsen voor opname in de Nationale Milieudatabase, conform het Toetsingsprotocol." />
+  <meta name="keywords" content="erkende LCA-toetser, NMD LCA-toetser, LCA laten toetsen, EPD toetsen NMD, onafhankelijke LCA-toetsing, NMD-Toetsingsprotocol, milieuverklaring laten toetsen" />
+  <link rel="canonical" href="https://www.infraimpact.nl/diensten/lca-toetsing-nmd/" />
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.infraimpact.nl/diensten/dubocalc/" />
-  <meta property="og:title" content="DuboCalc voor GWW | InfraImpact" />
-  <meta property="og:description" content="DuboCalc berekeningen voor GWW-projecten. InfraImpact helpt bij modellering, dataverificatie en interpretatie van DuboCalc-uitkomsten." />
+  <meta property="og:url" content="https://www.infraimpact.nl/diensten/lca-toetsing-nmd/" />
+  <meta property="og:title" content="Erkende LCA-toetser voor de NMD | InfraImpact" />
+  <meta property="og:description" content="InfraImpact is door Stichting NMD erkende LCA-toetser. Laat je LCA of EPD onafhankelijk toetsen voor opname in de Nationale Milieudatabase, conform het Toetsingsprotocol." />
   <meta property="og:image" content="https://www.infraimpact.nl/brand_assets/infra_impact.png" />
   <meta property="og:locale" content="nl_NL" />
   <script>(function(){var s=localStorage.getItem('theme'),p=window.matchMedia('(prefers-color-scheme: dark)').matches;if(s==='dark'||(!s&&p))document.documentElement.classList.add('dark')})();</script>
@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{display:['"DM Serif Display"','Georgia','serif'],body:['Inter','system-ui','sans-serif']}}}}</script>
+  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{teal:{DEFAULT:'#2D6E5E'},steel:{DEFAULT:'#3B6080'}},fontFamily:{display:['"DM Serif Display"','Georgia','serif'],body:['Inter','system-ui','sans-serif']}}}}</script>
   <style>
     *,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}
     body{font-family:'Inter',system-ui,sans-serif;color:#1a2c38;background:#F8F7F4;transition:background .3s,color .3s}
@@ -30,12 +30,15 @@
     html.dark .faq-question{color:#e2e8f0!important}
     html.dark .faq-answer-inner{color:#94a3b8!important}
     html.dark .divider{border-color:rgba(255,255,255,.06)!important}
+    html.dark .step-card{background:#162e47!important;border-color:rgba(255,255,255,.06)!important}
     body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")}
     .heading-xl{font-family:'DM Serif Display',Georgia,serif;letter-spacing:-.03em;line-height:1.08}
     .heading-lg{font-family:'DM Serif Display',Georgia,serif;letter-spacing:-.025em;line-height:1.15}
+    .shadow-card{box-shadow:0 1px 1px rgba(30,50,65,.04),0 4px 8px rgba(30,50,65,.06),0 12px 32px rgba(30,50,65,.07)}
     #navbar{transition:background .3s,box-shadow .3s}
     #navbar.scrolled{background:rgba(248,247,244,.96);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(30,50,65,.08),0 4px 16px rgba(30,50,65,.06)}
-    .nav-pill-container{display:flex;align-items:center;background:rgba(45,110,94,.06);border:1px solid rgba(45,110,94,.12);border-radius:9999px;padding:4px;gap:2px}
+    .nav-pill-container{position:relative;display:flex;align-items:center;background:rgba(45,110,94,.06);border:1px solid rgba(45,110,94,.12);border-radius:9999px;padding:4px;gap:2px}
+    html.dark .nav-pill-container{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.08)}
     .nav-link-pill{position:relative;z-index:1;padding:.45rem 1.1rem;border-radius:9999px;font-size:.9375rem;font-weight:500;color:#273F54;transition:color .18s;text-decoration:none;white-space:nowrap}
     html.dark .nav-link-pill{color:rgba(255,255,255,.65)}
     .nav-link-pill:hover{color:#2D6E5E}
@@ -43,7 +46,7 @@
     .btn-primary:hover{background:#1E4D42;transform:translateY(-2px)}
     .btn-outline{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:#fff;padding:.75rem 1.5rem;border-radius:.5rem;font-weight:500;font-size:.9375rem;border:1.5px solid rgba(255,255,255,.3);transition:transform .18s,background .18s;text-decoration:none}
     .btn-outline:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
-    .nav-link{font-size:.9375rem;font-weight:500;color:#273F54;transition:color .18s;text-decoration:none}
+    .nav-link{position:relative;font-size:.9375rem;font-weight:500;color:#273F54;transition:color .18s;text-decoration:none}
     .nav-link:hover{color:#2D6E5E}
     .theme-toggle-wrap{display:flex;align-items:center;justify-content:space-between;width:56px;height:28px;padding:3px;border-radius:9999px;cursor:pointer;border:1px solid;flex-shrink:0;background:#f4f4f5;border-color:#d4d4d8}
     html.dark .theme-toggle-wrap{background:#18181b;border-color:#3f3f46}
@@ -55,6 +58,7 @@
     .section-label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#2D6E5E}
     .divider{border:none;border-top:1px solid rgba(45,110,94,.10);margin:2.5rem 0}
     .breadcrumb{font-size:.875rem;color:#94a3b8}
+    .breadcrumb a{color:#2D6E5E;text-decoration:none}
     .faq-item{border-bottom:1px solid rgba(45,110,94,.12)}
     .faq-btn{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:1.1rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem}
     .faq-question{font-family:'DM Serif Display',Georgia,serif;font-size:1rem;color:#273F54;transition:color .2s;line-height:1.4}
@@ -62,7 +66,7 @@
     .faq-icon{flex-shrink:0;transition:transform .35s cubic-bezier(.22,1,.36,1);color:#2D6E5E}
     .faq-item.open .faq-icon{transform:rotate(45deg)}
     .faq-answer{overflow:hidden;max-height:0;transition:max-height .4s cubic-bezier(.22,1,.36,1)}
-    .faq-item.open .faq-answer{max-height:400px}
+    .faq-item.open .faq-answer{max-height:520px}
     .faq-answer-inner{padding-bottom:1rem;line-height:1.75;color:#64748b;font-size:.9rem}
     .toc-link{display:block;font-size:.875rem;color:#64748b;padding:.3rem 0;border-left:2px solid transparent;padding-left:.75rem;text-decoration:none;transition:color .15s,border-color .15s}
     .toc-link:hover,.toc-link.active{color:#2D6E5E;border-left-color:#2D6E5E}
@@ -78,7 +82,9 @@
     html.dark .pillar-prose p{color:#94a3b8}
     .pillar-prose a{color:#2D6E5E;text-decoration:underline;text-decoration-color:rgba(45,110,94,.3)}
     .pillar-prose a:hover{text-decoration-color:#2D6E5E}
-    .contact-block{background:rgba(45,110,94,.06);border:1px solid rgba(45,110,94,.15);border-radius:1rem;padding:1.5rem 2rem;margin-top:2.5rem}
+    .step-card{background:#fff;border:1px solid rgba(45,110,94,.10);border-radius:1rem;padding:1.25rem 1.5rem}
+    html.dark .step-card{background:#162e47;border-color:rgba(255,255,255,.06)}
+    .step-number{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:50%;background:#2D6E5E;color:#fff;font-size:.875rem;font-weight:600;flex-shrink:0;margin-bottom:.75rem}
     .nav-dropdown-wrap{position:relative}
     .nav-dropdown-trigger{display:flex;align-items:center;gap:.375rem;background:none;border:none;cursor:pointer;font-family:inherit;padding:0;font-size:.8125rem}
     .nav-dropdown-trigger .nav-chevron{transition:transform .2s ease}
@@ -96,13 +102,41 @@
     .nav-dropdown-all-link{display:block;margin-top:.5rem;padding:.5rem .75rem;font-size:.875rem;font-weight:600;color:#2D6E5E;border-top:1px solid rgba(45,110,94,.12);text-decoration:none}
     html.dark #mobile-menu{background:rgba(12,24,38,.98)!important}
     html.dark .nav-link{color:rgba(255,255,255,.65)!important}
-    
+
     .nav-mobile-accordion-trigger{background:none;border:none;cursor:pointer;font-family:inherit;width:100%;text-align:left;display:flex;align-items:center;justify-content:space-between}
     .nav-mobile-accordion-trigger .nav-chevron-m{transition:transform .2s ease;flex-shrink:0}
     .nav-mobile-accordion-trigger[aria-expanded="true"] .nav-chevron-m{transform:rotate(180deg)}
+    /* feature-grid (2-koloms lijst) */
+    .product-grid{list-style:none;padding:0;margin:1rem 0 1.25rem;display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem 1.5rem}
+    @media(max-width:640px){.product-grid{grid-template-columns:1fr}}
+    .product-grid li{position:relative;padding-left:1.5rem;color:#4a6070;line-height:1.65;font-size:1rem}
+    .product-grid li::before{content:'';position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:#2D6E5E}
+    html.dark .product-grid li{color:#94a3b8}
+    /* doelgroep / scheidingsblok */
+    .two-col-compare{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:1.25rem 0 1.5rem}
+    @media(max-width:640px){.two-col-compare{grid-template-columns:1fr}}
+    .compare-col{border-radius:.875rem;padding:1.25rem 1.5rem}
+    .compare-col-green{background:rgba(45,110,94,.06);border:1px solid rgba(45,110,94,.15)}
+    html.dark .compare-col-green{background:rgba(45,110,94,.12);border-color:rgba(45,110,94,.25)}
+    .compare-col-steel{background:rgba(59,96,128,.06);border:1px solid rgba(59,96,128,.16)}
+    html.dark .compare-col-steel{background:rgba(59,96,128,.14);border-color:rgba(59,96,128,.28)}
+    /* erkenning-callout */
+    .recognition-card{display:flex;gap:1.1rem;align-items:flex-start;background:rgba(45,110,94,.06);border:1px solid rgba(45,110,94,.18);border-radius:1rem;padding:1.4rem 1.6rem;margin:1.5rem 0 .5rem}
+    html.dark .recognition-card{background:rgba(45,110,94,.12);border-color:rgba(45,110,94,.28)}
+    .recognition-badge{flex-shrink:0;width:2.75rem;height:2.75rem;border-radius:.75rem;background:#2D6E5E;display:flex;align-items:center;justify-content:center}
+    /* placeholder-markering: tekst die de redactie nog moet invullen of bevestigen */
+    .ph{background:rgba(214,158,46,.16);border-bottom:1px dashed #B7791F;color:#8a5a00;padding:0 .15em;border-radius:2px;font-weight:600}
+    html.dark .ph{color:#f6d488;background:rgba(214,158,46,.22)}
+    .hero-intro{color:#4a6070}
+    html.dark .hero-intro{color:#94a3b8}
+    .section-h3{font-family:'DM Serif Display',Georgia,serif;font-size:1.15rem;color:#273F54;letter-spacing:-.01em}
+    html.dark .section-h3{color:#e2e8f0}
+    .ref-card-body{color:#4a6070}
+    html.dark .ref-card-body{color:#94a3b8}
+    html.dark .heading-xl{color:#e2e8f0}
   </style>
   <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"DuboCalc voor GWW","description":"DuboCalc berekeningen voor GWW-projecten: modellering, dataverificatie en interpretatie.","url":"https://www.infraimpact.nl/diensten/dubocalc/","provider":{"@type":"Organization","name":"InfraImpact","logo":"https://www.infraimpact.nl/brand_assets/infra_impact.png"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.infraimpact.nl/"},{"@type":"ListItem","position":2,"name":"Diensten","item":"https://www.infraimpact.nl/diensten/"},{"@type":"ListItem","position":3,"name":"DuboCalc","item":"https://www.infraimpact.nl/diensten/dubocalc/"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","name":"Erkende LCA-toetser voor de NMD","description":"Onafhankelijke toetsing van LCA's en EPD's (categorie 1- en 2-milieudata) voor opname in de Nationale Milieudatabase, conform het NMD-Toetsingsprotocol en de Bepalingsmethode. InfraImpact is door Stichting NMD erkende LCA-toetser.","url":"https://www.infraimpact.nl/diensten/lca-toetsing-nmd/","areaServed":{"@type":"Country","name":"Nederland"},"audience":{"@type":"Audience","audienceType":"Producenten en leveranciers van bouwproducten, LCA-opstellers en adviesbureaus, aannemers en opdrachtgevers in de GWW"},"provider":{"@type":"Organization","name":"InfraImpact","url":"https://www.infraimpact.nl/","logo":"https://www.infraimpact.nl/brand_assets/infra_impact.png","sameAs":["https://milieudatabase.nl/nl/milieudata-lca/vind-een-erkende-lca-opsteller-of-toetser/jim-van-der-kooij/"],"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"Erkend LCA-toetser","url":"https://milieudatabase.nl/nl/milieudata-lca/vind-een-erkende-lca-opsteller-of-toetser/jim-van-der-kooij/","recognizedBy":{"@type":"Organization","name":"Stichting Nationale Milieudatabase (NMD)"}}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.infraimpact.nl/"},{"@type":"ListItem","position":2,"name":"Diensten","item":"https://www.infraimpact.nl/diensten/"},{"@type":"ListItem","position":3,"name":"LCA-toetsing voor de NMD","item":"https://www.infraimpact.nl/diensten/lca-toetsing-nmd/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Kunnen jullie onze LCA of EPD onafhankelijk toetsen voor opname in de NMD?","acceptedAnswer":{"@type":"Answer","text":"Ja. InfraImpact is door Stichting NMD erkende LCA-toetser en kan categorie 1- en 2-milieudata toetsen voor opname in de Nationale Milieudatabase. Voorwaarde is dat InfraImpact niet betrokken is geweest bij het LCA-onderzoek dat wordt getoetst. Een toetser is per definitie een onafhankelijke derde partij. Wij stellen daarom nooit een milieuverklaring op die wij zelf toetsen, en andersom."}},{"@type":"Question","name":"Wat betekent het dat de toetser onafhankelijk moet zijn?","acceptedAnswer":{"@type":"Answer","text":"De erkende toetser mag geen betrokkenheid hebben gehad bij het LCA-onderzoek dat ter toetsing wordt aangeboden. Dat waarborgt een objectief oordeel. Heeft InfraImpact de LCA of EPD opgesteld, dan kunnen wij die niet toetsen en verwijzen we naar een andere erkende toetser. Heeft een ander bureau de LCA opgesteld, dan kunnen wij als onafhankelijke partij toetsen."}},{"@type":"Question","name":"Is een goedgekeurde toetsing een garantie op opname in de NMD?","acceptedAnswer":{"@type":"Answer","text":"Nee. Toetsing is een onafhankelijke beoordeling of de LCA en de milieudata voldoen aan het NMD-Toetsingsprotocol en de Bepalingsmethode. Opname in de Nationale Milieudatabase verloopt via Stichting NMD en kent een eigen procedure. Een positieve toetsing is een noodzakelijke stap, maar geen automatische garantie op publicatie."}},{"@type":"Question","name":"Wat is het verschil tussen een LCA-opsteller en een erkende LCA-toetser?","acceptedAnswer":{"@type":"Answer","text":"Een opsteller voert het LCA-onderzoek uit en stelt de milieuverklaring of EPD op. Een erkende toetser beoordeelt dat werk onafhankelijk op naleving van het Toetsingsprotocol en de Bepalingsmethode. Beide rollen mogen voor dezelfde milieuverklaring niet door dezelfde partij worden vervuld."}},{"@type":"Question","name":"Voor welke milieudata zijn jullie erkend als toetser?","acceptedAnswer":{"@type":"Answer","text":"InfraImpact is erkend voor het toetsen van categorie 1- en 2-milieudata ten behoeve van opname in de NMD. De toetsing vindt plaats conform de actuele versie van het NMD-Toetsingsprotocol en de eisen uit de Bepalingsmethode."}},{"@type":"Question","name":"Volgens welk protocol toetsen jullie?","acceptedAnswer":{"@type":"Answer","text":"Wij toetsen conform de actuele versie van het NMD-Toetsingsprotocol van Stichting NMD, in samenhang met de Bepalingsmethode Milieuprestatie Bouwwerken en EN 15804+A2. We werken altijd met de op dat moment geldende versie van het protocol."}}]}]}
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0EC03F60S"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-D0EC03F60S');</script>
@@ -122,7 +156,7 @@
 
 <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
   <div class="max-w-7xl mx-auto px-6 lg:px-10 h-18 flex items-center justify-between py-4">
-    <a href="/" style="flex-shrink:0" aria-label="InfraImpact home">
+    <a href="/" class="flex items-center gap-3" aria-label="InfraImpact home" style="flex-shrink:0">
       <img src="/brand_assets/infra_impact.png" alt="InfraImpact" class="h-14 w-auto" />
     </a>
     <nav class="hidden md:flex items-center" aria-label="Hoofdnavigatie">
@@ -151,20 +185,22 @@
             </div>
           </div>
         </div>
-        <a href="/tooling" class="nav-link-pill active" style="color:#2D6E5E;">Tooling</a>
+        <a href="/tooling" class="nav-link-pill">Tooling</a>
         <div class="nav-dropdown-wrap" id="artikelen-dropdown">
           <button class="nav-link-pill nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="artikelen-trigger">Artikelen <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <div class="nav-dropdown-panel" id="artikelen-panel" role="menu">
             <div>
               <div class="nav-dropdown-col-label">Artikelen</div>
+              <a href="/artikelen/wat-is-een-lca" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Wat is een LCA?</div><div class="nav-dropdown-item-desc">Levenscyclusanalyse uitgelegd</div></a>
               <a href="/artikelen/wat-is-mki" class="nav-dropdown-item"><div class="nav-dropdown-item-title">Wat is MKI?</div><div class="nav-dropdown-item-desc">De Milieu Kosten Indicator</div></a>
               <a href="/artikelen" class="nav-dropdown-all-link">Alle artikelen &rarr;</a>
             </div>
             <div class="nav-dropdown-divider"></div>
             <div>
               <div class="nav-dropdown-col-label"><a href="/kennisbank" style="color:#2D6E5E;text-decoration:none;">Kennisbank</a></div>
+              <a href="/kennisbank/epd-en-normen" class="nav-dropdown-item"><div class="nav-dropdown-item-title">EPD en normen</div><div class="nav-dropdown-item-desc">NMD, PCR 2.0 en bepalingsmethode</div></a>
               <a href="/kennisbank/mki-berekeningen" class="nav-dropdown-item"><div class="nav-dropdown-item-title">MKI-berekeningen</div><div class="nav-dropdown-item-desc">Hoe werkt de berekening?</div></a>
-              <a href="/kennisbank/lca-in-aanbestedingen" class="nav-dropdown-item"><div class="nav-dropdown-item-title">LCA in aanbestedingen</div><div class="nav-dropdown-item-desc">EMVI en duurzaam aanbesteden</div></a>
+              <a href="/kennisbank/lca-in-de-gww" class="nav-dropdown-item"><div class="nav-dropdown-item-title">LCA in de GWW</div><div class="nav-dropdown-item-desc">Basiskennis voor de infrasector</div></a>
               <a href="/kennisbank/mki-aanbesteding" class="nav-dropdown-item"><div class="nav-dropdown-item-title">MKI bij aanbesteding</div><div class="nav-dropdown-item-desc">Gunningscriterium en strategie</div></a>
               <a href="/kennisbank/dubocalc-uitleg" class="nav-dropdown-item"><div class="nav-dropdown-item-title">DuboCalc uitgelegd</div><div class="nav-dropdown-item-desc">Hoe werkt het rekenplatform?</div></a>
               <a href="/kennisbank/mki-score-verlagen" class="nav-dropdown-item"><div class="nav-dropdown-item-title">MKI-score verlagen</div><div class="nav-dropdown-item-desc">Optimalisatie bij aanbesteding</div></a>
@@ -223,7 +259,7 @@
           <a href="/kennisbank/mki-berekeningen" class="nav-link py-1.5 text-sm">MKI-berekeningen</a>
           <a href="/kennisbank/epd-en-normen" class="nav-link py-1.5 text-sm">EPD &amp; normen</a>
           <a href="/kennisbank/lca-in-aanbestedingen" class="nav-link py-1.5 text-sm">LCA in aanbestedingen</a>
-          <a href="/artikelen" class="nav-link py-1.5 text-sm font-semibold">Alle artikelen →</a>
+          <a href="/artikelen" class="nav-link py-1.5 text-sm font-semibold">Alle artikelen &rarr;</a>
         </div>
       </div>
       <a href="/over-ons" class="nav-link py-2 text-base">Over ons</a>
@@ -234,10 +270,19 @@
 
 <section class="pt-28 pb-14" style="background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(59,96,128,.12) 0%,transparent 65%),radial-gradient(ellipse 60% 80% at 10% 80%,rgba(45,110,94,.10) 0%,transparent 60%),#F8F7F4;">
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
-    <div class="breadcrumb mb-5"><span>Diensten</span><span class="mx-2">/</span><span>DuboCalc</span></div>
-    <span class="section-label block mb-3">Dienst</span>
-    <h1 class="heading-xl fade-up" style="font-size:clamp(2rem,5vw,3.25rem);max-width:720px;color:#1a2c38;">DuboCalc voor GWW-projecten</h1>
-    <p class="mt-4 fade-up" style="font-size:1.125rem;line-height:1.75;color:#4a6070;max-width:600px;animation-delay:.1s;">DuboCalc is de standaardtool voor MKI-berekeningen bij Rijkswaterstaat en grote opdrachtgevers. InfraImpact helpt bij de modellering, de dataselectie en de interpretatie van de uitkomsten.</p>
+    <div class="breadcrumb mb-5"><a href="/">Home</a><span class="mx-2">/</span><span>Diensten</span><span class="mx-2">/</span><span>LCA-toetsing voor de NMD</span></div>
+    <span class="section-label block mb-3">Dienst &middot; Erkende LCA-toetser</span>
+    <h1 class="heading-xl fade-up" style="font-size:clamp(2rem,5vw,3.25rem);max-width:760px;">Erkende LCA-toetser voor de NMD</h1>
+    <p class="mt-4 fade-up hero-intro" style="font-size:1.125rem;line-height:1.75;max-width:700px;animation-delay:.1s;">InfraImpact is door Stichting NMD erkende LCA-toetser en staat op de officiele Lijst van Erkende LCA-toetsers. Wil je een LCA of EPD onafhankelijk laten toetsen voor opname in de Nationale Milieudatabase? Wij toetsen categorie 1- en 2-milieudata als onafhankelijke derde partij, conform het NMD-Toetsingsprotocol en de Bepalingsmethode. Zo weet je zeker dat je milieudata de toets der kritiek doorstaat, zonder verrassingen achteraf.</p>
+    <div class="recognition-card fade-up" style="max-width:700px;animation-delay:.15s;">
+      <div class="recognition-badge">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 4.5-3.4 8.5-8 10-4.6-1.5-8-5.5-8-10V6l8-4z" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.5 12l2.2 2.2L15.5 9.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <p class="text-sm font-semibold mb-1" style="color:#1a2c38;">Door Stichting NMD erkende LCA-toetser</p>
+        <p class="text-sm" style="color:#4a6070;line-height:1.65;margin:0;">Erkend sinds juni 2026 voor categorie 1- en 2-milieudata, voor alle productgroepen. Opgenomen op de <a href="https://milieudatabase.nl/nl/milieudata-lca/vind-een-erkende-lca-opsteller-of-toetser/jim-van-der-kooij/" target="_blank" rel="noopener" style="color:#2D6E5E;font-weight:600;text-decoration:underline;">Lijst van Erkende LCA-toetsers</a>.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -247,11 +292,13 @@
       <div class="toc-sticky">
         <p class="text-xs font-semibold uppercase tracking-widest mb-4" style="color:#94a3b8;">Inhoudsopgave</p>
         <nav class="flex flex-col">
-          <a href="#wat-is" class="toc-link">Wat is DuboCalc?</a>
-          <a href="#hoe-werkt" class="toc-link">Hoe werkt een DuboCalc-berekening?</a>
-          <a href="#mki" class="toc-link">DuboCalc en de MKI-score</a>
-          <a href="#rijkswaterstaat" class="toc-link">DuboCalc bij Rijkswaterstaat</a>
-          <a href="#ondersteuning" class="toc-link">Ondersteuning bij DuboCalc</a>
+          <a href="#wat-is" class="toc-link">Wat is LCA-toetsing?</a>
+          <a href="#onafhankelijk" class="toc-link">Waarom onafhankelijk</a>
+          <a href="#voor-wie" class="toc-link">Voor wie</a>
+          <a href="#scope" class="toc-link">Waarvoor erkend</a>
+          <a href="#proces" class="toc-link">Hoe werkt het</a>
+          <a href="#scheiding" class="toc-link">Toetsen of opstellen</a>
+          <a href="#waarom" class="toc-link">Waarom InfraImpact</a>
           <a href="#faq" class="toc-link">Veelgestelde vragen</a>
         </nav>
       </div>
@@ -260,56 +307,123 @@
     <div class="pillar-prose min-w-0 max-w-3xl">
 
       <div id="wat-is">
-        <h2 style="margin-top:0;">Wat is DuboCalc?</h2>
-        <p>DuboCalc is een softwaretool ontwikkeld door Rijkswaterstaat voor het berekenen van de milieuprestatie van GWW-projecten. De tool is gebaseerd op de Bepalingsmethode Milieuprestatie GWW en gebruikt data uit de Nationale Milieudatabase (NMD). Het resultaat is een MKI-score: de milieubelasting van het project uitgedrukt in euros per functionele eenheid.</p>
-        <p>DuboCalc is de verplichte tool voor MKI-berekeningen bij veel Rijkswaterstaat-aanbestedingen en wordt ook steeds vaker voorgeschreven door andere grote opdrachtgevers. De tool structureert de berekening via een vaste opbouw van constructiedelen, materialen en hoeveelheden, en rekent die door naar milieu-impactscores op basis van de gekoppelde NMD-data. Meer over de berekening achter de tool lees je in de <a href="/kennisbank/mki-berekeningen">kennisbank over MKI-berekeningen</a>.</p>
+        <h2 style="margin-top:0;">Wat is LCA-toetsing voor de NMD?</h2>
+        <p>Wie milieudata van een bouwproduct wil laten opnemen in de Nationale Milieudatabase (NMD), moet die data eerst laten toetsen door een onafhankelijke, door Stichting NMD erkende LCA-toetser. De toetser beoordeelt of de onderliggende levenscyclusanalyse (LCA) en de milieuverklaring of EPD voldoen aan het NMD-Toetsingsprotocol en aan de eisen uit de Bepalingsmethode Milieuprestatie Bouwwerken. Het gaat om een inhoudelijke controle van methode, systeemgrenzen, databronnen en rapportage, niet om een formaliteit.</p>
+        <p>InfraImpact is opgenomen op de Lijst van Erkende LCA-toetsers en toetst categorie 1- en 2-milieudata. Toetsing geeft je de zekerheid dat je milieudata aantoonbaar voldoet aan de geldende eisen, voordat je die indient bij Stichting NMD. De achtergrond bij EPD's, de NMD en de relevante normen lees je in de kennisbank over <a href="/kennisbank/epd-en-normen">EPD en normen</a> en <a href="/kennisbank/en-15804-uitgelegd">EN 15804 uitgelegd</a>.</p>
       </div>
 
-      <h2 id="hoe-werkt">Hoe werkt een DuboCalc-berekening?</h2>
-      <p>Een DuboCalc-berekening start met het opbouwen van een projectmodel. Dat model bestaat uit constructiedelen (bijvoorbeeld een wegvak, een brugdek, een fundering) die worden gevuld met materialen en bijbehorende hoeveelheden. Per materiaal kies je de databron uit de NMD: een generieke categorie-2 dataset of, als die beschikbaar is, een productspecifieke categorie-3 dataset op basis van een EPD.</p>
-      <p>DuboCalc berekent vervolgens de milieu-impact per constructiedeel en voor het totale project, uitgesplitst over de levenscyclusmodules A1 tot en met C. De uitkomst is een MKI-waarde in euros. Die waarde kun je vergelijken met een referentiewaarde die de opdrachtgever heeft vastgesteld, of gebruiken als basis voor een variantenvergelijking in de ontwerpfase.</p>
-      <p>Klinkt dit eenvoudig? Dat is het ook, tot het punt waarop de keuzes beginnen. Welk constructiedeel hoort bij welke systeemgrens? Welke dataset gebruik je als er meerdere opties zijn? Hoe ga je om met transportafstanden en onderhoudscenario's? Die keuzes bepalen de uitkomst net zo sterk als de hoeveelheden die je invult. InfraImpact begeleidt bij die keuzes en zorgt voor een berekening die methodisch verantwoord en verdedigbaar is.</p>
+      <h2 id="onafhankelijk">Onafhankelijkheid is de kern van toetsing</h2>
+      <p>Een erkende toetser is per definitie een onafhankelijke derde partij. De toetser mag geen enkele betrokkenheid hebben gehad bij het LCA-onderzoek dat ter toetsing wordt aangeboden. Die scheiding is geen detail, maar de hele reden dat toetsing waarde heeft: alleen een beoordelaar die los staat van het oorspronkelijke onderzoek kan een objectief oordeel geven over de kwaliteit en de naleving van de regels.</p>
+      <p>Voor jou als opdrachtgever betekent dit grip en geloofwaardigheid. De getoetste milieudata is beoordeeld door een partij die er geen belang bij had dat het onderzoek slaagde. Dat versterkt de geloofwaardigheid van je EPD richting Stichting NMD, afnemers en aanbestedende diensten. InfraImpact bewaakt die onafhankelijkheid strikt: een milieuverklaring die wij zelf hebben opgesteld, kunnen en zullen wij nooit toetsen.</p>
 
-      <h2 id="mki">DuboCalc en de MKI-score</h2>
-      <p>De MKI die DuboCalc berekent is een getal, maar het verhaal achter dat getal is minstens zo belangrijk. Welke materialen domineren de score? Waar zit de grootste hefboom voor verbetering? Wat is het effect van een andere dataselectie of een gewijzigd onderhoudscenario? Die vragen zijn pas te beantwoorden als je de berekening begrijpt, niet alleen als je de output leest.</p>
-      <p>InfraImpact interpreteert de DuboCalc-uitkomsten in de context van het project. We geven duiding bij de verdeling van de impact over constructiedelen en materialen, en adviseren over de mogelijkheden voor optimalisatie. Dat is relevant als je varianten vergelijkt in de ontwerpfase, maar ook als je de ingediende MKI wilt begrijpen voordat je een aanbieding doet of beoordeelt. Meer over aanbesteding met MKI staat bij <a href="/diensten/mki-aanbesteding">MKI bij aanbesteding</a>.</p>
-
-      <h2 id="rijkswaterstaat">DuboCalc bij Rijkswaterstaat-projecten</h2>
-      <p>Rijkswaterstaat heeft DuboCalc verankerd in haar aanbestedingssystematiek. Bij EMVI-inschrijvingen voor grote infrastructurele projecten is een DuboCalc-berekening vrijwel altijd vereist. De specifieke eisen, zoals de te gebruiken versie van DuboCalc, de levensduur die als basis geldt en de modules die gerapporteerd moeten worden, staan in het bestek.</p>
-      <p>Wat bij Rijkswaterstaat-projecten specifiek aandacht verdient, is de afstemming tussen de DuboCalc-berekening en de rest van de inschrijving. Als in de technische beschrijving een bepaald materiaal of ontwerp is opgenomen, moet dat consistent zijn met wat in DuboCalc is gemodelleerd. Discrepanties tussen de technische inschrijving en de MKI-berekening leiden tot vragen in de beoordelingsfase en soms tot lagere scores of afwijzing.</p>
-
-      <h2 id="ondersteuning">Ondersteuning bij DuboCalc-modellering</h2>
-      <p>InfraImpact ondersteunt bij het opbouwen van DuboCalc-modellen voor nieuwe projecten, bij het updaten van bestaande modellen bij scopewijzigingen, en bij de beoordeling van DuboCalc-berekeningen van derden. We controleren de dataselectie, de hoeveelheden en de systeemgrensafbakening, en signaleren eventuele inconsistenties voordat die problemen geven.</p>
-      <p>Voor bedrijven die regelmatig DuboCalc-berekeningen uitvoeren bieden we ook kennisoverdracht: een begeleide sessie waarin we samen een model opbouwen en de keuzes uitleggen. Zo bouw je intern kennis op en hoef je niet voor elke berekening externe ondersteuning in te roepen. Meer over onze bredere dienstverlening vind je bij <a href="/diensten/lca-advies">LCA-advies voor de GWW</a>.</p>
-
-      <div class="contact-block">
-        <p class="font-semibold mb-1" style="color:#1a2c38;">Hulp nodig?</p>
-        <p style="color:#4a6070;margin:0;">Neem contact op via <a href="mailto:info@infraimpact.nl" style="color:#2D6E5E;">info@infraimpact.nl</a> of bel <a href="tel:+31621350805" style="color:#2D6E5E;">+31 (0)6 2135 0805</a>.</p>
+      <h2 id="voor-wie">Voor wie is toetsing bedoeld?</h2>
+      <p>Toetsing is relevant voor iedereen die categorie 1- of 2-milieudata wil laten opnemen in de NMD of die zijn milieuverklaring extern wil laten borgen.</p>
+      <div class="flex flex-col gap-4 my-6">
+        <div class="step-card shadow-card">
+          <p class="text-sm font-semibold mb-1" style="color:#273F54;">Producenten &amp; leveranciers</p>
+          <p class="text-sm" style="color:#4a6070;line-height:1.7;margin:0;">Je hebt een LCA of EPD laten opstellen voor je bouwproduct en wilt die data laten opnemen in de NMD. Daarvoor is een toetsing door een erkende, onafhankelijke toetser nodig. Wij toetsen je categorie 1- of 2-milieudata conform het Toetsingsprotocol.</p>
+        </div>
+        <div class="step-card shadow-card">
+          <p class="text-sm font-semibold mb-1" style="color:#273F54;">LCA-opstellers &amp; adviesbureaus</p>
+          <p class="text-sm" style="color:#4a6070;line-height:1.7;margin:0;">Je stelt zelf LCA's en EPD's op, maar moet protocollair een onafhankelijke toetser inschakelen die niet bij het onderzoek betrokken was. InfraImpact vervult die rol als erkende toetser, met praktijkkennis van de GWW en een scherpe blik op methode en naleving.</p>
+        </div>
+        <div class="step-card shadow-card">
+          <p class="text-sm font-semibold mb-1" style="color:#273F54;">Aannemers &amp; opdrachtgevers</p>
+          <p class="text-sm" style="color:#4a6070;line-height:1.7;margin:0;">Je werkt met projectspecifieke LCA's of As Built-data in de GWW en wilt die onafhankelijk laten borgen. Ook die toetsing valt binnen onze erkende scope, met de praktijkkennis van de infrasector die daarbij hoort.</p>
+        </div>
       </div>
+
+      <h2 id="scope">Waarvoor is InfraImpact erkend?</h2>
+      <p>InfraImpact is door Stichting NMD erkend voor het toetsen van categorie 1- en 2-milieudata, voor alle productgroepen, ten behoeve van opname in de NMD. De toetsing vindt plaats conform de geldende NMD-toetsingsprotocollen en de eisen uit de Bepalingsmethode.</p>
+      <ul class="product-grid">
+        <li>Toetsing categorie 1-milieudata (productspecifiek, fabrikantgebonden)</li>
+        <li>Toetsing categorie 2-milieudata (productspecifiek, merkongebonden)</li>
+        <li>Alle productgroepen, geen beperking tot specifieke categorieen</li>
+        <li>Projectspecifieke en As Built-LCA's in de GWW</li>
+        <li>Beoordeling conform de geldende NMD-toetsingsprotocollen</li>
+        <li>Toetsing aan de Bepalingsmethode en EN 15804+A2</li>
+      </ul>
+      <p style="font-size:.95rem;background:rgba(59,96,128,.05);border-left:3px solid #3B6080;padding:.85rem 1.1rem;border-radius:.4rem;"><strong>Erkenningsdetails:</strong> Erkend sinds juni 2026 &middot; Scope: alle productgroepen &middot; Toetsing conform alle geldende NMD-toetsingsprotocollen &middot; <a href="https://milieudatabase.nl/nl/milieudata-lca/vind-een-erkende-lca-opsteller-of-toetser/jim-van-der-kooij/" target="_blank" rel="noopener">Profiel op de Lijst van Erkende LCA-toetsers</a>.</p>
+
+      <h2 id="proces">Hoe verloopt een toetsing?</h2>
+      <p>Een toetsing volgt een vaste, navolgbare lijn. We maken vooraf afspraken over scope en doorlooptijd, zodat je weet waar je aan toe bent. Eerst stellen we de onafhankelijkheid vast: als InfraImpact op geen enkele manier betrokken is geweest bij het LCA-onderzoek, kunnen we als toetser optreden.</p>
+      <div class="flex flex-col gap-4 my-6">
+        <div class="step-card shadow-card">
+          <div class="step-number">1</div>
+          <p class="text-sm font-semibold mb-1" style="color:#273F54;">Onafhankelijkheidstoets &amp; intake</p>
+          <p class="text-sm" style="color:#4a6070;line-height:1.7;margin:0;">We controleren of InfraImpact niet betrokken is geweest bij het opstellen van de LCA of EPD, leggen de scope vast en stemmen de aan te leveren stukken af.</p>
+        </div>
+        <div class="step-card shadow-card">
+          <div class="step-number">2</div>
+          <p class="text-sm font-semibold mb-1" style="color:#273F54;">Inhoudelijke toetsing</p>
+          <p class="text-sm" style="color:#4a6070;line-height:1.7;margin:0;">We toetsen de LCA en milieuverklaring aan het NMD-Toetsingsprotocol en de Bepalingsmethode: systeemgrenzen, functionele eenheid, datakwaliteit, rekenregels en rapportage.</p>
+        </div>
+        <div class="step-card shadow-card">
+          <div class="step-number">3</div>
+          <p class="text-sm font-semibold mb-1" style="color:#273F54;">Bevindingen &amp; correctieronde</p>
+          <p class="text-sm" style="color:#4a6070;line-height:1.7;margin:0;">Je ontvangt de bevindingen met onderbouwing. Waar nodig verwerkt de opsteller de punten, waarna wij de aangepaste versie opnieuw beoordelen.</p>
+        </div>
+        <div class="step-card shadow-card">
+          <div class="step-number">4</div>
+          <p class="text-sm font-semibold mb-1" style="color:#273F54;">Toetsverklaring</p>
+          <p class="text-sm" style="color:#4a6070;line-height:1.7;margin:0;">Bij een positief oordeel leggen we de toetsing vast in een toetsverklaring. Daarmee kun je de milieudata indienen voor opname in de NMD. De opname zelf verloopt via Stichting NMD en kent een eigen procedure.</p>
+        </div>
+      </div>
+      <p style="font-size:.95rem;color:#4a6070;background:rgba(45,110,94,.05);border-left:3px solid #2D6E5E;padding:.85rem 1.1rem;border-radius:.4rem;">Let op: een positieve toetsing is een noodzakelijke stap richting de NMD, maar geen automatische garantie op publicatie. Stichting NMD beslist over opname op basis van de eigen procedure.</p>
+
+      <h2 id="scheiding">Toetsen of opstellen, nooit allebei voor dezelfde verklaring</h2>
+      <p>InfraImpact stelt LCA's en EPD's op en treedt op als erkende toetser. Voor een en dezelfde milieuverklaring doen we nooit beide. Dat is geen interne afspraak die we naar believen kunnen aanpassen, maar een harde voorwaarde van de toetserrol: de toetser mag niet betrokken zijn geweest bij het onderzoek dat hij beoordeelt.</p>
+      <div class="two-col-compare">
+        <div class="compare-col compare-col-green">
+          <p class="text-sm font-semibold mb-2" style="color:#2D6E5E;">Jij hebt elders laten opstellen</p>
+          <p class="text-sm ref-card-body" style="line-height:1.7;margin:0;">Is je LCA of EPD opgesteld door een ander bureau of door je eigen team? Dan kan InfraImpact onafhankelijk toetsen voor opname in de NMD.</p>
+        </div>
+        <div class="compare-col compare-col-steel">
+          <p class="text-sm font-semibold mb-2" style="color:#3B6080;">InfraImpact heeft opgesteld</p>
+          <p class="text-sm ref-card-body" style="line-height:1.7;margin:0;">Heeft InfraImpact je LCA of EPD opgesteld? Dan toetsen wij die niet zelf. We verwijzen je naar een andere erkende toetser, zodat de onafhankelijkheid geborgd blijft.</p>
+        </div>
+      </div>
+      <p>Wil je juist een EPD laten opstellen in plaats van toetsen? Bekijk dan onze dienst <a href="/diensten/epd-opstellen/">EPD opstellen voor GWW en bouwproducten</a>.</p>
+
+      <h2 id="waarom">Waarom InfraImpact als toetser?</h2>
+      <p>Relatief weinig partijen zijn door Stichting NMD erkend als LCA-toetser. Die erkenning is een door de sector gevalideerd kwaliteitssignaal: aantoonbare, getoetste deskundigheid in LCA-methodiek en de NMD-systematiek. InfraImpact combineert die erkenning met jarenlange praktijkervaring aan de opdrachtnemende kant van de GWW.</p>
+      <ul class="product-grid">
+        <li>Door Stichting NMD erkende, onafhankelijke toetser</li>
+        <li>Diepgaande kennis van Bepalingsmethode en EN 15804+A2</li>
+        <li>Praktijkkennis van GWW-producten en NMD-data</li>
+        <li>Strikte scheiding tussen opstellen en toetsen</li>
+        <li>Heldere bevindingen, navolgbaar onderbouwd</li>
+        <li>Grip op het traject, geen verrassingen achteraf</li>
+      </ul>
+      <p>Die combinatie van officiele erkenning en praktijkkennis sluit aan op onze bredere dienstverlening rond <a href="/diensten/mki-berekening/">MKI-berekeningen</a> en <a href="/diensten/epd-opstellen/">EPD's</a>. Een voorbeeld van ons werk met NMD-data in de GWW vind je bij het project <a href="/projecten/nmd-gww-perceel-6/">NMD-GWW Perceel 6</a>.</p>
 
       <hr class="divider" />
 
       <h2 id="faq" style="margin-top:1.5rem;">Veelgestelde vragen</h2>
       <div class="mt-4">
         <div class="faq-item">
-          <button class="faq-btn"><span class="faq-question">Is DuboCalc altijd verplicht bij GWW-aanbestedingen?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
-          <div class="faq-answer"><p class="faq-answer-inner">Niet bij alle aanbestedingen. DuboCalc is verplicht bij Rijkswaterstaat-projecten die MKI als criterium hanteren. Andere opdrachtgevers kunnen DuboCalc voorschrijven, maar sommigen accepteren ook andere tools of methoden. Controleer altijd het bestek.</p></div>
+          <button class="faq-btn"><span class="faq-question">Kunnen jullie onze LCA of EPD onafhankelijk toetsen voor opname in de NMD?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">Ja. InfraImpact is door Stichting NMD erkende LCA-toetser en kan categorie 1- en 2-milieudata toetsen voor opname in de Nationale Milieudatabase. Voorwaarde is dat InfraImpact niet betrokken is geweest bij het LCA-onderzoek dat wordt getoetst. Een toetser is per definitie een onafhankelijke derde partij. Wij stellen daarom nooit een milieuverklaring op die wij zelf toetsen, en andersom.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-btn"><span class="faq-question">Welke versie van DuboCalc moet ik gebruiken?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
-          <div class="faq-answer"><p class="faq-answer-inner">De versie die in het bestek wordt voorgeschreven. DuboCalc wordt regelmatig bijgewerkt; oudere versies worden na verloop van tijd uitgefaseerd. Gebruik altijd de versie die de opdrachtgever verlangt, ook als een nieuwere versie beschikbaar is.</p></div>
+          <button class="faq-btn"><span class="faq-question">Wat betekent het dat de toetser onafhankelijk moet zijn?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">De erkende toetser mag geen betrokkenheid hebben gehad bij het LCA-onderzoek dat ter toetsing wordt aangeboden. Dat waarborgt een objectief oordeel. Heeft InfraImpact de LCA of EPD opgesteld, dan kunnen wij die niet toetsen en verwijzen we naar een andere erkende toetser. Heeft een ander bureau of je eigen team de LCA opgesteld, dan kunnen wij als onafhankelijke partij toetsen.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-btn"><span class="faq-question">Kan ik EPD-data gebruiken in DuboCalc?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
-          <div class="faq-answer"><p class="faq-answer-inner">Ja, als de EPD is opgenomen in de NMD als categorie-3 dataset. DuboCalc geeft toegang tot NMD-data, inclusief EPD-gebaseerde datasets. Als een EPD nog niet in de NMD is opgenomen, is gebruik in DuboCalc doorgaans niet direct mogelijk.</p></div>
+          <button class="faq-btn"><span class="faq-question">Is een goedgekeurde toetsing een garantie op opname in de NMD?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">Nee. Toetsing is een onafhankelijke beoordeling of de LCA en de milieudata voldoen aan het NMD-Toetsingsprotocol en de Bepalingsmethode. Opname in de Nationale Milieudatabase verloopt via Stichting NMD en kent een eigen procedure. Een positieve toetsing is een noodzakelijke stap, maar geen automatische garantie op publicatie.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-btn"><span class="faq-question">Wat doe ik als DuboCalc geen data heeft voor een specifiek materiaal?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
-          <div class="faq-answer"><p class="faq-answer-inner">Dan val je terug op een generieke proxy-dataset die het dichtst in de buurt komt. Dat is methodisch toegestaan, maar vraagt om transparantie: je moet kunnen uitleggen welke keuze je hebt gemaakt en waarom. InfraImpact adviseert over de meest verdedigbare proxy-keuze in dit soort situaties.</p></div>
+          <button class="faq-btn"><span class="faq-question">Wat is het verschil tussen een LCA-opsteller en een erkende LCA-toetser?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">Een opsteller voert het LCA-onderzoek uit en stelt de milieuverklaring of EPD op. Een erkende toetser beoordeelt dat werk onafhankelijk op naleving van het Toetsingsprotocol en de Bepalingsmethode. Beide rollen mogen voor dezelfde milieuverklaring niet door dezelfde partij worden vervuld. InfraImpact kan beide rollen leveren, maar nooit voor een en dezelfde verklaring.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-btn"><span class="faq-question">Hoe verhoudt DuboCalc zich tot andere LCA-software?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
-          <div class="faq-answer"><p class="faq-answer-inner">DuboCalc is specifiek ontwikkeld voor de Nederlandse GWW-markt en gekoppeld aan de NMD. Generieke LCA-software zoals SimaPro of OpenLCA biedt meer flexibiliteit maar minder directe koppeling met de NMD. Voor Rijkswaterstaat-projecten is DuboCalc de norm; voor complexere LCA-analyses of EPD-ontwikkeling is gespecialiseerde software soms geschikter.</p></div>
+          <button class="faq-btn"><span class="faq-question">Voor welke milieudata zijn jullie erkend als toetser?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">InfraImpact is erkend voor het toetsen van categorie 1- en 2-milieudata ten behoeve van opname in de NMD. De toetsing vindt plaats conform de actuele versie van het NMD-Toetsingsprotocol en de eisen uit de Bepalingsmethode.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn"><span class="faq-question">Volgens welk protocol toetsen jullie?</span><svg class="faq-icon" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 4v10M4 9h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><p class="faq-answer-inner">Wij toetsen conform de actuele versie van het NMD-Toetsingsprotocol van Stichting NMD, in samenhang met de Bepalingsmethode Milieuprestatie Bouwwerken en EN 15804+A2. We werken altijd met de op dat moment geldende versie van het protocol.</p></div>
         </div>
       </div>
     </div>
@@ -318,12 +432,12 @@
 
 <section class="cta-bg py-20 mt-8">
   <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center">
-    <span class="section-label" style="color:rgba(255,255,255,.55);">DuboCalc ondersteuning</span>
-    <h2 class="heading-lg text-white mt-3 mb-4" style="font-size:clamp(1.75rem,3.5vw,2.5rem);">Hulp nodig bij een DuboCalc-berekening?</h2>
-    <p class="mb-8" style="color:rgba(255,255,255,.65);font-size:1.0625rem;line-height:1.75;">Vertel ons om welk project het gaat en in welke fase je zit. We kijken snel samen hoe we kunnen ondersteunen.</p>
+    <span class="section-label" style="color:rgba(255,255,255,.55);">Onafhankelijk getoetst</span>
+    <h2 class="heading-lg text-white mt-3 mb-4" style="font-size:clamp(1.75rem,3.5vw,2.5rem);">Je LCA of EPD laten toetsen voor de NMD?</h2>
+    <p class="mb-8" style="color:rgba(255,255,255,.65);font-size:1.0625rem;line-height:1.75;">Vertel ons wie de LCA heeft opgesteld en om welk product het gaat. We checken de onafhankelijkheid en geven snel een richtlijn voor scope en doorlooptijd.</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="mailto:info@infraimpact.nl?subject=DuboCalc%20ondersteuning" class="btn-primary">Neem contact op <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="/kennisbank/mki-berekeningen" class="btn-outline">Meer over MKI-berekeningen</a>
+      <a href="mailto:info@infraimpact.nl?subject=LCA-toetsing%20voor%20de%20NMD%20aanvragen" class="btn-primary">Vraag een toetsing aan <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="mailto:info@infraimpact.nl?subject=Kennismaking%20LCA-toetsing" class="btn-outline">Plan een kennismaking</a>
     </div>
   </div>
 </section>
@@ -386,7 +500,7 @@
     makeDropdown('home-dropdown','home-trigger','home-panel');
     makeDropdown('artikelen-dropdown','artikelen-trigger','artikelen-panel');
     makeDropdown('projecten-dropdown','projecten-trigger','projecten-panel');
-    
+
     function makeAccordion(triggerId, panelId) {
       var t = document.getElementById(triggerId);
       var p = document.getElementById(panelId);
@@ -395,7 +509,7 @@
     }
     makeAccordion('home-accordion-trigger','home-accordion-panel');
     makeAccordion('artikelen-accordion-trigger','artikelen-accordion-panel');
-    
+
   })();
 </script>
 </body>
